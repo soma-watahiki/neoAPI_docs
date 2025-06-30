@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
     <meta name="generator" content="Doxygen 1.8.15" />
     <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
-    <title>neoAPI Python Documentation: getting_started.py</title>
+    <title>neoAPI Python Documentation: Member List</title>
     <link rel="shortcut icon" type="image/x-icon" media="all" href="favicon.ico" />
     <script type="text/javascript" src="dynsections.js"></script>
     <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -59,14 +59,79 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="a00091.html">neoapi</a></li><li class="navelem"><a class="el" href="a00863.html">Cam</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">getting_started.py</div>  </div>
+<div class="title">neoapi.Cam Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>This example describes the FIRST STEPS of handling Cam SDK. The given source code applies to handle one camera and image acquisition</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment"># \example getting_started.py</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># This example describes the FIRST STEPS of handling NeoAPI Python SDK.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># The given source code applies to handle one camera and image acquisition</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">#</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> sys</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> neoapi</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;result = 0</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordflow">try</span>:</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    camera = <a class="code" href="a00831.html">neoapi.Cam</a>()</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    camera.Connect()</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    camera.f.ExposureTime.Set(10000)</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    image = camera.GetImage()</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    image.Save(<span class="stringliteral">&quot;getting_started.bmp&quot;</span>)</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordflow">except</span> (<a class="code" href="a00731.html">neoapi.NeoException</a>, Exception) <span class="keyword">as</span> exc:</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    print(<span class="stringliteral">&#39;error: &#39;</span>, exc)</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    result = 1</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;sys.exit(result)</div></div><!-- fragment --> </div><!-- contents -->
+
+<p>This is the complete list of members for <a class="el" href="a00863.html">neoapi.Cam</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#ac87a83e0e942b51bb10d9319f38e5e80">__del__</a>(self)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#ae323752d23aff5196ae5095724a9a4c5">__init__</a>(self, *args)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#ad62bf7e7209b986b3f0140301273b202">AddUserBuffer</a>(self, &quot;BufferBase&quot; buffer)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#afa62e4ad2e20e3f8e77652168ada7ce1">ClearEvents</a>(self, *args)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#a468a099f074de5e226b222d191536160">ClearImages</a>(self)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#ab07f5cc12958e241b180b20e3e00cc47">ClearPnPEvents</a>(self)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#af9342490a56163f394c07abf61064880">Connect</a>(self, *args)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#ad681192391a74de7e565c0d27eda715d">DisableChunk</a>(self, *args)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#a9751caf0f47a47e38ea91ef8599ec2ad">DisableEvent</a>(self, &quot;str&quot; name)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#af6a0fc58c51bf7579fc086280df4a3ad">DisableEventCallback</a>(self, *args)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#a360b1e87ab0e0bd912199ef87539d23b">DisableImageCallback</a>(self)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#a8021221f0a6e3068c316445e215fbbe3">DisablePnPEventCallback</a>(self)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#af6de2c6d720ddff06eab94d44f511719">Disconnect</a>(self)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#abec16d1554a6f884755c3e6e88ebf1e9">EnableChunk</a>(self, *args)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#a902197448111a59521537f067da10e78">EnableEvent</a>(self, &quot;str&quot; name, &quot;int&quot; max_queuesize=1000)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#a9194d1a7f231b08aa3ae95e0e2956549">EnableEventCallback</a>(self, callback, name=&quot;&quot;)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#a3f9a60901507b78f13feb7c52129b6d6">EnableImageCallback</a>(self, callback)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#a30e692aec2a89896d6aa229352e4532a">EnablePnPEventCallback</a>(self, callback)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#a4f1da1221cf2888f6b6e095a9ce9f2c5">Execute</a>(self, &quot;str&quot; name)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#a177b60302bc6c88dfe82a8fc938f3885">f</a>(self)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#acd1be2e807ab576178a378e04353a691">GetAdjustFeatureValueMode</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00859.html#a535fb59548f1b8613979a9d3cd261371">GetAvailableChunks</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#a96e7621be71177bc2bd79bb266d03d3c">GetAvailableEvents</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00859.html#a5b34c75756c475826f4eafa59de2b3e6">GetEnabledEvents</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#a457e6738d020688c89c4f76f6283b538">GetEvent</a>(self, *args)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00859.html#a583f268ca217c5980a73142274850449">GetFeature</a>(self, &quot;str&quot; name)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#ae93ad58886f8665f885b777d27e9532f">GetFeatureList</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00859.html#ab03809a72ac8136b628597d502b4db51">GetImage</a>(self, &quot;int&quot; timeout=400)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#ad635657fae4824cbc8df3a1aee5ad7eb">GetImageBufferCount</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00859.html#a2692cee5025c780d021b782e125c9a35">GetImageBufferCycleCount</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#ae92af3924d145c8a26c18558d279fa9b">GetImageInfo</a>(self, &quot;int&quot; index)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00859.html#a53107564ffb57385f19127eea6435f64">GetImages</a>(self, 'int' timeout=400)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#a1dabab0b7beb6aff03dcdb8f13ef370d">GetImagesPerBuffer</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00859.html#a6dc8972d4d0bdc70a9022b18f8cd1b00">GetInfo</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#aca5a01fb66bf17b8f9cbe250d3f3dc14">GetLibraryVersion</a>()</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00859.html#a4b3accbf3321c31a5fceb7fc0ab9de87">GetOfflineCount</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#a5533479e8e16bc1a5aea0a5c7a2dde5c">GetPnPEvent</a>(self, &quot;int&quot; timeout=400)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00859.html#aa15c1f6e02b987b7a3fe7b1300f9e6f9">GetRuntimeInfoList</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#a2f1286b198a986b461e3229c784b0981">GetSynchronFeatureMode</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00859.html#a8158f4ce4112a5c886b0258557e1bb79">GetUserBufferMode</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#a374c5e3200cab8d7464bc907811ba035">HasFeature</a>(self, &quot;str&quot; name)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00859.html#ad5d532323d90fcb245a0c2e9b4079d26">IsConnected</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#aaaf166323ef78a64f75e02be7a32d8fa">IsOnline</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00859.html#a7e02b28ffff318ae93a6c0a37b5de38a">IsReadable</a>(self, &quot;str&quot; name)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00859.html#a16d699f52cbdfa7b8f2ff2ed08149839">IsStreaming</a>(self)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00859.html#afc86d804d99b2d9b11ce5c685548b24b">IsWritable</a>(self, &quot;str&quot; name)</td><td class="entry"><a class="el" href="a00859.html">neoapi.CamBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#a2e6dc00e3cd05182ef06b227742a12da">ReadMemory</a>(self, &quot;int&quot; address, &quot;bytearray&quot; buffer, &quot;int&quot; length)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#ac3334df2cd21515996229fd6fdb3db90">RevokeUserBuffer</a>(self, &quot;BufferBase&quot; buffer)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#a3299965f197821f2de6f63b43eefd251">SetAdjustFeatureValueMode</a>(self, &quot;bool&quot; adjust=True)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#a196586403385f1c09291a129e712cb62">SetFeature</a>(self, *args)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#a2f19563bca5378be0b09e23dc1fd70d1">SetImageBufferCount</a>(self, &quot;int&quot; buffercount=10)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#af2f0ac4b47d3afdb2f90c42891b8909e">SetImageBufferCycleCount</a>(self, &quot;int&quot; cyclecount=1)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#ab14f94f0300b589b9a502a592c1cf7d5">SetSynchronFeatureMode</a>(self, &quot;bool&quot; synchronous=True)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#ae93a07bcc61563515507f4a726a1bcdc">SetUserBufferMode</a>(self, &quot;bool&quot; user_buffers=True)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#ab47c16af10208521e0191267cd4b72b6">StartStreaming</a>(self)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#a3c29d9505242b8f6c3bf790ef0e11d11">StopStreaming</a>(self)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#ae50022e50933bacdcc0438eb00ccedd1">thisown</a></td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00863.html#a4a2c9929a8fd60a9241327519f9d3c3d">WriteFeatureStack</a>(self, &quot;FeatureStack&quot; featurestack)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00863.html#a888f3007c299cf28c82a0ee209b11252">WriteMemory</a>(self, &quot;int&quot; address, &quot;bytearray&quot; buffer, &quot;int&quot; length)</td><td class="entry"><a class="el" href="a00863.html">neoapi.Cam</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->
 </div>
@@ -76,7 +141,7 @@ $(function() {
 </div>
 <hr class="footer" /><address class="footer">
     <small>
-        neoAPI Python Documentation ver. 1.4.1,
+        neoAPI Python Documentation ver. 1.5.0,
         generated by <a href="http://www.doxygen.org/index.html">
             Doxygen
         </a>

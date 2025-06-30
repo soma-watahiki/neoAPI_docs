@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
     <meta name="generator" content="Doxygen 1.8.15" />
     <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
-    <title>neoAPI Python Documentation: neoapi.NeoEventCallback Class Reference</title>
+    <title>neoAPI Python Documentation: neoapi.FeatureList Class Reference</title>
     <link rel="shortcut icon" type="image/x-icon" media="all" href="favicon.ico" />
     <script type="text/javascript" src="dynsections.js"></script>
     <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -61,22 +61,23 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00091.html">neoapi</a></li><li class="navelem"><a class="el" href="a00815.html">NeoEventCallback</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00091.html">neoapi</a></li><li class="navelem"><a class="el" href="a00815.html">FeatureList</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="a00812.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">neoapi.NeoEventCallback Class Reference<div class="ingroups"><a class="el" href="a00090.html">All Cam Classes</a></div></div>  </div>
+<div class="title">neoapi.FeatureList Class Reference<div class="ingroups"><a class="el" href="a00090.html">All Cam Classes</a> &#124; <a class="el" href="a00088.html">Supporting Classes</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Base class providing the event callback interface.  
+<p>Provides list functionality for camera features.  
  <a href="a00815.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for neoapi.NeoEventCallback:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for neoapi.FeatureList:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
@@ -86,45 +87,48 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7e8d0860ddba0f452e71b596073eee18"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00815.html#a7e8d0860ddba0f452e71b596073eee18">__init__</a> (self)</td></tr>
-<tr class="memdesc:a7e8d0860ddba0f452e71b596073eee18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a7e8d0860ddba0f452e71b596073eee18">More...</a><br /></td></tr>
-<tr class="separator:a7e8d0860ddba0f452e71b596073eee18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89bd162b436496fbf13b23bede163f65"><td class="memItemLeft" align="right" valign="top">&quot;None&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00815.html#a89bd162b436496fbf13b23bede163f65">EventCallback</a> (self, '<a class="el" href="a00767.html">NeoEvent</a>' event)</td></tr>
-<tr class="memdesc:a89bd162b436496fbf13b23bede163f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrite this method to receive event data.  <a href="#a89bd162b436496fbf13b23bede163f65">More...</a><br /></td></tr>
-<tr class="separator:a89bd162b436496fbf13b23bede163f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa7a4d935460b3be5383409601894eb2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00815.html#aaa7a4d935460b3be5383409601894eb2">__init__</a> (self, *args)</td></tr>
+<tr class="memdesc:aaa7a4d935460b3be5383409601894eb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#aaa7a4d935460b3be5383409601894eb2">More...</a><br /></td></tr>
+<tr class="separator:aaa7a4d935460b3be5383409601894eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fb45ac6412d880875d9df5a5a99ef80"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00815.html#a8fb45ac6412d880875d9df5a5a99ef80">HasFeature</a> (self, &quot;str&quot; name)</td></tr>
+<tr class="memdesc:a8fb45ac6412d880875d9df5a5a99ef80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a feature is supported by this camera.  <a href="#a8fb45ac6412d880875d9df5a5a99ef80">More...</a><br /></td></tr>
+<tr class="separator:a8fb45ac6412d880875d9df5a5a99ef80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92efae5d78e74056ca4be8180ddb014d"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00815.html#a92efae5d78e74056ca4be8180ddb014d">IsReadable</a> (self, &quot;str&quot; name)</td></tr>
+<tr class="memdesc:a92efae5d78e74056ca4be8180ddb014d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is readable.  <a href="#a92efae5d78e74056ca4be8180ddb014d">More...</a><br /></td></tr>
+<tr class="separator:a92efae5d78e74056ca4be8180ddb014d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a505f3f3066e52efb89344680f6bc070a"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00815.html#a505f3f3066e52efb89344680f6bc070a">IsWritable</a> (self, &quot;str&quot; name)</td></tr>
+<tr class="memdesc:a505f3f3066e52efb89344680f6bc070a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is writeable.  <a href="#a505f3f3066e52efb89344680f6bc070a">More...</a><br /></td></tr>
+<tr class="separator:a505f3f3066e52efb89344680f6bc070a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaed306896fc0b8738b3d6c951d70242d"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00815.html#aaed306896fc0b8738b3d6c951d70242d">GetSize</a> (self)</td></tr>
+<tr class="memdesc:aaed306896fc0b8738b3d6c951d70242d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the number of features in this list.  <a href="#aaed306896fc0b8738b3d6c951d70242d">More...</a><br /></td></tr>
+<tr class="separator:aaed306896fc0b8738b3d6c951d70242d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9bf38228fee9d4ce2d9696a8dc1435f"><td class="memItemLeft" align="right" valign="top">&quot;FeatureListIterator&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00815.html#ae9bf38228fee9d4ce2d9696a8dc1435f">find</a> (self, &quot;str&quot; name)</td></tr>
+<tr class="memdesc:ae9bf38228fee9d4ce2d9696a8dc1435f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator by feature name.  <a href="#ae9bf38228fee9d4ce2d9696a8dc1435f">More...</a><br /></td></tr>
+<tr class="separator:ae9bf38228fee9d4ce2d9696a8dc1435f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf59e729f5a33518267d543d001b2709"><td class="memItemLeft" align="right" valign="top">&quot;Iterator&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00815.html#abf59e729f5a33518267d543d001b2709">__iter__</a> (self)</td></tr>
+<tr class="memdesc:abf59e729f5a33518267d543d001b2709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides iterator functionality.  <a href="#abf59e729f5a33518267d543d001b2709">More...</a><br /></td></tr>
+<tr class="separator:abf59e729f5a33518267d543d001b2709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d2f41f5090951c8cc9a4a2d662b429f"><td class="memItemLeft" align="right" valign="top">&quot;Feature&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00815.html#a5d2f41f5090951c8cc9a4a2d662b429f">__getitem__</a> (self, &quot;str&quot; s)</td></tr>
+<tr class="memdesc:a5d2f41f5090951c8cc9a4a2d662b429f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides iterator functionality.  <a href="#a5d2f41f5090951c8cc9a4a2d662b429f">More...</a><br /></td></tr>
+<tr class="separator:a5d2f41f5090951c8cc9a4a2d662b429f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a278ea658fcdca5c884842bb3a9aa1a1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00815.html#a278ea658fcdca5c884842bb3a9aa1a1e">thisown</a> = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc=&quot;The membership flag&quot;)</td></tr>
+<tr class="memdesc:a278ea658fcdca5c884842bb3a9aa1a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The membership flag.  <a href="#a278ea658fcdca5c884842bb3a9aa1a1e">More...</a><br /></td></tr>
+<tr class="separator:a278ea658fcdca5c884842bb3a9aa1a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base class providing the event callback interface. </p>
+<div class="textblock"><p>Provides list functionality for camera features. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7e8d0860ddba0f452e71b596073eee18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e8d0860ddba0f452e71b596073eee18">&#9670;&nbsp;</a></span>__init__()</h2>
+<a id="aaa7a4d935460b3be5383409601894eb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa7a4d935460b3be5383409601894eb2">&#9670;&nbsp;</a></span>__init__()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def neoapi.NeoEventCallback.__init__ </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructor. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a89bd162b436496fbf13b23bede163f65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89bd162b436496fbf13b23bede163f65">&#9670;&nbsp;</a></span>EventCallback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;None&quot; neoapi.NeoEventCallback.EventCallback </td>
+          <td class="memname">def neoapi.FeatureList.__init__ </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -132,8 +136,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">'<a class="el" href="a00767.html">NeoEvent</a>'&#160;</td>
-          <td class="paramname"><em>event</em>&#160;</td>
+          <td class="paramtype">*&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -143,14 +147,279 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Overwrite this method to receive event data. </p>
+<p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>The event data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*args</td><td>Arguments:<br />
+ <b>object</b> (optional) A <a class="el" href="a00815.html" title="Provides list functionality for camera features.">FeatureList</a> object </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8fb45ac6412d880875d9df5a5a99ef80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fb45ac6412d880875d9df5a5a99ef80">&#9670;&nbsp;</a></span>HasFeature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.FeatureList.HasFeature </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;str&quot;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a feature is supported by this camera. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the feature to read (SFNC Name) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the feature is supported by the camera </dd></dl>
+
+</div>
+</div>
+<a id="a92efae5d78e74056ca4be8180ddb014d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92efae5d78e74056ca4be8180ddb014d">&#9670;&nbsp;</a></span>IsReadable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.FeatureList.IsReadable </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;str&quot;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates that the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is readable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True if the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is readable, otherwise false </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a505f3f3066e52efb89344680f6bc070a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a505f3f3066e52efb89344680f6bc070a">&#9670;&nbsp;</a></span>IsWritable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.FeatureList.IsWritable </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;str&quot;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates that the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is writeable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool True if the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is readable, otherwise false </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaed306896fc0b8738b3d6c951d70242d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaed306896fc0b8738b3d6c951d70242d">&#9670;&nbsp;</a></span>GetSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.FeatureList.GetSize </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provides the number of features in this list. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of features </dd></dl>
+
+</div>
+</div>
+<a id="ae9bf38228fee9d4ce2d9696a8dc1435f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9bf38228fee9d4ce2d9696a8dc1435f">&#9670;&nbsp;</a></span>find()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;FeatureListIterator&quot; neoapi.FeatureList.find </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;str&quot;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get an iterator by feature name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>iterator <div class="fragment"><div class="line"><span class="keyword">import</span> neoapi</div><div class="line">cam = <a class="code" href="a00863.html">neoapi.Cam</a>()          <span class="comment"># create a camera object</span></div><div class="line">cam.Connect()               <span class="comment"># connect to any device</span></div><div class="line"><span class="comment"># the internal list is accessed only one time to get the iterator</span></div><div class="line">feat = cam.GetFeatureList().find(<span class="stringliteral">&quot;SpecialFeature&quot;</span>);</div><div class="line"><span class="keywordflow">if</span> feat.GetName():                      <span class="comment"># check if feature exists</span></div><div class="line">    feat.__ref__().SetInt(1)            <span class="comment"># set feature</span></div><div class="line"><span class="comment"># or (every time the feature name is passed, a search on the internal list takes place.)</span></div><div class="line"><span class="keywordflow">if</span> cam.HasFeature(<span class="stringliteral">&quot;SpecialFeature&quot;</span>):      <span class="comment"># check if feature exists</span></div><div class="line">    cam.SetFeature(<span class="stringliteral">&quot;SpecialFeature&quot;</span>, 1)   <span class="comment"># set feature</span></div></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="abf59e729f5a33518267d543d001b2709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf59e729f5a33518267d543d001b2709">&#9670;&nbsp;</a></span>__iter__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Iterator&quot; neoapi.FeatureList.__iter__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provides iterator functionality. </p>
+<dl class="section return"><dt>Returns</dt><dd>Iterator </dd></dl>
+
+</div>
+</div>
+<a id="a5d2f41f5090951c8cc9a4a2d662b429f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d2f41f5090951c8cc9a4a2d662b429f">&#9670;&nbsp;</a></span>__getitem__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Feature&quot; neoapi.FeatureList.__getitem__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;str&quot;&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provides iterator functionality. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>The name of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a278ea658fcdca5c884842bb3a9aa1a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a278ea658fcdca5c884842bb3a9aa1a1e">&#9670;&nbsp;</a></span>thisown</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">neoapi.FeatureList.thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc=&quot;The membership flag&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The membership flag. </p>
 
 </div>
 </div>
@@ -167,7 +436,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <hr class="footer" /><address class="footer">
     <small>
-        neoAPI Python Documentation ver. 1.4.1,
+        neoAPI Python Documentation ver. 1.5.0,
         generated by <a href="http://www.doxygen.org/index.html">
             Doxygen
         </a>

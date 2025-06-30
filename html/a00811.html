@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
     <meta name="generator" content="Doxygen 1.8.15" />
     <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
-    <title>neoAPI Python Documentation: neoapi.RegisterFeature Class Reference</title>
+    <title>neoAPI Python Documentation: neoapi.Feature Class Reference</title>
     <link rel="shortcut icon" type="image/x-icon" media="all" href="favicon.ico" />
     <script type="text/javascript" src="dynsections.js"></script>
     <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -61,88 +61,170 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00091.html">neoapi</a></li><li class="navelem"><a class="el" href="a00811.html">RegisterFeature</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00091.html">neoapi</a></li><li class="navelem"><a class="el" href="a00811.html">Feature</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="a00808.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">neoapi.RegisterFeature Class Reference<div class="ingroups"><a class="el" href="a00090.html">All Cam Classes</a> &#124; <a class="el" href="a00087.html">GenICam Feature Interface</a></div></div>  </div>
+<div class="title">neoapi.Feature Class Reference<div class="ingroups"><a class="el" href="a00090.html">All Cam Classes</a> &#124; <a class="el" href="a00086.html">Cam Interface Classes</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Base class providing the 'IRegister' interface.  
+<p>Provides access to camera features This class provides an easy way to work with camera features.  
  <a href="a00811.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for neoapi.RegisterFeature:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for neoapi.Feature:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a00811.png" usemap="#neoapi.RegisterFeature_map" alt=""/>
-  <map id="neoapi.RegisterFeature_map" name="neoapi.RegisterFeature_map">
-<area href="a00783.html" title="Base Feature class providing the interface to be used independent of Feature data-type." alt="neoapi.BaseFeature" shape="rect" coords="0,56,144,80"/>
-  </map>
-</div></div>
+  <img src="a00811.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abb2139403f7ca24ec7d14bd636c50d10"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#abb2139403f7ca24ec7d14bd636c50d10">__init__</a> (self, *args)</td></tr>
-<tr class="memdesc:abb2139403f7ca24ec7d14bd636c50d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#abb2139403f7ca24ec7d14bd636c50d10">More...</a><br /></td></tr>
-<tr class="separator:abb2139403f7ca24ec7d14bd636c50d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88ae2c69ede04bf5c4d914b116e01026"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a88ae2c69ede04bf5c4d914b116e01026">GetRegisterLength</a> (self)</td></tr>
-<tr class="memdesc:a88ae2c69ede04bf5c4d914b116e01026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length in bytes of the memory pointed to by the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#a88ae2c69ede04bf5c4d914b116e01026">More...</a><br /></td></tr>
-<tr class="separator:a88ae2c69ede04bf5c4d914b116e01026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8434c1db000e3cc041923dbfa6e316cd"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a8434c1db000e3cc041923dbfa6e316cd">GetRegisterAddress</a> (self)</td></tr>
-<tr class="memdesc:a8434c1db000e3cc041923dbfa6e316cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the address of the memory pointed to by the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#a8434c1db000e3cc041923dbfa6e316cd">More...</a><br /></td></tr>
-<tr class="separator:a8434c1db000e3cc041923dbfa6e316cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ca80790dd8b0b71d41bbe41d056f81c"><td class="memItemLeft" align="right" valign="top">&quot;RegisterFeature&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a5ca80790dd8b0b71d41bbe41d056f81c">GetRegister</a> (self, 'bytes' buffer, 'int' length)</td></tr>
-<tr class="memdesc:a5ca80790dd8b0b71d41bbe41d056f81c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the memory pointed to by the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object and writes it into the provided buffer.  <a href="#a5ca80790dd8b0b71d41bbe41d056f81c">More...</a><br /></td></tr>
-<tr class="separator:a5ca80790dd8b0b71d41bbe41d056f81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e066b5f0768eb9109cf87c7ad50f8c0"><td class="memItemLeft" align="right" valign="top">&quot;RegisterFeature&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a8e066b5f0768eb9109cf87c7ad50f8c0">SetRegister</a> (self, 'bytes' buffer, 'int' length)</td></tr>
-<tr class="memdesc:a8e066b5f0768eb9109cf87c7ad50f8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the memory pointed to by the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#a8e066b5f0768eb9109cf87c7ad50f8c0">More...</a><br /></td></tr>
-<tr class="separator:a8e066b5f0768eb9109cf87c7ad50f8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affff6bd927a38fc199f92c32fd031490"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#affff6bd927a38fc199f92c32fd031490">GetInterface</a> (self)</td></tr>
-<tr class="memdesc:affff6bd927a38fc199f92c32fd031490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the GenICam data type of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#affff6bd927a38fc199f92c32fd031490">More...</a><br /></td></tr>
-<tr class="separator:affff6bd927a38fc199f92c32fd031490"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1aa8c9d453a386b2f9f91cd3b3615c3"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#ad1aa8c9d453a386b2f9f91cd3b3615c3">GetToolTip</a> (self)</td></tr>
-<tr class="memdesc:ad1aa8c9d453a386b2f9f91cd3b3615c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a short description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#ad1aa8c9d453a386b2f9f91cd3b3615c3">More...</a><br /></td></tr>
-<tr class="separator:ad1aa8c9d453a386b2f9f91cd3b3615c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6830b31068e48ae5db294d32f2def11c"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#a6830b31068e48ae5db294d32f2def11c">GetDescription</a> (self)</td></tr>
-<tr class="memdesc:a6830b31068e48ae5db294d32f2def11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#a6830b31068e48ae5db294d32f2def11c">More...</a><br /></td></tr>
-<tr class="separator:a6830b31068e48ae5db294d32f2def11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae28b09dddd7447d487a04a8258590633"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#ae28b09dddd7447d487a04a8258590633">GetName</a> (self)</td></tr>
-<tr class="memdesc:ae28b09dddd7447d487a04a8258590633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#ae28b09dddd7447d487a04a8258590633">More...</a><br /></td></tr>
-<tr class="separator:ae28b09dddd7447d487a04a8258590633"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa79f26165f8083861522250888e0cee3"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#aa79f26165f8083861522250888e0cee3">GetDisplayName</a> (self)</td></tr>
-<tr class="memdesc:aa79f26165f8083861522250888e0cee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the display name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#aa79f26165f8083861522250888e0cee3">More...</a><br /></td></tr>
-<tr class="separator:aa79f26165f8083861522250888e0cee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bacabd7d5e68d9e54e88314660e2e9a"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#a4bacabd7d5e68d9e54e88314660e2e9a">GetVisibility</a> (self)</td></tr>
-<tr class="memdesc:a4bacabd7d5e68d9e54e88314660e2e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the recommended visibility (Beginner/Expert/Guru or Invisible) of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#a4bacabd7d5e68d9e54e88314660e2e9a">More...</a><br /></td></tr>
-<tr class="separator:a4bacabd7d5e68d9e54e88314660e2e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04f73633d9a8b93b7865bf91d2d36b67"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#a04f73633d9a8b93b7865bf91d2d36b67">IsReadable</a> (self)</td></tr>
-<tr class="memdesc:a04f73633d9a8b93b7865bf91d2d36b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is readable.  <a href="#a04f73633d9a8b93b7865bf91d2d36b67">More...</a><br /></td></tr>
-<tr class="separator:a04f73633d9a8b93b7865bf91d2d36b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac1faf49fc350a92ddf2ce11d35ba85c"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#aac1faf49fc350a92ddf2ce11d35ba85c">IsWritable</a> (self)</td></tr>
-<tr class="memdesc:aac1faf49fc350a92ddf2ce11d35ba85c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if a <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is writable.  <a href="#aac1faf49fc350a92ddf2ce11d35ba85c">More...</a><br /></td></tr>
-<tr class="separator:aac1faf49fc350a92ddf2ce11d35ba85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada3c4ad870b561c575714a16f70d19db"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#ada3c4ad870b561c575714a16f70d19db">IsAvailable</a> (self)</td></tr>
-<tr class="memdesc:ada3c4ad870b561c575714a16f70d19db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is available.  <a href="#ada3c4ad870b561c575714a16f70d19db">More...</a><br /></td></tr>
-<tr class="separator:ada3c4ad870b561c575714a16f70d19db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a403a136c5a7b4be1caf7a51c48919c77"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a403a136c5a7b4be1caf7a51c48919c77">__init__</a> (self, *args)</td></tr>
+<tr class="separator:a403a136c5a7b4be1caf7a51c48919c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a470ae7fcbfa89f856ce7412e6bbc96fb"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a470ae7fcbfa89f856ce7412e6bbc96fb">GetInterface</a> (self)</td></tr>
+<tr class="memdesc:a470ae7fcbfa89f856ce7412e6bbc96fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the GenICam data type of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object GenICam features can have different interface (data) types.  <a href="#a470ae7fcbfa89f856ce7412e6bbc96fb">More...</a><br /></td></tr>
+<tr class="separator:a470ae7fcbfa89f856ce7412e6bbc96fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d1a2836faa0fae35d3dfe2208716759"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a5d1a2836faa0fae35d3dfe2208716759">GetToolTip</a> (self)</td></tr>
+<tr class="memdesc:a5d1a2836faa0fae35d3dfe2208716759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a short description of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object.  <a href="#a5d1a2836faa0fae35d3dfe2208716759">More...</a><br /></td></tr>
+<tr class="separator:a5d1a2836faa0fae35d3dfe2208716759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625b369e4dc91cda7b3c41f8d4bbefde"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a625b369e4dc91cda7b3c41f8d4bbefde">GetDescription</a> (self)</td></tr>
+<tr class="memdesc:a625b369e4dc91cda7b3c41f8d4bbefde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the description of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object.  <a href="#a625b369e4dc91cda7b3c41f8d4bbefde">More...</a><br /></td></tr>
+<tr class="separator:a625b369e4dc91cda7b3c41f8d4bbefde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81195421dded0f9e1e98999c517161f4"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a81195421dded0f9e1e98999c517161f4">GetName</a> (self)</td></tr>
+<tr class="memdesc:a81195421dded0f9e1e98999c517161f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object.  <a href="#a81195421dded0f9e1e98999c517161f4">More...</a><br /></td></tr>
+<tr class="separator:a81195421dded0f9e1e98999c517161f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598660ec01fe189e8cc2ba6e219e8d67"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a598660ec01fe189e8cc2ba6e219e8d67">GetDisplayName</a> (self)</td></tr>
+<tr class="memdesc:a598660ec01fe189e8cc2ba6e219e8d67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the display name of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object.  <a href="#a598660ec01fe189e8cc2ba6e219e8d67">More...</a><br /></td></tr>
+<tr class="separator:a598660ec01fe189e8cc2ba6e219e8d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec69f7f7673a58d0730969f1d9c8056d"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#aec69f7f7673a58d0730969f1d9c8056d">GetVisibility</a> (self)</td></tr>
+<tr class="memdesc:aec69f7f7673a58d0730969f1d9c8056d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the recommended visibility (Beginner/Expert/Guru or Invisible) of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object.  <a href="#aec69f7f7673a58d0730969f1d9c8056d">More...</a><br /></td></tr>
+<tr class="separator:aec69f7f7673a58d0730969f1d9c8056d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6012ab5cf826fbf4e47147e56f2c00cd"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a6012ab5cf826fbf4e47147e56f2c00cd">IsReadable</a> (self)</td></tr>
+<tr class="memdesc:a6012ab5cf826fbf4e47147e56f2c00cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is readable.  <a href="#a6012ab5cf826fbf4e47147e56f2c00cd">More...</a><br /></td></tr>
+<tr class="separator:a6012ab5cf826fbf4e47147e56f2c00cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c3ef92f53d96f95324e130c56ecb1bb"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a0c3ef92f53d96f95324e130c56ecb1bb">IsWritable</a> (self)</td></tr>
+<tr class="memdesc:a0c3ef92f53d96f95324e130c56ecb1bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if a <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is writeable.  <a href="#a0c3ef92f53d96f95324e130c56ecb1bb">More...</a><br /></td></tr>
+<tr class="separator:a0c3ef92f53d96f95324e130c56ecb1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52b73bcde3be16e21543aaf168956176"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a52b73bcde3be16e21543aaf168956176">GetRepresentation</a> (self)</td></tr>
+<tr class="memdesc:a52b73bcde3be16e21543aaf168956176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value, which recommends the representation type of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object in a GUI The presentation is only available for the interface types IFloat and IInteger.  <a href="#a52b73bcde3be16e21543aaf168956176">More...</a><br /></td></tr>
+<tr class="separator:a52b73bcde3be16e21543aaf168956176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef22ab95afe291708798dc606b3ff046"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#aef22ab95afe291708798dc606b3ff046">GetUnit</a> (self)</td></tr>
+<tr class="memdesc:aef22ab95afe291708798dc606b3ff046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the physical unit of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object, only available for the types 'IFloat' and 'IInteger'.  <a href="#aef22ab95afe291708798dc606b3ff046">More...</a><br /></td></tr>
+<tr class="separator:aef22ab95afe291708798dc606b3ff046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd8890c4c4e5d90ff9aabd069c1e9af4"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#acd8890c4c4e5d90ff9aabd069c1e9af4">IsAvailable</a> (self)</td></tr>
+<tr class="memdesc:acd8890c4c4e5d90ff9aabd069c1e9af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is available "Not available" or False is equivalent to the access mode 'NA'.  <a href="#acd8890c4c4e5d90ff9aabd069c1e9af4">More...</a><br /></td></tr>
+<tr class="separator:acd8890c4c4e5d90ff9aabd069c1e9af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a251c3b500b730799f531cebe1e4ab652"><td class="memItemLeft" align="right" valign="top">&quot;FeatureList&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a251c3b500b730799f531cebe1e4ab652">GetEnumValueList</a> (self)</td></tr>
+<tr class="memdesc:a251c3b500b730799f531cebe1e4ab652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of all possible values of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for interface type 'IEnumeration'.  <a href="#a251c3b500b730799f531cebe1e4ab652">More...</a><br /></td></tr>
+<tr class="separator:a251c3b500b730799f531cebe1e4ab652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92227cda96f3db405a9f5092cb5a99fc"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a92227cda96f3db405a9f5092cb5a99fc">GetInt</a> (self)</td></tr>
+<tr class="memdesc:a92227cda96f3db405a9f5092cb5a99fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as integer Valid for the interface types 'IFloat', 'IInteger', 'IEnumeration' and 'IBoolean'.  <a href="#a92227cda96f3db405a9f5092cb5a99fc">More...</a><br /></td></tr>
+<tr class="separator:a92227cda96f3db405a9f5092cb5a99fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e03ac71173b851ae10ccdba70d0399"><td class="memItemLeft" align="right" valign="top">&quot;Feature&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a75e03ac71173b851ae10ccdba70d0399">SetInt</a> (self, &quot;int&quot; value)</td></tr>
+<tr class="memdesc:a75e03ac71173b851ae10ccdba70d0399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an integer value to the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Valid for the interface types 'IFloat', 'IInteger', 'IEnumeration' and 'IBoolean'.  <a href="#a75e03ac71173b851ae10ccdba70d0399">More...</a><br /></td></tr>
+<tr class="separator:a75e03ac71173b851ae10ccdba70d0399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f0e484b51eb348742c03dcec66a54c"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a41f0e484b51eb348742c03dcec66a54c">GetIntMin</a> (self)</td></tr>
+<tr class="memdesc:a41f0e484b51eb348742c03dcec66a54c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the smallest allowed value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as integer Valid for the interface types 'IInteger' and 'IFloat'.  <a href="#a41f0e484b51eb348742c03dcec66a54c">More...</a><br /></td></tr>
+<tr class="separator:a41f0e484b51eb348742c03dcec66a54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3dbe0271eede2408067c5191851fe37"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#ae3dbe0271eede2408067c5191851fe37">GetIntMax</a> (self)</td></tr>
+<tr class="memdesc:ae3dbe0271eede2408067c5191851fe37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the largest allowed value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as integer Valid for the interface types 'IInteger' and 'IFloat'.  <a href="#ae3dbe0271eede2408067c5191851fe37">More...</a><br /></td></tr>
+<tr class="separator:ae3dbe0271eede2408067c5191851fe37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13e5ac4d86f0dd5701b0cc618fd5b9ea"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a13e5ac4d86f0dd5701b0cc618fd5b9ea">GetIntInc</a> (self)</td></tr>
+<tr class="memdesc:a13e5ac4d86f0dd5701b0cc618fd5b9ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the allowed step size for the value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as integer Valid for the interface types 'IInteger' and 'IFloat'.  <a href="#a13e5ac4d86f0dd5701b0cc618fd5b9ea">More...</a><br /></td></tr>
+<tr class="separator:a13e5ac4d86f0dd5701b0cc618fd5b9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a120d6ffd8f44ade71ce041d6320751d8"><td class="memItemLeft" align="right" valign="top">&quot;float&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a120d6ffd8f44ade71ce041d6320751d8">GetDouble</a> (self)</td></tr>
+<tr class="memdesc:a120d6ffd8f44ade71ce041d6320751d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as floating-point number Valid for the interface types 'IFloat', 'IInteger', 'IEnumeration' and 'IBoolean'.  <a href="#a120d6ffd8f44ade71ce041d6320751d8">More...</a><br /></td></tr>
+<tr class="separator:a120d6ffd8f44ade71ce041d6320751d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9be4d0cfa11eec57556f4b7b3bcbc626"><td class="memItemLeft" align="right" valign="top">&quot;Feature&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a9be4d0cfa11eec57556f4b7b3bcbc626">SetDouble</a> (self, &quot;float&quot; value)</td></tr>
+<tr class="memdesc:a9be4d0cfa11eec57556f4b7b3bcbc626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a floating-point value to the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Valid for the interface types 'IFloat', 'IInteger', 'IEnumeration' and 'IBoolean'.  <a href="#a9be4d0cfa11eec57556f4b7b3bcbc626">More...</a><br /></td></tr>
+<tr class="separator:a9be4d0cfa11eec57556f4b7b3bcbc626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa57c67d9d005ef0a56b9c493c4736fe6"><td class="memItemLeft" align="right" valign="top">&quot;float&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#aa57c67d9d005ef0a56b9c493c4736fe6">GetDoubleMin</a> (self)</td></tr>
+<tr class="memdesc:aa57c67d9d005ef0a56b9c493c4736fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the smallest allowed value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as a floating-point number Valid for the interface types 'IFloat' and 'IInteger'.  <a href="#aa57c67d9d005ef0a56b9c493c4736fe6">More...</a><br /></td></tr>
+<tr class="separator:aa57c67d9d005ef0a56b9c493c4736fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac956e51d81c4c1c3b63eea4c9ea476d6"><td class="memItemLeft" align="right" valign="top">&quot;float&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#ac956e51d81c4c1c3b63eea4c9ea476d6">GetDoubleMax</a> (self)</td></tr>
+<tr class="memdesc:ac956e51d81c4c1c3b63eea4c9ea476d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the largest allowed value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as a floating-point number Valid for the interface types 'IFloat' and 'IInteger'.  <a href="#ac956e51d81c4c1c3b63eea4c9ea476d6">More...</a><br /></td></tr>
+<tr class="separator:ac956e51d81c4c1c3b63eea4c9ea476d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae53c3fcfa6b3fc21aad9f5e72141dd5b"><td class="memItemLeft" align="right" valign="top">&quot;float&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#ae53c3fcfa6b3fc21aad9f5e72141dd5b">GetDoubleInc</a> (self)</td></tr>
+<tr class="memdesc:ae53c3fcfa6b3fc21aad9f5e72141dd5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the allowed step size for the value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as a floating-point number Valid for the interface types 'IFloat' and 'IInteger'.  <a href="#ae53c3fcfa6b3fc21aad9f5e72141dd5b">More...</a><br /></td></tr>
+<tr class="separator:ae53c3fcfa6b3fc21aad9f5e72141dd5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab30d096e2fd16d4053d7c75441d7a7d"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#aab30d096e2fd16d4053d7c75441d7a7d">GetDoublePrecision</a> (self)</td></tr>
+<tr class="memdesc:aab30d096e2fd16d4053d7c75441d7a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the precision for the corresponding double Only valid for the interface type 'IFloat'.  <a href="#aab30d096e2fd16d4053d7c75441d7a7d">More...</a><br /></td></tr>
+<tr class="separator:aab30d096e2fd16d4053d7c75441d7a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd2ab067299afe1dfc06b10704bfaa6d"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#afd2ab067299afe1dfc06b10704bfaa6d">GetMaxStringLength</a> (self)</td></tr>
+<tr class="memdesc:afd2ab067299afe1dfc06b10704bfaa6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum allowed string-length of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for the interface type 'IString'.  <a href="#afd2ab067299afe1dfc06b10704bfaa6d">More...</a><br /></td></tr>
+<tr class="separator:afd2ab067299afe1dfc06b10704bfaa6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4896531d4272849e7552eec94cafb6da"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a4896531d4272849e7552eec94cafb6da">GetString</a> (self)</td></tr>
+<tr class="memdesc:a4896531d4272849e7552eec94cafb6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of a <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> as a string.  <a href="#a4896531d4272849e7552eec94cafb6da">More...</a><br /></td></tr>
+<tr class="separator:a4896531d4272849e7552eec94cafb6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8402ad968e3bd0c4ef41a517224576f"><td class="memItemLeft" align="right" valign="top">&quot;Feature&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#ab8402ad968e3bd0c4ef41a517224576f">SetString</a> (self, &quot;str&quot; value)</td></tr>
+<tr class="memdesc:ab8402ad968e3bd0c4ef41a517224576f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the value of a <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> as a string.  <a href="#ab8402ad968e3bd0c4ef41a517224576f">More...</a><br /></td></tr>
+<tr class="separator:ab8402ad968e3bd0c4ef41a517224576f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8c6f3618922f4ca5dcd34d852688a67"><td class="memItemLeft" align="right" valign="top">&quot;Feature&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#ad8c6f3618922f4ca5dcd34d852688a67">Execute</a> (self)</td></tr>
+<tr class="memdesc:ad8c6f3618922f4ca5dcd34d852688a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the command of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for the interface type 'ICommand'.  <a href="#ad8c6f3618922f4ca5dcd34d852688a67">More...</a><br /></td></tr>
+<tr class="separator:ad8c6f3618922f4ca5dcd34d852688a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f725a3ccd37f41f5f154784075adea7"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a5f725a3ccd37f41f5f154784075adea7">IsDone</a> (self)</td></tr>
+<tr class="memdesc:a5f725a3ccd37f41f5f154784075adea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the command of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is still executing Only valid for the interface type 'ICommand'.  <a href="#a5f725a3ccd37f41f5f154784075adea7">More...</a><br /></td></tr>
+<tr class="separator:a5f725a3ccd37f41f5f154784075adea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a500821f9f5bc1adde068befc917873c6"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a500821f9f5bc1adde068befc917873c6">GetBool</a> (self)</td></tr>
+<tr class="memdesc:a500821f9f5bc1adde068befc917873c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as boolean value Only valid for the interface type 'IBoolean'.  <a href="#a500821f9f5bc1adde068befc917873c6">More...</a><br /></td></tr>
+<tr class="separator:a500821f9f5bc1adde068befc917873c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b4b8294c5c3def133e1e6070689d81d"><td class="memItemLeft" align="right" valign="top">&quot;Feature&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a5b4b8294c5c3def133e1e6070689d81d">SetBool</a> (self, &quot;bool&quot; value)</td></tr>
+<tr class="memdesc:a5b4b8294c5c3def133e1e6070689d81d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a boolean value to the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for the interface type 'IBoolean'.  <a href="#a5b4b8294c5c3def133e1e6070689d81d">More...</a><br /></td></tr>
+<tr class="separator:a5b4b8294c5c3def133e1e6070689d81d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85c27bf170bda573befcdbe84de2cd07"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a85c27bf170bda573befcdbe84de2cd07">IsSelector</a> (self)</td></tr>
+<tr class="memdesc:a85c27bf170bda573befcdbe84de2cd07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is a selector A selector is a possibility to define feature dependencies.  <a href="#a85c27bf170bda573befcdbe84de2cd07">More...</a><br /></td></tr>
+<tr class="separator:a85c27bf170bda573befcdbe84de2cd07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4928a45027855b138d35805013a2b89d"><td class="memItemLeft" align="right" valign="top">&quot;FeatureList&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a4928a45027855b138d35805013a2b89d">GetSelectedFeatureList</a> (self)</td></tr>
+<tr class="memdesc:a4928a45027855b138d35805013a2b89d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of features that depend on this selector <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> Valid for the interface types 'IInteger' and 'IEnumeration'.  <a href="#a4928a45027855b138d35805013a2b89d">More...</a><br /></td></tr>
+<tr class="separator:a4928a45027855b138d35805013a2b89d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96a8ba2656df57ac888d28745015d4f2"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a96a8ba2656df57ac888d28745015d4f2">GetRegisterLength</a> (self)</td></tr>
+<tr class="memdesc:a96a8ba2656df57ac888d28745015d4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length in bytes of the memory pointed to by the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for the interface type 'IRegister'.  <a href="#a96a8ba2656df57ac888d28745015d4f2">More...</a><br /></td></tr>
+<tr class="separator:a96a8ba2656df57ac888d28745015d4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0392d7a753c6ae498924d5e1547c409e"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a0392d7a753c6ae498924d5e1547c409e">GetRegisterAddress</a> (self)</td></tr>
+<tr class="memdesc:a0392d7a753c6ae498924d5e1547c409e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the address of the memory pointed to by the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for the interface type 'IRegister'.  <a href="#a0392d7a753c6ae498924d5e1547c409e">More...</a><br /></td></tr>
+<tr class="separator:a0392d7a753c6ae498924d5e1547c409e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a151f1a287ed06c1ddb8f486f6a775c0d"><td class="memItemLeft" align="right" valign="top">&quot;Feature&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a151f1a287ed06c1ddb8f486f6a775c0d">GetRegister</a> (self, &quot;bytearray&quot; buffer, &quot;int&quot; length)</td></tr>
+<tr class="memdesc:a151f1a287ed06c1ddb8f486f6a775c0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the memory pointed to by the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object and writes it into the provided buffer Only valid for the interface type 'IRegister'.  <a href="#a151f1a287ed06c1ddb8f486f6a775c0d">More...</a><br /></td></tr>
+<tr class="separator:a151f1a287ed06c1ddb8f486f6a775c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afee1c8bcca5a1e4edbee79c441217fdd"><td class="memItemLeft" align="right" valign="top">&quot;Feature&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#afee1c8bcca5a1e4edbee79c441217fdd">SetRegister</a> (self, &quot;bytearray&quot; buffer, &quot;int&quot; length)</td></tr>
+<tr class="memdesc:afee1c8bcca5a1e4edbee79c441217fdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the memory pointed to by the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for the interface type 'IRegister'.  <a href="#afee1c8bcca5a1e4edbee79c441217fdd">More...</a><br /></td></tr>
+<tr class="separator:afee1c8bcca5a1e4edbee79c441217fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ecf847fa6ac9130f09d042bafdafa4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a65ecf847fa6ac9130f09d042bafdafa4">GetValue</a> (self)</td></tr>
+<tr class="memdesc:a65ecf847fa6ac9130f09d042bafdafa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a>.  <a href="#a65ecf847fa6ac9130f09d042bafdafa4">More...</a><br /></td></tr>
+<tr class="separator:a65ecf847fa6ac9130f09d042bafdafa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9ace9058d51b65cbecd9297a245c9f6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#af9ace9058d51b65cbecd9297a245c9f6">SetValue</a> (self, <a class="el" href="a00811.html#ad9353d112a25ec31e5fee21dd4b0e50b">value</a>)</td></tr>
+<tr class="memdesc:af9ace9058d51b65cbecd9297a245c9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a>.  <a href="#af9ace9058d51b65cbecd9297a245c9f6">More...</a><br /></td></tr>
+<tr class="separator:af9ace9058d51b65cbecd9297a245c9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a7433fbf6a07e587ba3dc7bedff7e420f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#a7433fbf6a07e587ba3dc7bedff7e420f">thisown</a> = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc=&quot;The membership flag&quot;)</td></tr>
+<tr class="memdesc:a7433fbf6a07e587ba3dc7bedff7e420f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The membership flag.  <a href="#a7433fbf6a07e587ba3dc7bedff7e420f">More...</a><br /></td></tr>
+<tr class="separator:a7433fbf6a07e587ba3dc7bedff7e420f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9353d112a25ec31e5fee21dd4b0e50b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00811.html#ad9353d112a25ec31e5fee21dd4b0e50b">value</a> = property(<a class="el" href="a00811.html#a65ecf847fa6ac9130f09d042bafdafa4">GetValue</a>, <a class="el" href="a00811.html#af9ace9058d51b65cbecd9297a245c9f6">SetValue</a>)</td></tr>
+<tr class="memdesc:ad9353d112a25ec31e5fee21dd4b0e50b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the feature value as a property.  <a href="#ad9353d112a25ec31e5fee21dd4b0e50b">More...</a><br /></td></tr>
+<tr class="separator:ad9353d112a25ec31e5fee21dd4b0e50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base class providing the 'IRegister' interface. </p>
+<div class="textblock"><p>Provides access to camera features This class provides an easy way to work with camera features. </p>
+<p>It provides access to the GenICam SFNC features as well as custom features the camera might support. The Class has a set of methods to get information about and work with a feature (such as type, minimum and maximum values), find out if a feature is accessible (available/readable/writable) and to read or write features. More information about the GenICam SFNC (standard feature naming convention) can be found at the <a href="https://www.emva.org/standards-technology/genicam/genicam-downloads/">EMVA Website</a>. More information about the features of your specific camera can be found in the documentation of your camera available at the member area of the <a href="https://vt.baumer.com">Baumer Website</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abb2139403f7ca24ec7d14bd636c50d10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb2139403f7ca24ec7d14bd636c50d10">&#9670;&nbsp;</a></span>__init__()</h2>
+<a id="a403a136c5a7b4be1caf7a51c48919c77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a403a136c5a7b4be1caf7a51c48919c77">&#9670;&nbsp;</a></span>__init__()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def neoapi.RegisterFeature.__init__ </td>
+          <td class="memname">def neoapi.Feature.__init__ </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -160,29 +242,26 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<pre class="fragment">   \brief      Constructor
+</pre> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">*args</td><td>Arguments:<br />
- <b>object</b> (optional) An <a class="el" href="a00811.html" title="Base class providing the &#39;IRegister&#39; interface.">RegisterFeature</a> object </td></tr>
+ <b>object</b> (optional) A <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Reimplemented from <a class="el" href="a00783.html#ad57036684dcf73a4522484aafbb2b1ca">neoapi.BaseFeature</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a88ae2c69ede04bf5c4d914b116e01026"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88ae2c69ede04bf5c4d914b116e01026">&#9670;&nbsp;</a></span>GetRegisterLength()</h2>
+<a id="a470ae7fcbfa89f856ce7412e6bbc96fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a470ae7fcbfa89f856ce7412e6bbc96fb">&#9670;&nbsp;</a></span>GetInterface()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;int&quot; neoapi.RegisterFeature.GetRegisterLength </td>
+          <td class="memname"> &quot;str&quot; neoapi.Feature.GetInterface </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
@@ -191,25 +270,25 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the length in bytes of the memory pointed to by the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The length in bytes of the memory pointed to by the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
+<p>Get the GenICam data type of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object GenICam features can have different interface (data) types. </p>
+<p>Depending on the interface type, different feature access methods are provided </p><div class="fragment"><div class="line">IInteger     - data type integer</div><div class="line">IFloat       - data type float</div><div class="line">IBool        - data type boolean</div><div class="line">IString      - data type string</div><div class="line">IEnumeration - data type enumeration, can be a selector or an enumeration</div><div class="line">ICommand     - command features are executable features</div><div class="line">ICategory    - used to group features which belong together</div></div><!-- fragment --> <dl class="section return"><dt>Returns</dt><dd>The interface type of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a8434c1db000e3cc041923dbfa6e316cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8434c1db000e3cc041923dbfa6e316cd">&#9670;&nbsp;</a></span>GetRegisterAddress()</h2>
+<a id="a5d1a2836faa0fae35d3dfe2208716759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d1a2836faa0fae35d3dfe2208716759">&#9670;&nbsp;</a></span>GetToolTip()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;int&quot; neoapi.RegisterFeature.GetRegisterAddress </td>
+          <td class="memname"> &quot;str&quot; neoapi.Feature.GetToolTip </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
@@ -218,25 +297,322 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the address of the memory pointed to by the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The address of the memory pointed to by the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
+<p>Get a short description of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The short description of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a5ca80790dd8b0b71d41bbe41d056f81c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ca80790dd8b0b71d41bbe41d056f81c">&#9670;&nbsp;</a></span>GetRegister()</h2>
+<a id="a625b369e4dc91cda7b3c41f8d4bbefde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625b369e4dc91cda7b3c41f8d4bbefde">&#9670;&nbsp;</a></span>GetDescription()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;RegisterFeature&quot; neoapi.RegisterFeature.GetRegister </td>
+          <td class="memname"> &quot;str&quot; neoapi.Feature.GetDescription </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the description of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The description text of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a81195421dded0f9e1e98999c517161f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81195421dded0f9e1e98999c517161f4">&#9670;&nbsp;</a></span>GetName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.Feature.GetName </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the name of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The name of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a598660ec01fe189e8cc2ba6e219e8d67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a598660ec01fe189e8cc2ba6e219e8d67">&#9670;&nbsp;</a></span>GetDisplayName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.Feature.GetDisplayName </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the display name of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The display name of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aec69f7f7673a58d0730969f1d9c8056d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec69f7f7673a58d0730969f1d9c8056d">&#9670;&nbsp;</a></span>GetVisibility()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.Feature.GetVisibility </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the recommended visibility (Beginner/Expert/Guru or Invisible) of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string representing the visibility of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6012ab5cf826fbf4e47147e56f2c00cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6012ab5cf826fbf4e47147e56f2c00cd">&#9670;&nbsp;</a></span>IsReadable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.Feature.IsReadable </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates that the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is readable. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is readable, otherwise false </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0c3ef92f53d96f95324e130c56ecb1bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c3ef92f53d96f95324e130c56ecb1bb">&#9670;&nbsp;</a></span>IsWritable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.Feature.IsWritable </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates if a <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is writeable. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is writable, otherwise false </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a52b73bcde3be16e21543aaf168956176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52b73bcde3be16e21543aaf168956176">&#9670;&nbsp;</a></span>GetRepresentation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.Feature.GetRepresentation </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a value, which recommends the representation type of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object in a GUI The presentation is only available for the interface types IFloat and IInteger. </p>
+<p>Possible values are: </p><div class="fragment"><div class="line">Linear      - IFloat and IInteger</div><div class="line">Logarithmic - IFloat and IInteger</div><div class="line">PureNumber  - IFloat and IInteger</div><div class="line">Boolean     - IInteger</div><div class="line">HexNumber   - IInteger</div><div class="line">IPV4Address - IInteger</div><div class="line">MACAddress  - IInteger</div></div><!-- fragment --> <dl class="section return"><dt>Returns</dt><dd>The recommended representation of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object in a GUI </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aef22ab95afe291708798dc606b3ff046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef22ab95afe291708798dc606b3ff046">&#9670;&nbsp;</a></span>GetUnit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.Feature.GetUnit </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the physical unit of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object, only available for the types 'IFloat' and 'IInteger'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The physical unit of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acd8890c4c4e5d90ff9aabd069c1e9af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd8890c4c4e5d90ff9aabd069c1e9af4">&#9670;&nbsp;</a></span>IsAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.Feature.IsAvailable </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is available "Not available" or False is equivalent to the access mode 'NA'. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is available to work with it, otherwise false </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a251c3b500b730799f531cebe1e4ab652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a251c3b500b730799f531cebe1e4ab652">&#9670;&nbsp;</a></span>GetEnumValueList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;FeatureList&quot; neoapi.Feature.GetEnumValueList </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a list of all possible values of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for interface type 'IEnumeration'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The list of all possible values of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a92227cda96f3db405a9f5092cb5a99fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92227cda96f3db405a9f5092cb5a99fc">&#9670;&nbsp;</a></span>GetInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.Feature.GetInt </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as integer Valid for the interface types 'IFloat', 'IInteger', 'IEnumeration' and 'IBoolean'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> value </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a75e03ac71173b851ae10ccdba70d0399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75e03ac71173b851ae10ccdba70d0399">&#9670;&nbsp;</a></span>SetInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Feature&quot; neoapi.Feature.SetInt </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -244,13 +620,644 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">'bytes'&#160;</td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes an integer value to the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Valid for the interface types 'IFloat', 'IInteger', 'IEnumeration' and 'IBoolean'. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>An integer value to be written </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a41f0e484b51eb348742c03dcec66a54c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f0e484b51eb348742c03dcec66a54c">&#9670;&nbsp;</a></span>GetIntMin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.Feature.GetIntMin </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the smallest allowed value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as integer Valid for the interface types 'IInteger' and 'IFloat'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The smallest allowed value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae3dbe0271eede2408067c5191851fe37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3dbe0271eede2408067c5191851fe37">&#9670;&nbsp;</a></span>GetIntMax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.Feature.GetIntMax </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the largest allowed value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as integer Valid for the interface types 'IInteger' and 'IFloat'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The largest allowed value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a13e5ac4d86f0dd5701b0cc618fd5b9ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13e5ac4d86f0dd5701b0cc618fd5b9ea">&#9670;&nbsp;</a></span>GetIntInc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.Feature.GetIntInc </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the allowed step size for the value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as integer Valid for the interface types 'IInteger' and 'IFloat'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The allowed step size for the value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a120d6ffd8f44ade71ce041d6320751d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a120d6ffd8f44ade71ce041d6320751d8">&#9670;&nbsp;</a></span>GetDouble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;float&quot; neoapi.Feature.GetDouble </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as floating-point number Valid for the interface types 'IFloat', 'IInteger', 'IEnumeration' and 'IBoolean'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9be4d0cfa11eec57556f4b7b3bcbc626"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be4d0cfa11eec57556f4b7b3bcbc626">&#9670;&nbsp;</a></span>SetDouble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Feature&quot; neoapi.Feature.SetDouble </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;float&quot;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write a floating-point value to the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Valid for the interface types 'IFloat', 'IInteger', 'IEnumeration' and 'IBoolean'. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>A floating-point value to be written </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa57c67d9d005ef0a56b9c493c4736fe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa57c67d9d005ef0a56b9c493c4736fe6">&#9670;&nbsp;</a></span>GetDoubleMin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;float&quot; neoapi.Feature.GetDoubleMin </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the smallest allowed value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as a floating-point number Valid for the interface types 'IFloat' and 'IInteger'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The smallest allowed value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac956e51d81c4c1c3b63eea4c9ea476d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac956e51d81c4c1c3b63eea4c9ea476d6">&#9670;&nbsp;</a></span>GetDoubleMax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;float&quot; neoapi.Feature.GetDoubleMax </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the largest allowed value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as a floating-point number Valid for the interface types 'IFloat' and 'IInteger'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The largest allowed value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae53c3fcfa6b3fc21aad9f5e72141dd5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae53c3fcfa6b3fc21aad9f5e72141dd5b">&#9670;&nbsp;</a></span>GetDoubleInc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;float&quot; neoapi.Feature.GetDoubleInc </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the allowed step size for the value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as a floating-point number Valid for the interface types 'IFloat' and 'IInteger'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The allowed step size for the value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aab30d096e2fd16d4053d7c75441d7a7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab30d096e2fd16d4053d7c75441d7a7d">&#9670;&nbsp;</a></span>GetDoublePrecision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.Feature.GetDoublePrecision </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the precision for the corresponding double Only valid for the interface type 'IFloat'. </p>
+<dl class="section return"><dt>Returns</dt><dd>A non-negative number for the precision the double should be displayed </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afd2ab067299afe1dfc06b10704bfaa6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd2ab067299afe1dfc06b10704bfaa6d">&#9670;&nbsp;</a></span>GetMaxStringLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.Feature.GetMaxStringLength </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the maximum allowed string-length of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for the interface type 'IString'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The maximum length of the string </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4896531d4272849e7552eec94cafb6da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4896531d4272849e7552eec94cafb6da">&#9670;&nbsp;</a></span>GetString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.Feature.GetString </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the value of a <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> as a string. </p>
+<dl class="section return"><dt>Returns</dt><dd>The value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab8402ad968e3bd0c4ef41a517224576f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8402ad968e3bd0c4ef41a517224576f">&#9670;&nbsp;</a></span>SetString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Feature&quot; neoapi.Feature.SetString </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;str&quot;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write the value of a <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> as a string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>A string value to be written </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad8c6f3618922f4ca5dcd34d852688a67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8c6f3618922f4ca5dcd34d852688a67">&#9670;&nbsp;</a></span>Execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Feature&quot; neoapi.Feature.Execute </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes the command of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for the interface type 'ICommand'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5f725a3ccd37f41f5f154784075adea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f725a3ccd37f41f5f154784075adea7">&#9670;&nbsp;</a></span>IsDone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.Feature.IsDone </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether the command of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is still executing Only valid for the interface type 'ICommand'. </p>
+<p>Must be supported by the camera. Currently no Baumer camera is supporting this </p><dl class="section return"><dt>Returns</dt><dd>False if the command of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is still been executed, true if it finished executing </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a500821f9f5bc1adde068befc917873c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a500821f9f5bc1adde068befc917873c6">&#9670;&nbsp;</a></span>GetBool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.Feature.GetBool </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object as boolean value Only valid for the interface type 'IBoolean'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5b4b8294c5c3def133e1e6070689d81d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b4b8294c5c3def133e1e6070689d81d">&#9670;&nbsp;</a></span>SetBool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Feature&quot; neoapi.Feature.SetBool </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;bool&quot;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write a boolean value to the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for the interface type 'IBoolean'. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>A boolean value to be written </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a85c27bf170bda573befcdbe84de2cd07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85c27bf170bda573befcdbe84de2cd07">&#9670;&nbsp;</a></span>IsSelector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.Feature.IsSelector </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is a selector A selector is a possibility to define feature dependencies. </p>
+<p>The current value of a selector <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> has an impact on the value of another <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object. Valid for the interface types 'IInteger' and 'IEnumeration' </p><dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is a selector, otherwise false </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4928a45027855b138d35805013a2b89d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4928a45027855b138d35805013a2b89d">&#9670;&nbsp;</a></span>GetSelectedFeatureList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;FeatureList&quot; neoapi.Feature.GetSelectedFeatureList </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a list of features that depend on this selector <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> Valid for the interface types 'IInteger' and 'IEnumeration'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The list of all features that depend on this selector <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a96a8ba2656df57ac888d28745015d4f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96a8ba2656df57ac888d28745015d4f2">&#9670;&nbsp;</a></span>GetRegisterLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.Feature.GetRegisterLength </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the length in bytes of the memory pointed to by the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for the interface type 'IRegister'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The length in bytes of the memory pointed to by the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0392d7a753c6ae498924d5e1547c409e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0392d7a753c6ae498924d5e1547c409e">&#9670;&nbsp;</a></span>GetRegisterAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.Feature.GetRegisterAddress </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the address of the memory pointed to by the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for the interface type 'IRegister'. </p>
+<dl class="section return"><dt>Returns</dt><dd>The address of the memory pointed to by the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a151f1a287ed06c1ddb8f486f6a775c0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a151f1a287ed06c1ddb8f486f6a775c0d">&#9670;&nbsp;</a></span>GetRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Feature&quot; neoapi.Feature.GetRegister </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;bytearray&quot;&#160;</td>
           <td class="paramname"><em>buffer</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">'int'&#160;</td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
           <td class="paramname"><em>length</em>&#160;</td>
         </tr>
         <tr>
@@ -261,32 +1268,32 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reads the memory pointed to by the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object and writes it into the provided buffer. </p>
+<p>Reads the memory pointed to by the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object and writes it into the provided buffer Only valid for the interface type 'IRegister'. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The destination buffer into which the read data is copied </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The size of the destination buffer, GetRegisterLength provides the necessary size </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The size of the destination buffer. The method GetRegisterLength provides the necessary size </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00811.html" title="Base class providing the &#39;IRegister&#39; interface.">RegisterFeature</a> object </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a8e066b5f0768eb9109cf87c7ad50f8c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e066b5f0768eb9109cf87c7ad50f8c0">&#9670;&nbsp;</a></span>SetRegister()</h2>
+<a id="afee1c8bcca5a1e4edbee79c441217fdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee1c8bcca5a1e4edbee79c441217fdd">&#9670;&nbsp;</a></span>SetRegister()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;RegisterFeature&quot; neoapi.RegisterFeature.SetRegister </td>
+          <td class="memname"> &quot;Feature&quot; neoapi.Feature.SetRegister </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -294,13 +1301,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">'bytes'&#160;</td>
+          <td class="paramtype">&quot;bytearray&quot;&#160;</td>
           <td class="paramname"><em>buffer</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">'int'&#160;</td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
           <td class="paramname"><em>length</em>&#160;</td>
         </tr>
         <tr>
@@ -311,26 +1318,85 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Writes the memory pointed to by the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
+<p>Writes the memory pointed to by the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object Only valid for the interface type 'IRegister'. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The buffer for the data to be written </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The size of the destination buffer, GetRegisterLength provides the necessary size </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The size of the destination buffer. The method GetRegisterLength provides the necessary size </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00811.html" title="Base class providing the &#39;IRegister&#39; interface.">RegisterFeature</a> object </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="affff6bd927a38fc199f92c32fd031490"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affff6bd927a38fc199f92c32fd031490">&#9670;&nbsp;</a></span>GetInterface()</h2>
+<a id="a65ecf847fa6ac9130f09d042bafdafa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65ecf847fa6ac9130f09d042bafdafa4">&#9670;&nbsp;</a></span>GetValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def neoapi.Feature.GetValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> </dd></dl>
+
+</div>
+</div>
+<a id="af9ace9058d51b65cbecd9297a245c9f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9ace9058d51b65cbecd9297a245c9f6">&#9670;&nbsp;</a></span>SetValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def neoapi.Feature.SetValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the value of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>A value to be set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a7433fbf6a07e587ba3dc7bedff7e420f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7433fbf6a07e587ba3dc7bedff7e420f">&#9670;&nbsp;</a></span>thisown</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -339,34 +1405,22 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetInterface </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
+          <td class="memname">neoapi.Feature.thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc=&quot;The membership flag&quot;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the GenICam data type of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<p>GenICam features can have different interface (data) types. Depending on the interface type, different feature access methods are provided.</p>
-<div class="fragment"><div class="line">IInteger     - data type integer</div><div class="line">IFloat       - data type float</div><div class="line">IBool        - data type boolean</div><div class="line">IString      - data type string</div><div class="line">IEnumeration - data type enumeration, can be a selector or an enumeration</div><div class="line">ICommand     - command features are executable features</div><div class="line">ICategory    - used to group features which belong together</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>The interface type of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>The membership flag. </p>
 
 </div>
 </div>
-<a id="ad1aa8c9d453a386b2f9f91cd3b3615c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1aa8c9d453a386b2f9f91cd3b3615c3">&#9670;&nbsp;</a></span>GetToolTip()</h2>
+<a id="ad9353d112a25ec31e5fee21dd4b0e50b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9353d112a25ec31e5fee21dd4b0e50b">&#9670;&nbsp;</a></span>value</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -375,274 +1429,17 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetToolTip </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
+          <td class="memname">neoapi.Feature.value = property(<a class="el" href="a00811.html#a65ecf847fa6ac9130f09d042bafdafa4">GetValue</a>, <a class="el" href="a00811.html#af9ace9058d51b65cbecd9297a245c9f6">SetValue</a>)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get a short description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The short description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a6830b31068e48ae5db294d32f2def11c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6830b31068e48ae5db294d32f2def11c">&#9670;&nbsp;</a></span>GetDescription()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetDescription </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The description text of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ae28b09dddd7447d487a04a8258590633"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae28b09dddd7447d487a04a8258590633">&#9670;&nbsp;</a></span>GetName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetName </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa79f26165f8083861522250888e0cee3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa79f26165f8083861522250888e0cee3">&#9670;&nbsp;</a></span>GetDisplayName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetDisplayName </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the display name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The display name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a4bacabd7d5e68d9e54e88314660e2e9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bacabd7d5e68d9e54e88314660e2e9a">&#9670;&nbsp;</a></span>GetVisibility()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetVisibility </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the recommended visibility (Beginner/Expert/Guru or Invisible) of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The string representing the visibility of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a04f73633d9a8b93b7865bf91d2d36b67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04f73633d9a8b93b7865bf91d2d36b67">&#9670;&nbsp;</a></span>IsReadable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;bool&quot; neoapi.BaseFeature.IsReadable </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Indicates that the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is readable. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is readable, otherwise False </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aac1faf49fc350a92ddf2ce11d35ba85c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac1faf49fc350a92ddf2ce11d35ba85c">&#9670;&nbsp;</a></span>IsWritable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;bool&quot; neoapi.BaseFeature.IsWritable </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Indicates if a <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is writable. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is writable, otherwise False </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ada3c4ad870b561c575714a16f70d19db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada3c4ad870b561c575714a16f70d19db">&#9670;&nbsp;</a></span>IsAvailable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;bool&quot; neoapi.BaseFeature.IsAvailable </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Indicates whether the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is available. </p>
-<pre class="fragment"> "Not available" or False is equivalent to the access mode 'NA'.
-</pre><dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is available to work with it, otherwise False </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Provides access to the feature value as a property. </p>
 
 </div>
 </div>
@@ -659,7 +1456,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <hr class="footer" /><address class="footer">
     <small>
-        neoAPI Python Documentation ver. 1.4.1,
+        neoAPI Python Documentation ver. 1.5.0,
         generated by <a href="http://www.doxygen.org/index.html">
             Doxygen
         </a>

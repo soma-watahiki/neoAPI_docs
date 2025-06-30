@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
     <meta name="generator" content="Doxygen 1.8.15" />
     <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
-    <title>neoAPI Python Documentation: user_buffer.py</title>
+    <title>neoAPI Python Documentation: neoapi.Cam Class Reference</title>
     <link rel="shortcut icon" type="image/x-icon" media="all" href="favicon.ico" />
     <script type="text/javascript" src="dynsections.js"></script>
     <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -59,14 +59,2555 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="a00091.html">neoapi</a></li><li class="navelem"><a class="el" href="a00863.html">Cam</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a> &#124;
+<a href="a00860.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">user_buffer.py</div>  </div>
+<div class="title">neoapi.Cam Class Reference<div class="ingroups"><a class="el" href="a00090.html">All Cam Classes</a> &#124; <a class="el" href="a00086.html">Cam Interface Classes</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>This example describes the use of buffers allocated by the user or other frameworks.</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="stringliteral">&#39;&#39;&#39; \example user_buffer.py</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="stringliteral">This example describes the use of buffers allocated by the user or other frameworks.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="stringliteral">The given source code applies to handle one camera and image acquisition.</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&#39;&#39;&#39;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">import</span> sys</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;use_numpy = <span class="keyword">False</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordflow">try</span>:</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">import</span> numpy</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    use_numpy = <span class="keyword">True</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordflow">except</span> ImportError:</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">pass</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> neoapi</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> ctypes</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span>MyBuffer(<a class="code" href="a00823.html">neoapi.BufferBase</a>):</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;implementation for user buffer mode&quot;&quot;&quot;</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">def </span>__init__(self, size):</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="a00823.html#a452d20e5d9f465a672f3ef50c90d59bc">neoapi.BufferBase.__init__</a>(self)</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        self._buf = numpy.zeros(size, numpy.uint8) <span class="keywordflow">if</span> use_numpy <span class="keywordflow">else</span> bytearray(size)</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        self._size = size</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        self.RegisterMemory(self._buf, self._size)</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">def </span>CalcVar(self):</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        var = -1</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (use_numpy): <span class="comment"># buf contains the image data and can be used with numpy</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            var = self._buf.var()</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> var</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;result = 0</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordflow">try</span>:</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    camera = <a class="code" href="a00831.html">neoapi.Cam</a>()</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    camera.Connect()</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    payloadsize = camera.f.PayloadSize.Get()</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    buf = MyBuffer(payloadsize)</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    buf.myContent = 42</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    camera.AddUserBuffer(buf)</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    camera.f.ExposureTime.Set(10000)</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    camera.SetUserBufferMode(<span class="keyword">True</span>)</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    image = camera.GetImage()</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    print(<span class="stringliteral">&quot;Image variance:&quot;</span>, image.GetUserBuffer().CalcVar())</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment"># the same object will be returned (myContent is set)</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    print(<span class="stringliteral">&quot;Buffers Content:&quot;</span>, image.GetUserBuffer().myContent)</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordflow">except</span> (<a class="code" href="a00731.html">neoapi.NeoException</a>, Exception) <span class="keyword">as</span> exc:</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    print(<span class="stringliteral">&#39;error: &#39;</span>, exc)</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    result = 1</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;sys.exit(result)</div></div><!-- fragment --> </div><!-- contents -->
+
+<p>Main camera class &mdash; connect, set features, retrieve images This class provides all methods to work with a camera.  
+ <a href="a00863.html#details">More...</a></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for neoapi.Cam:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a00863.png" usemap="#neoapi.Cam_map" alt=""/>
+  <map id="neoapi.Cam_map" name="neoapi.Cam_map">
+<area href="a00859.html" title="Base camera class from which other camera classes inherit functionality This class provides all metho..." alt="neoapi.CamBase" shape="rect" coords="0,56,107,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ae323752d23aff5196ae5095724a9a4c5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#ae323752d23aff5196ae5095724a9a4c5">__init__</a> (self, *args)</td></tr>
+<tr class="separator:ae323752d23aff5196ae5095724a9a4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac87a83e0e942b51bb10d9319f38e5e80"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#ac87a83e0e942b51bb10d9319f38e5e80">__del__</a> (self)</td></tr>
+<tr class="memdesc:ac87a83e0e942b51bb10d9319f38e5e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#ac87a83e0e942b51bb10d9319f38e5e80">More...</a><br /></td></tr>
+<tr class="separator:ac87a83e0e942b51bb10d9319f38e5e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9342490a56163f394c07abf61064880"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#af9342490a56163f394c07abf61064880">Connect</a> (self, *args)</td></tr>
+<tr class="memdesc:af9342490a56163f394c07abf61064880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect a GenICam camera device to work with it The Connect method is called to establish a connection to a GenICam compatible camera device.  <a href="#af9342490a56163f394c07abf61064880">More...</a><br /></td></tr>
+<tr class="separator:af9342490a56163f394c07abf61064880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6de2c6d720ddff06eab94d44f511719"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#af6de2c6d720ddff06eab94d44f511719">Disconnect</a> (self)</td></tr>
+<tr class="memdesc:af6de2c6d720ddff06eab94d44f511719"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnect a GenICam camera device.  <a href="#af6de2c6d720ddff06eab94d44f511719">More...</a><br /></td></tr>
+<tr class="separator:af6de2c6d720ddff06eab94d44f511719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab47c16af10208521e0191267cd4b72b6"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#ab47c16af10208521e0191267cd4b72b6">StartStreaming</a> (self)</td></tr>
+<tr class="memdesc:ab47c16af10208521e0191267cd4b72b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start streaming from this camera.  <a href="#ab47c16af10208521e0191267cd4b72b6">More...</a><br /></td></tr>
+<tr class="separator:ab47c16af10208521e0191267cd4b72b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c29d9505242b8f6c3bf790ef0e11d11"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a3c29d9505242b8f6c3bf790ef0e11d11">StopStreaming</a> (self)</td></tr>
+<tr class="memdesc:a3c29d9505242b8f6c3bf790ef0e11d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop streaming from this camera.  <a href="#a3c29d9505242b8f6c3bf790ef0e11d11">More...</a><br /></td></tr>
+<tr class="separator:a3c29d9505242b8f6c3bf790ef0e11d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a196586403385f1c09291a129e712cb62"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a196586403385f1c09291a129e712cb62">SetFeature</a> (self, *args)</td></tr>
+<tr class="memdesc:a196586403385f1c09291a129e712cb62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of a feature of the camera, see <a class="el" href="a00863.html#a177b60302bc6c88dfe82a8fc938f3885" title="Provides access to the generated camera features A GenICam camera has hundreds of features which are ...">Cam.f</a> for a more convenient way to access features.  <a href="#a196586403385f1c09291a129e712cb62">More...</a><br /></td></tr>
+<tr class="separator:a196586403385f1c09291a129e712cb62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f1da1221cf2888f6b6e095a9ce9f2c5"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a4f1da1221cf2888f6b6e095a9ce9f2c5">Execute</a> (self, &quot;str&quot; name)</td></tr>
+<tr class="memdesc:a4f1da1221cf2888f6b6e095a9ce9f2c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes an exectutable SFNC-ICommand-Feature of the camera Some Features are used to trigger an action in the camera.  <a href="#a4f1da1221cf2888f6b6e095a9ce9f2c5">More...</a><br /></td></tr>
+<tr class="separator:a4f1da1221cf2888f6b6e095a9ce9f2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a2c9929a8fd60a9241327519f9d3c3d"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a4a2c9929a8fd60a9241327519f9d3c3d">WriteFeatureStack</a> (self, &quot;FeatureStack&quot; featurestack)</td></tr>
+<tr class="memdesc:a4a2c9929a8fd60a9241327519f9d3c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of multiple feature of the camera in one operation.  <a href="#a4a2c9929a8fd60a9241327519f9d3c3d">More...</a><br /></td></tr>
+<tr class="separator:a4a2c9929a8fd60a9241327519f9d3c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e6dc00e3cd05182ef06b227742a12da"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a2e6dc00e3cd05182ef06b227742a12da">ReadMemory</a> (self, &quot;int&quot; address, &quot;bytearray&quot; buffer, &quot;int&quot; length)</td></tr>
+<tr class="memdesc:a2e6dc00e3cd05182ef06b227742a12da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the memory region and writes it into the provided buffer.  <a href="#a2e6dc00e3cd05182ef06b227742a12da">More...</a><br /></td></tr>
+<tr class="separator:a2e6dc00e3cd05182ef06b227742a12da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a888f3007c299cf28c82a0ee209b11252"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a888f3007c299cf28c82a0ee209b11252">WriteMemory</a> (self, &quot;int&quot; address, &quot;bytearray&quot; buffer, &quot;int&quot; length)</td></tr>
+<tr class="memdesc:a888f3007c299cf28c82a0ee209b11252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the content of the provieded buffer into the camera memory at the given address.  <a href="#a888f3007c299cf28c82a0ee209b11252">More...</a><br /></td></tr>
+<tr class="separator:a888f3007c299cf28c82a0ee209b11252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a468a099f074de5e226b222d191536160"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a468a099f074de5e226b222d191536160">ClearImages</a> (self)</td></tr>
+<tr class="memdesc:a468a099f074de5e226b222d191536160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the image queue.  <a href="#a468a099f074de5e226b222d191536160">More...</a><br /></td></tr>
+<tr class="separator:a468a099f074de5e226b222d191536160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f9a60901507b78f13feb7c52129b6d6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a3f9a60901507b78f13feb7c52129b6d6">EnableImageCallback</a> (self, callback)</td></tr>
+<tr class="memdesc:a3f9a60901507b78f13feb7c52129b6d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable image callback.  <a href="#a3f9a60901507b78f13feb7c52129b6d6">More...</a><br /></td></tr>
+<tr class="separator:a3f9a60901507b78f13feb7c52129b6d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a360b1e87ab0e0bd912199ef87539d23b"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a360b1e87ab0e0bd912199ef87539d23b">DisableImageCallback</a> (self)</td></tr>
+<tr class="memdesc:a360b1e87ab0e0bd912199ef87539d23b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable image callback.  <a href="#a360b1e87ab0e0bd912199ef87539d23b">More...</a><br /></td></tr>
+<tr class="separator:a360b1e87ab0e0bd912199ef87539d23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93a07bcc61563515507f4a726a1bcdc"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#ae93a07bcc61563515507f4a726a1bcdc">SetUserBufferMode</a> (self, &quot;bool&quot; user_buffers=True)</td></tr>
+<tr class="memdesc:ae93a07bcc61563515507f4a726a1bcdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">In user buffer mode the camera uses buffers provided by AddUserBuffer.  <a href="#ae93a07bcc61563515507f4a726a1bcdc">More...</a><br /></td></tr>
+<tr class="separator:ae93a07bcc61563515507f4a726a1bcdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3334df2cd21515996229fd6fdb3db90"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#ac3334df2cd21515996229fd6fdb3db90">RevokeUserBuffer</a> (self, &quot;BufferBase&quot; buffer)</td></tr>
+<tr class="memdesc:ac3334df2cd21515996229fd6fdb3db90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Revoke a user allocated memory from buffer list <a class="el" href="a00855.html" title="Provides an object to get access to image data and its properties The Image object is used to retriev...">Image</a> objects that refer to a revoked memory will not be invalidated.  <a href="#ac3334df2cd21515996229fd6fdb3db90">More...</a><br /></td></tr>
+<tr class="separator:ac3334df2cd21515996229fd6fdb3db90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f19563bca5378be0b09e23dc1fd70d1"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a2f19563bca5378be0b09e23dc1fd70d1">SetImageBufferCount</a> (self, &quot;int&quot; buffercount=10)</td></tr>
+<tr class="memdesc:a2f19563bca5378be0b09e23dc1fd70d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of internal used image buffers The number of internal image buffers is equal to the maximum images that can be worked on in parallel.  <a href="#a2f19563bca5378be0b09e23dc1fd70d1">More...</a><br /></td></tr>
+<tr class="separator:a2f19563bca5378be0b09e23dc1fd70d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2f0ac4b47d3afdb2f90c42891b8909e"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#af2f0ac4b47d3afdb2f90c42891b8909e">SetImageBufferCycleCount</a> (self, &quot;int&quot; cyclecount=1)</td></tr>
+<tr class="memdesc:af2f0ac4b47d3afdb2f90c42891b8909e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of internal image buffers to be cycled automatically By changing the <code><a class="el" href="a00863.html#a2f19563bca5378be0b09e23dc1fd70d1" title="Set the number of internal used image buffers The number of internal image buffers is equal to the ma...">SetImageBufferCount()</a></code> and <code><a class="el" href="a00863.html#af2f0ac4b47d3afdb2f90c42891b8909e" title="Set the number of internal image buffers to be cycled automatically By changing the SetImageBufferCou...">SetImageBufferCycleCount()</a></code> the three different buffer modes can be configured.  <a href="#af2f0ac4b47d3afdb2f90c42891b8909e">More...</a><br /></td></tr>
+<tr class="separator:af2f0ac4b47d3afdb2f90c42891b8909e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab14f94f0300b589b9a502a592c1cf7d5"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#ab14f94f0300b589b9a502a592c1cf7d5">SetSynchronFeatureMode</a> (self, &quot;bool&quot; synchronous=True)</td></tr>
+<tr class="memdesc:ab14f94f0300b589b9a502a592c1cf7d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">In synchronous mode the acquisition will restart for every feature change, to ensure new values will be reflected in the next image When a feature is set to a new value, this change may take some time to take effect.  <a href="#ab14f94f0300b589b9a502a592c1cf7d5">More...</a><br /></td></tr>
+<tr class="separator:ab14f94f0300b589b9a502a592c1cf7d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3299965f197821f2de6f63b43eefd251"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a3299965f197821f2de6f63b43eefd251">SetAdjustFeatureValueMode</a> (self, &quot;bool&quot; adjust=True)</td></tr>
+<tr class="memdesc:a3299965f197821f2de6f63b43eefd251"><td class="mdescLeft">&#160;</td><td class="mdescRight">With AdjustFeatureValueMode enabled feature values will be checked an adjusted where necessary Some <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> can only be changed with a fixed increment.  <a href="#a3299965f197821f2de6f63b43eefd251">More...</a><br /></td></tr>
+<tr class="separator:a3299965f197821f2de6f63b43eefd251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abec16d1554a6f884755c3e6e88ebf1e9"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#abec16d1554a6f884755c3e6e88ebf1e9">EnableChunk</a> (self, *args)</td></tr>
+<tr class="memdesc:abec16d1554a6f884755c3e6e88ebf1e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow all or individual chunk data If name is empty all chunk data will processed.  <a href="#abec16d1554a6f884755c3e6e88ebf1e9">More...</a><br /></td></tr>
+<tr class="separator:abec16d1554a6f884755c3e6e88ebf1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad681192391a74de7e565c0d27eda715d"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#ad681192391a74de7e565c0d27eda715d">DisableChunk</a> (self, *args)</td></tr>
+<tr class="memdesc:ad681192391a74de7e565c0d27eda715d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disallow all or individual chunk data If name is empty all chunk data will processed.  <a href="#ad681192391a74de7e565c0d27eda715d">More...</a><br /></td></tr>
+<tr class="separator:ad681192391a74de7e565c0d27eda715d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a902197448111a59521537f067da10e78"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a902197448111a59521537f067da10e78">EnableEvent</a> (self, &quot;str&quot; name, &quot;int&quot; max_queuesize=1000)</td></tr>
+<tr class="memdesc:a902197448111a59521537f067da10e78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow individual events.  <a href="#a902197448111a59521537f067da10e78">More...</a><br /></td></tr>
+<tr class="separator:a902197448111a59521537f067da10e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9751caf0f47a47e38ea91ef8599ec2ad"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a9751caf0f47a47e38ea91ef8599ec2ad">DisableEvent</a> (self, &quot;str&quot; name)</td></tr>
+<tr class="memdesc:a9751caf0f47a47e38ea91ef8599ec2ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disallow individual events.  <a href="#a9751caf0f47a47e38ea91ef8599ec2ad">More...</a><br /></td></tr>
+<tr class="separator:a9751caf0f47a47e38ea91ef8599ec2ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa62e4ad2e20e3f8e77652168ada7ce1"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#afa62e4ad2e20e3f8e77652168ada7ce1">ClearEvents</a> (self, *args)</td></tr>
+<tr class="memdesc:afa62e4ad2e20e3f8e77652168ada7ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the event queue.  <a href="#afa62e4ad2e20e3f8e77652168ada7ce1">More...</a><br /></td></tr>
+<tr class="separator:afa62e4ad2e20e3f8e77652168ada7ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9194d1a7f231b08aa3ae95e0e2956549"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a9194d1a7f231b08aa3ae95e0e2956549">EnableEventCallback</a> (self, callback, name=&quot;&quot;)</td></tr>
+<tr class="memdesc:a9194d1a7f231b08aa3ae95e0e2956549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable event callback.  <a href="#a9194d1a7f231b08aa3ae95e0e2956549">More...</a><br /></td></tr>
+<tr class="separator:a9194d1a7f231b08aa3ae95e0e2956549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6a0fc58c51bf7579fc086280df4a3ad"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#af6a0fc58c51bf7579fc086280df4a3ad">DisableEventCallback</a> (self, *args)</td></tr>
+<tr class="memdesc:af6a0fc58c51bf7579fc086280df4a3ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable event callback.  <a href="#af6a0fc58c51bf7579fc086280df4a3ad">More...</a><br /></td></tr>
+<tr class="separator:af6a0fc58c51bf7579fc086280df4a3ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07f5cc12958e241b180b20e3e00cc47"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#ab07f5cc12958e241b180b20e3e00cc47">ClearPnPEvents</a> (self)</td></tr>
+<tr class="memdesc:ab07f5cc12958e241b180b20e3e00cc47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the event queue.  <a href="#ab07f5cc12958e241b180b20e3e00cc47">More...</a><br /></td></tr>
+<tr class="separator:ab07f5cc12958e241b180b20e3e00cc47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30e692aec2a89896d6aa229352e4532a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a30e692aec2a89896d6aa229352e4532a">EnablePnPEventCallback</a> (self, callback)</td></tr>
+<tr class="memdesc:a30e692aec2a89896d6aa229352e4532a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable event callback.  <a href="#a30e692aec2a89896d6aa229352e4532a">More...</a><br /></td></tr>
+<tr class="separator:a30e692aec2a89896d6aa229352e4532a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8021221f0a6e3068c316445e215fbbe3"><td class="memItemLeft" align="right" valign="top">&quot;Cam&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a8021221f0a6e3068c316445e215fbbe3">DisablePnPEventCallback</a> (self)</td></tr>
+<tr class="memdesc:a8021221f0a6e3068c316445e215fbbe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable event callback.  <a href="#a8021221f0a6e3068c316445e215fbbe3">More...</a><br /></td></tr>
+<tr class="separator:a8021221f0a6e3068c316445e215fbbe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177b60302bc6c88dfe82a8fc938f3885"><td class="memItemLeft" align="right" valign="top">&quot;FeatureAccess&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a177b60302bc6c88dfe82a8fc938f3885">f</a> (self)</td></tr>
+<tr class="memdesc:a177b60302bc6c88dfe82a8fc938f3885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the generated camera features A GenICam camera has hundreds of features which are used to configure the camera as required.  <a href="#a177b60302bc6c88dfe82a8fc938f3885">More...</a><br /></td></tr>
+<tr class="separator:a177b60302bc6c88dfe82a8fc938f3885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca5a01fb66bf17b8f9cbe250d3f3dc14"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#aca5a01fb66bf17b8f9cbe250d3f3dc14">GetLibraryVersion</a> ()</td></tr>
+<tr class="memdesc:aca5a01fb66bf17b8f9cbe250d3f3dc14"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the current library version.  <a href="#aca5a01fb66bf17b8f9cbe250d3f3dc14">More...</a><br /></td></tr>
+<tr class="separator:aca5a01fb66bf17b8f9cbe250d3f3dc14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5d532323d90fcb245a0c2e9b4079d26"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#ad5d532323d90fcb245a0c2e9b4079d26">IsConnected</a> (self)</td></tr>
+<tr class="memdesc:ad5d532323d90fcb245a0c2e9b4079d26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a camera is connected Before using a camera it needs to be connected and initialized.  <a href="#ad5d532323d90fcb245a0c2e9b4079d26">More...</a><br /></td></tr>
+<tr class="separator:ad5d532323d90fcb245a0c2e9b4079d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16d699f52cbdfa7b8f2ff2ed08149839"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a16d699f52cbdfa7b8f2ff2ed08149839">IsStreaming</a> (self)</td></tr>
+<tr class="memdesc:a16d699f52cbdfa7b8f2ff2ed08149839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a camera is streaming.  <a href="#a16d699f52cbdfa7b8f2ff2ed08149839">More...</a><br /></td></tr>
+<tr class="separator:a16d699f52cbdfa7b8f2ff2ed08149839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a583f268ca217c5980a73142274850449"><td class="memItemLeft" align="right" valign="top">&quot;Feature&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a583f268ca217c5980a73142274850449">GetFeature</a> (self, &quot;str&quot; name)</td></tr>
+<tr class="memdesc:a583f268ca217c5980a73142274850449"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> to access to it's properties, see <a class="el" href="a00863.html#a177b60302bc6c88dfe82a8fc938f3885" title="Provides access to the generated camera features A GenICam camera has hundreds of features which are ...">Cam.f</a> for a more convenient way to access features.  <a href="#a583f268ca217c5980a73142274850449">More...</a><br /></td></tr>
+<tr class="separator:a583f268ca217c5980a73142274850449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a374c5e3200cab8d7464bc907811ba035"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a374c5e3200cab8d7464bc907811ba035">HasFeature</a> (self, &quot;str&quot; name)</td></tr>
+<tr class="memdesc:a374c5e3200cab8d7464bc907811ba035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a feature is supported by a camera, see <a class="el" href="a00863.html#a177b60302bc6c88dfe82a8fc938f3885" title="Provides access to the generated camera features A GenICam camera has hundreds of features which are ...">Cam.f</a> for a more convenient way to access features.  <a href="#a374c5e3200cab8d7464bc907811ba035">More...</a><br /></td></tr>
+<tr class="separator:a374c5e3200cab8d7464bc907811ba035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e02b28ffff318ae93a6c0a37b5de38a"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a7e02b28ffff318ae93a6c0a37b5de38a">IsReadable</a> (self, &quot;str&quot; name)</td></tr>
+<tr class="memdesc:a7e02b28ffff318ae93a6c0a37b5de38a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is readable.  <a href="#a7e02b28ffff318ae93a6c0a37b5de38a">More...</a><br /></td></tr>
+<tr class="separator:a7e02b28ffff318ae93a6c0a37b5de38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc86d804d99b2d9b11ce5c685548b24b"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#afc86d804d99b2d9b11ce5c685548b24b">IsWritable</a> (self, &quot;str&quot; name)</td></tr>
+<tr class="memdesc:afc86d804d99b2d9b11ce5c685548b24b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is writable.  <a href="#afc86d804d99b2d9b11ce5c685548b24b">More...</a><br /></td></tr>
+<tr class="separator:afc86d804d99b2d9b11ce5c685548b24b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93ad58886f8665f885b777d27e9532f"><td class="memItemLeft" align="right" valign="top">&quot;FeatureList&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#ae93ad58886f8665f885b777d27e9532f">GetFeatureList</a> (self)</td></tr>
+<tr class="memdesc:ae93ad58886f8665f885b777d27e9532f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of all available features of the camera.  <a href="#ae93ad58886f8665f885b777d27e9532f">More...</a><br /></td></tr>
+<tr class="separator:ae93ad58886f8665f885b777d27e9532f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa15c1f6e02b987b7a3fe7b1300f9e6f9"><td class="memItemLeft" align="right" valign="top">&quot;FeatureList&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#aa15c1f6e02b987b7a3fe7b1300f9e6f9">GetRuntimeInfoList</a> (self)</td></tr>
+<tr class="memdesc:aa15c1f6e02b987b7a3fe7b1300f9e6f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of all available runtime infos.  <a href="#aa15c1f6e02b987b7a3fe7b1300f9e6f9">More...</a><br /></td></tr>
+<tr class="separator:aa15c1f6e02b987b7a3fe7b1300f9e6f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dabab0b7beb6aff03dcdb8f13ef370d"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a1dabab0b7beb6aff03dcdb8f13ef370d">GetImagesPerBuffer</a> (self)</td></tr>
+<tr class="memdesc:a1dabab0b7beb6aff03dcdb8f13ef370d"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns maximum transmitted image count per buffer  <a href="#a1dabab0b7beb6aff03dcdb8f13ef370d">More...</a><br /></td></tr>
+<tr class="separator:a1dabab0b7beb6aff03dcdb8f13ef370d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae92af3924d145c8a26c18558d279fa9b"><td class="memItemLeft" align="right" valign="top">&quot;ImageInfo&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#ae92af3924d145c8a26c18558d279fa9b">GetImageInfo</a> (self, &quot;int&quot; index)</td></tr>
+<tr class="memdesc:ae92af3924d145c8a26c18558d279fa9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a <a class="el" href="a00803.html" title="Provides an object to get access to image properties even before streaming The ImageInfo object give ...">neoapi.ImageInfo</a> object that gives basic informations about the image and the related buffer segment  <a href="#ae92af3924d145c8a26c18558d279fa9b">More...</a><br /></td></tr>
+<tr class="separator:ae92af3924d145c8a26c18558d279fa9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab03809a72ac8136b628597d502b4db51"><td class="memItemLeft" align="right" valign="top">&quot;Image&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#ab03809a72ac8136b628597d502b4db51">GetImage</a> (self, &quot;int&quot; timeout=400)</td></tr>
+<tr class="memdesc:ab03809a72ac8136b628597d502b4db51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an image from the camera The GetImage method is used to retrieve an image from the camera to work with it.  <a href="#ab03809a72ac8136b628597d502b4db51">More...</a><br /></td></tr>
+<tr class="separator:ab03809a72ac8136b628597d502b4db51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53107564ffb57385f19127eea6435f64"><td class="memItemLeft" align="right" valign="top">&quot;list&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a53107564ffb57385f19127eea6435f64">GetImages</a> (self, 'int' timeout=400)</td></tr>
+<tr class="memdesc:a53107564ffb57385f19127eea6435f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return all images from the current buffer.  <a href="#a53107564ffb57385f19127eea6435f64">More...</a><br /></td></tr>
+<tr class="separator:a53107564ffb57385f19127eea6435f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8158f4ce4112a5c886b0258557e1bb79"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a8158f4ce4112a5c886b0258557e1bb79">GetUserBufferMode</a> (self)</td></tr>
+<tr class="memdesc:a8158f4ce4112a5c886b0258557e1bb79"><td class="mdescLeft">&#160;</td><td class="mdescRight">In user buffer mode the camera uses buffers provided by AddUserBuffer.  <a href="#a8158f4ce4112a5c886b0258557e1bb79">More...</a><br /></td></tr>
+<tr class="separator:a8158f4ce4112a5c886b0258557e1bb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad62bf7e7209b986b3f0140301273b202"><td class="memItemLeft" align="right" valign="top">&quot;CamBase&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#ad62bf7e7209b986b3f0140301273b202">AddUserBuffer</a> (self, &quot;BufferBase&quot; buffer)</td></tr>
+<tr class="memdesc:ad62bf7e7209b986b3f0140301273b202"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a user allocated memory for use as buffer in UserBufferMode A buffer is only used if the buffer has enough memory to handle the incoming data.  <a href="#ad62bf7e7209b986b3f0140301273b202">More...</a><br /></td></tr>
+<tr class="separator:ad62bf7e7209b986b3f0140301273b202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad635657fae4824cbc8df3a1aee5ad7eb"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#ad635657fae4824cbc8df3a1aee5ad7eb">GetImageBufferCount</a> (self)</td></tr>
+<tr class="memdesc:ad635657fae4824cbc8df3a1aee5ad7eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current number of internal or external image buffers Provides the current number of internal or externally provided image buffers used to store incoming images from the camera until they can be processed.  <a href="#ad635657fae4824cbc8df3a1aee5ad7eb">More...</a><br /></td></tr>
+<tr class="separator:ad635657fae4824cbc8df3a1aee5ad7eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2692cee5025c780d021b782e125c9a35"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a2692cee5025c780d021b782e125c9a35">GetImageBufferCycleCount</a> (self)</td></tr>
+<tr class="memdesc:a2692cee5025c780d021b782e125c9a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of internal image buffers to be cycled automatically.  <a href="#a2692cee5025c780d021b782e125c9a35">More...</a><br /></td></tr>
+<tr class="separator:a2692cee5025c780d021b782e125c9a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f1286b198a986b461e3229c784b0981"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a2f1286b198a986b461e3229c784b0981">GetSynchronFeatureMode</a> (self)</td></tr>
+<tr class="memdesc:a2f1286b198a986b461e3229c784b0981"><td class="mdescLeft">&#160;</td><td class="mdescRight">In synchronous mode the acquisition will restart for every feature change, to ensure new values will be reflected in the next image When a feature is set to a new value, this change may take some time to take effect.  <a href="#a2f1286b198a986b461e3229c784b0981">More...</a><br /></td></tr>
+<tr class="separator:a2f1286b198a986b461e3229c784b0981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd1be2e807ab576178a378e04353a691"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#acd1be2e807ab576178a378e04353a691">GetAdjustFeatureValueMode</a> (self)</td></tr>
+<tr class="memdesc:acd1be2e807ab576178a378e04353a691"><td class="mdescLeft">&#160;</td><td class="mdescRight">With AdjustFeatureValueMode enabled feature values will be checked an adjusted where necessary.  <a href="#acd1be2e807ab576178a378e04353a691">More...</a><br /></td></tr>
+<tr class="separator:acd1be2e807ab576178a378e04353a691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a535fb59548f1b8613979a9d3cd261371"><td class="memItemLeft" align="right" valign="top">&quot;tuple&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a535fb59548f1b8613979a9d3cd261371">GetAvailableChunks</a> (self)</td></tr>
+<tr class="memdesc:a535fb59548f1b8613979a9d3cd261371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query the list of the names of the existing chunk data To activate individual chunk data in a targeted manner, you need their names; the list of all names can be read here.  <a href="#a535fb59548f1b8613979a9d3cd261371">More...</a><br /></td></tr>
+<tr class="separator:a535fb59548f1b8613979a9d3cd261371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96e7621be71177bc2bd79bb266d03d3c"><td class="memItemLeft" align="right" valign="top">&quot;tuple&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a96e7621be71177bc2bd79bb266d03d3c">GetAvailableEvents</a> (self)</td></tr>
+<tr class="memdesc:a96e7621be71177bc2bd79bb266d03d3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of event names supported by the camera A GenICam camera can support many events which alert to changes of a data item in the camera.  <a href="#a96e7621be71177bc2bd79bb266d03d3c">More...</a><br /></td></tr>
+<tr class="separator:a96e7621be71177bc2bd79bb266d03d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b34c75756c475826f4eafa59de2b3e6"><td class="memItemLeft" align="right" valign="top">&quot;tuple&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a5b34c75756c475826f4eafa59de2b3e6">GetEnabledEvents</a> (self)</td></tr>
+<tr class="memdesc:a5b34c75756c475826f4eafa59de2b3e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of event names enabled in the camera A GenICam camera can support many events which alert to changes of a data item in the camera.  <a href="#a5b34c75756c475826f4eafa59de2b3e6">More...</a><br /></td></tr>
+<tr class="separator:a5b34c75756c475826f4eafa59de2b3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a457e6738d020688c89c4f76f6283b538"><td class="memItemLeft" align="right" valign="top">&quot;NeoEvent&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a457e6738d020688c89c4f76f6283b538">GetEvent</a> (self, *args)</td></tr>
+<tr class="memdesc:a457e6738d020688c89c4f76f6283b538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an event from the camera The GetEvent method is used to retrieve an event from the camera to work with it.  <a href="#a457e6738d020688c89c4f76f6283b538">More...</a><br /></td></tr>
+<tr class="separator:a457e6738d020688c89c4f76f6283b538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaf166323ef78a64f75e02be7a32d8fa"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#aaaf166323ef78a64f75e02be7a32d8fa">IsOnline</a> (self)</td></tr>
+<tr class="memdesc:aaaf166323ef78a64f75e02be7a32d8fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a camera is online A camera may be offline if a device reset was performed or as consequence of power issues or the removal of a cable.  <a href="#aaaf166323ef78a64f75e02be7a32d8fa">More...</a><br /></td></tr>
+<tr class="separator:aaaf166323ef78a64f75e02be7a32d8fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b3accbf3321c31a5fceb7fc0ab9de87"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a4b3accbf3321c31a5fceb7fc0ab9de87">GetOfflineCount</a> (self)</td></tr>
+<tr class="memdesc:a4b3accbf3321c31a5fceb7fc0ab9de87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of times the camera was offline This counter will increase every time the camera goes offline and is intended to keep track of pnp events.  <a href="#a4b3accbf3321c31a5fceb7fc0ab9de87">More...</a><br /></td></tr>
+<tr class="separator:a4b3accbf3321c31a5fceb7fc0ab9de87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5533479e8e16bc1a5aea0a5c7a2dde5c"><td class="memItemLeft" align="right" valign="top">&quot;NeoEvent&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a5533479e8e16bc1a5aea0a5c7a2dde5c">GetPnPEvent</a> (self, &quot;int&quot; timeout=400)</td></tr>
+<tr class="memdesc:a5533479e8e16bc1a5aea0a5c7a2dde5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a plug and play event from the camera The GetPnPEvent method is used to retrieve an plug and play event from the camera to work with it.  <a href="#a5533479e8e16bc1a5aea0a5c7a2dde5c">More...</a><br /></td></tr>
+<tr class="separator:a5533479e8e16bc1a5aea0a5c7a2dde5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dc8972d4d0bdc70a9022b18f8cd1b00"><td class="memItemLeft" align="right" valign="top">&quot;CamInfo&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00859.html#a6dc8972d4d0bdc70a9022b18f8cd1b00">GetInfo</a> (self)</td></tr>
+<tr class="memdesc:a6dc8972d4d0bdc70a9022b18f8cd1b00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get basic information about the camera.  <a href="#a6dc8972d4d0bdc70a9022b18f8cd1b00">More...</a><br /></td></tr>
+<tr class="separator:a6dc8972d4d0bdc70a9022b18f8cd1b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:ae50022e50933bacdcc0438eb00ccedd1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#ae50022e50933bacdcc0438eb00ccedd1">thisown</a> = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc=&quot;The membership flag&quot;)</td></tr>
+<tr class="memdesc:ae50022e50933bacdcc0438eb00ccedd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The membership flag.  <a href="#ae50022e50933bacdcc0438eb00ccedd1">More...</a><br /></td></tr>
+<tr class="separator:ae50022e50933bacdcc0438eb00ccedd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Main camera class &mdash; connect, set features, retrieve images This class provides all methods to work with a camera. </p>
+<p>You can use it to search and connect a camera, get and set camera features and retrieve images from the camera. The aim of this Interface is to reduce the complexity associated with the programming of a GenICam camera. The Interface will also greatly reduce the amount of code necessary to interact with a GenICam camera. Where ever there is an option the API provides you with a default carefully chosen to work in most circumstances. However, you can always change those settings once you understand the value of changing it. More information and the general concepts about the GenICam Standard can be found at the <a href="https://www.emva.org/standards-technology/genicam/genicam-downloads/">EMVA Website</a>. USAGE: </p><div class="fragment"><div class="line"><span class="keyword">import</span> neoapi</div><div class="line">camera = <a class="code" href="a00863.html">neoapi.Cam</a>();                  // create a camera object</div><div class="line">camera.Connect();                    // connect to any camera device</div><div class="line">camera.f.ExposureTime.value = 20000; // set the Exposure Time</div><div class="line">img = camera.GetImage()              // get an image <span class="keyword">from</span> the camera</div></div><!-- fragment --> <dl class="section user"><dt>20190402 </dt><dd></dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae323752d23aff5196ae5095724a9a4c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae323752d23aff5196ae5095724a9a4c5">&#9670;&nbsp;</a></span>__init__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def neoapi.Cam.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">*&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">   \brief      Constructor
+</pre> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*args</td><td>Arguments:<br />
+ <b>object</b> (optional) An <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#ab01cb8f7a559f37743af7ab7a9365687">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="ac87a83e0e942b51bb10d9319f38e5e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac87a83e0e942b51bb10d9319f38e5e80">&#9670;&nbsp;</a></span>__del__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def neoapi.Cam.__del__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructor. </p>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a32528a3186cba45869859c745c61b524">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af9342490a56163f394c07abf61064880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9342490a56163f394c07abf61064880">&#9670;&nbsp;</a></span>Connect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.Connect </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">*&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Connect a GenICam camera device to work with it The Connect method is called to establish a connection to a GenICam compatible camera device. </p>
+<p>To connect to a specific camera the identifier can be used. The identifier will be used to search for a camera. Possible Values for the camera identifier are: </p><div class="fragment"><div class="line">Transport Layer Type - &quot;U3V&quot; USB3 Vision Standard or &quot;GEV&quot; Gigabit Ethernet Vision</div><div class="line">Camera Model Name    - &quot;VCXU-32M&quot; or &quot;VLXT-123C.I&quot; this value can read from the SFNC Feature &quot;ModelName&quot;</div><div class="line">Camera Serial Number - &quot;700004105902&quot; the unique number</div><div class="line">Camera User ID       - &quot;Camera_left&quot; A user defined string which can be set to a camera permanently</div><div class="line">USB Port ID          - &quot;P10-2&quot; U3V only, describes the USB-Hub and Port the camera is attached to</div><div class="line">U3V Vision GUID      - &quot;282500003F46&quot; a globally unique identifier for U3V devices</div><div class="line">IP-Address           - The currently assigned IP Address of the camera or the ethernet Interface</div><div class="line">                        SFNC Feature &quot;GEVPrimaryApplicationIPAddress&quot; and &quot;GEVCurrentIPAddress&quot;</div><div class="line">MAC-Address          - &quot;00:06:BE:01:F8:06&quot; the MAC-Address of the GEV camera (found on the camera)</div><div class="line">Interface name       - ???????????????????????????????</div></div><!-- fragment --><p> If the identifier is empty, one of the connected camera will be choosen. If a U3V camera is present, it will be chosen first. Only if no U3V device can be found the GigE Vision interface will scanned. If the system does not change between calling the connect method, the method will always connect with the same camera to work in a consistent way. This is achieved by the search algorithm which will return the camera device with the lowest/smallest serial number on the interface </p><dl class="section note"><dt>Note</dt><dd>Please remember that a camera is always connected exclusively to one <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object. That means you can only connect to a camera after all previous connections (also from other programs) are disconnected </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>It is possible to call this method more than once, however, once a camera is connected it will keep that existing connection open </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">identifier</td><td>A string value with the camera identifier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td><a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> Device can not be opened <a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a> No device matching the given criterias is connected <div class="fragment"><div class="line"><span class="keyword">import</span> neoapi</div><div class="line">cam = <a class="code" href="a00863.html">neoapi.Cam</a>()          <span class="comment"># create a camera object</span></div><div class="line">cam.Connect(<span class="stringliteral">&quot;U3V&quot;</span>)          <span class="comment"># connect to any USB3 Vision device</span></div><div class="line"><span class="comment"># or</span></div><div class="line">cam.Connect(<span class="stringliteral">&quot;192.168.1.22&quot;</span>) <span class="comment"># connect to the GigE device with the IP-Address</span></div><div class="line">img = cam.GetImage()        <span class="comment"># retrieve an image from the camera</span></div></div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#ad5d532323d90fcb245a0c2e9b4079d26" title="Checks if a camera is connected Before using a camera it needs to be connected and initialized.">Cam.IsConnected()</a> </dd></dl>
+<dl class="section user"><dt>20190402 </dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a723ec46c77f3b734328a9f40e7aa1c19">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="af6de2c6d720ddff06eab94d44f511719"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6de2c6d720ddff06eab94d44f511719">&#9670;&nbsp;</a></span>Disconnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.Disconnect </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disconnect a GenICam camera device. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a1b81f0c2270ab38b0cff03219249b301">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="ab47c16af10208521e0191267cd4b72b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab47c16af10208521e0191267cd4b72b6">&#9670;&nbsp;</a></span>StartStreaming()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.StartStreaming </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start streaming from this camera. </p>
+<p>(Streaming is started by Conncet) </p><dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a79a59c8640be69d19e9e312694fbec65">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a3c29d9505242b8f6c3bf790ef0e11d11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c29d9505242b8f6c3bf790ef0e11d11">&#9670;&nbsp;</a></span>StopStreaming()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.StopStreaming </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stop streaming from this camera. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#abd8483f382bcb2857267e184ef661af0">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a196586403385f1c09291a129e712cb62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a196586403385f1c09291a129e712cb62">&#9670;&nbsp;</a></span>SetFeature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.SetFeature </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">*&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the value of a feature of the camera, see <a class="el" href="a00863.html#a177b60302bc6c88dfe82a8fc938f3885" title="Provides access to the generated camera features A GenICam camera has hundreds of features which are ...">Cam.f</a> for a more convenient way to access features. </p>
+<pre class="fragment"> You can use this method in case a camera feature is not accessable through Cam.f.
+</pre><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*args</td><td>Arguments:<br />
+ <b>name</b> The name of the feature to write (SFNC Name)<br />
+ <b>value</b> (optional) The integer value which should be written to the feature </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The feature is not accessible</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="keyword">import</span> neoapi</div><div class="line">cam = <a class="code" href="a00863.html">neoapi.Cam</a>()            <span class="comment"># create a camera object</span></div><div class="line">cam.Connect()                 <span class="comment"># connect to any camera</span></div><div class="line">cam.SetFeature(<span class="stringliteral">&quot;Gain&quot;</span>, 1.24)  <span class="comment"># set the Gain to 1.24</span></div></div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="a00863.html#a177b60302bc6c88dfe82a8fc938f3885" title="Provides access to the generated camera features A GenICam camera has hundreds of features which are ...">Cam.f</a> for a more convenient way to work with SFNC features </dd>
+<dd>
+<a class="el" href="a00763.html" title="Class to controll GenICam features.">FeatureAccess</a> for documentation about the SFNC features </dd>
+<dd>
+<a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> </dd></dl>
+<dl class="section user"><dt>20190402 </dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a3e8944a4aa1f5c87a9b95b391d278945">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a4f1da1221cf2888f6b6e095a9ce9f2c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f1da1221cf2888f6b6e095a9ce9f2c5">&#9670;&nbsp;</a></span>Execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.Execute </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;str&quot;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes an exectutable SFNC-ICommand-Feature of the camera Some Features are used to trigger an action in the camera. </p>
+<p>The most commonly used one is probably the AquisitionStart/AquisitionStop commands. The <a class="el" href="a00863.html#a4f1da1221cf2888f6b6e095a9ce9f2c5" title="Executes an exectutable SFNC-ICommand-Feature of the camera Some Features are used to trigger an acti...">Execute()</a> method is used to execute one of those features. </p><dl class="section note"><dt>Note</dt><dd>Check the <a href="https://www.emva.org/wp-content/uploads/GenICam_SFNC_v2_4.pdf">GenICam SFNC document</a> for more info on the ICommand Interface </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the feature to execute (SFNC Name) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The feature is not accessible </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>20190402 </dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a45c8a4adb6d7ea82fb99cf9af011bd95">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a4a2c9929a8fd60a9241327519f9d3c3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a2c9929a8fd60a9241327519f9d3c3d">&#9670;&nbsp;</a></span>WriteFeatureStack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.WriteFeatureStack </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;FeatureStack&quot;&#160;</td>
+          <td class="paramname"><em>featurestack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the value of multiple feature of the camera in one operation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">featurestack</td><td>A set of features to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>One or more features are not accessible </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00867.html#a6bb971602bd5d990e484b9ba12994a31" title="Add a feature/value pair to the FeatureStack.">FeatureStack.Add()</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a5c9b37d460925587c86abc5096d9b657">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a2e6dc00e3cd05182ef06b227742a12da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e6dc00e3cd05182ef06b227742a12da">&#9670;&nbsp;</a></span>ReadMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.ReadMemory </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;bytearray&quot;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads the memory region and writes it into the provided buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>The camera memory address to read from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The destination buffer into which the read data is copied </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The size of the destination buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>The device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>Read of memory area is not possible </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a10265873a47b6e513c5ea997f17baa54">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a888f3007c299cf28c82a0ee209b11252"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a888f3007c299cf28c82a0ee209b11252">&#9670;&nbsp;</a></span>WriteMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.WriteMemory </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;bytearray&quot;&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes the content of the provieded buffer into the camera memory at the given address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>The camera memory address to write to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The source buffer containing the data to write </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The size of the source buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>The device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>Write of memory area is not possible </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a6e0dbde51b16e2ceec4d9cf0da0f5700">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a468a099f074de5e226b222d191536160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a468a099f074de5e226b222d191536160">&#9670;&nbsp;</a></span>ClearImages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.ClearImages </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delete the image queue. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#afcc7b65f478ca08c79ab839b607efb6a">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a3f9a60901507b78f13feb7c52129b6d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f9a60901507b78f13feb7c52129b6d6">&#9670;&nbsp;</a></span>EnableImageCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def neoapi.Cam.EnableImageCallback </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable image callback. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The ImageCallback method of the given object will be called for every image data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a8b38e28876930ca8f58eac475b893d74">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a360b1e87ab0e0bd912199ef87539d23b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a360b1e87ab0e0bd912199ef87539d23b">&#9670;&nbsp;</a></span>DisableImageCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.DisableImageCallback </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable image callback. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a8fa517e4a1d9fe8ee897e83de308e512">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="ae93a07bcc61563515507f4a726a1bcdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93a07bcc61563515507f4a726a1bcdc">&#9670;&nbsp;</a></span>SetUserBufferMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.SetUserBufferMode </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;bool&quot;&#160;</td>
+          <td class="paramname"><em>user_buffers</em> = <code>True</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>In user buffer mode the camera uses buffers provided by AddUserBuffer. </p>
+<p>In this mode memory blocks allocated by other frameworks like e.g. OpenCV are used as acquisition buffers for the camera. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_buffers</td><td>True to enable UserBufferMode, otherwise false (default ist true) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a8c378141255469a625d0005afcce88c6">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="ac3334df2cd21515996229fd6fdb3db90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3334df2cd21515996229fd6fdb3db90">&#9670;&nbsp;</a></span>RevokeUserBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.RevokeUserBuffer </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;BufferBase&quot;&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Revoke a user allocated memory from buffer list <a class="el" href="a00855.html" title="Provides an object to get access to image data and its properties The Image object is used to retriev...">Image</a> objects that refer to a revoked memory will not be invalidated. </p>
+<p>This means the memory will not used anymore for image acquisition but <a class="el" href="a00855.html" title="Provides an object to get access to image data and its properties The Image object is used to retriev...">Image</a> objects holded by the user are only valid until the revoked memory is not freed. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>object derived from <a class="el" href="a00879.html" title="Base class to derive from for use as user buffer.">neoapi.BufferBase</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#ae55b7e85dbf2e1553af0fa906d709b4d">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a2f19563bca5378be0b09e23dc1fd70d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f19563bca5378be0b09e23dc1fd70d1">&#9670;&nbsp;</a></span>SetImageBufferCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.SetImageBufferCount </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
+          <td class="paramname"><em>buffercount</em> = <code>10</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the number of internal used image buffers The number of internal image buffers is equal to the maximum images that can be worked on in parallel. </p>
+<p>If you call GetImage without having an free internal image buffer to store the data, the GetImage method will not be able to store any new images coming from the camera and will throw an exception. As each buffer needs memory to store an incoming image, you should try to reduce the amount of buffers where possible </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffercount</td><td><a class="el" href="a00855.html" title="Provides an object to get access to image data and its properties The Image object is used to retriev...">Image</a> buffer count, if set to zero buffercount will be set to the default of 10 buffers </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00923.html">Images and Buffers with neoAPI</a> </dd></dl>
+<dl class="section user"><dt>20190402 </dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#ab5ad7ce815a8397b5073767ed344a896">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="af2f0ac4b47d3afdb2f90c42891b8909e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2f0ac4b47d3afdb2f90c42891b8909e">&#9670;&nbsp;</a></span>SetImageBufferCycleCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.SetImageBufferCycleCount </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
+          <td class="paramname"><em>cyclecount</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the number of internal image buffers to be cycled automatically By changing the <code><a class="el" href="a00863.html#a2f19563bca5378be0b09e23dc1fd70d1" title="Set the number of internal used image buffers The number of internal image buffers is equal to the ma...">SetImageBufferCount()</a></code> and <code><a class="el" href="a00863.html#af2f0ac4b47d3afdb2f90c42891b8909e" title="Set the number of internal image buffers to be cycled automatically By changing the SetImageBufferCou...">SetImageBufferCycleCount()</a></code> the three different buffer modes can be configured. </p>
+<p>Please see <a class="el" href="a00923.html">Images and Buffers with neoAPI</a> for details </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cyclecount</td><td><a class="el" href="a00855.html" title="Provides an object to get access to image data and its properties The Image object is used to retriev...">Image</a> buffer count </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="section user"><dt>20190402 </dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#ad6dc663d08df99799ec4f89a70a8bf89">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="ab14f94f0300b589b9a502a592c1cf7d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab14f94f0300b589b9a502a592c1cf7d5">&#9670;&nbsp;</a></span>SetSynchronFeatureMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.SetSynchronFeatureMode </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;bool&quot;&#160;</td>
+          <td class="paramname"><em>synchronous</em> = <code>True</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>In synchronous mode the acquisition will restart for every feature change, to ensure new values will be reflected in the next image When a feature is set to a new value, this change may take some time to take effect. </p>
+<p>In free running mode the camera may transfer one or more images based on the last value. To ensure new values will reflect in the next image the acquisition is stopped, the value of the feature is set and the acquisition will be restarted </p><dl class="section note"><dt>Note</dt><dd>The synchronous mode is active by default </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">synchronous</td><td>True to enable SynchronMode, otherwise false (default ist true) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#ab03809a72ac8136b628597d502b4db51" title="Get an image from the camera The GetImage method is used to retrieve an image from the camera to work...">CamBase.GetImage()</a> </dd></dl>
+<dl class="section user"><dt>20190402 </dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a068ff88af2a49cfade6f63f23339251e">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a3299965f197821f2de6f63b43eefd251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3299965f197821f2de6f63b43eefd251">&#9670;&nbsp;</a></span>SetAdjustFeatureValueMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.SetAdjustFeatureValueMode </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;bool&quot;&#160;</td>
+          <td class="paramname"><em>adjust</em> = <code>True</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>With AdjustFeatureValueMode enabled feature values will be checked an adjusted where necessary Some <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> can only be changed with a fixed increment. </p>
+<p>If a feature is set to a value the device can not handle, the value will be adjusted to the next valid value </p><dl class="section note"><dt>Note</dt><dd>The AdjustFeatureValueMode is active by default </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">adjust</td><td>True to Adjust feature values, otherwise false (default ist true) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#ab03809a72ac8136b628597d502b4db51" title="Get an image from the camera The GetImage method is used to retrieve an image from the camera to work...">CamBase.GetImage()</a> </dd></dl>
+<dl class="section user"><dt>20190402 </dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#ace4716e7126adb8e85bcc5e928ce87a7">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="abec16d1554a6f884755c3e6e88ebf1e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abec16d1554a6f884755c3e6e88ebf1e9">&#9670;&nbsp;</a></span>EnableChunk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.EnableChunk </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">*&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allow all or individual chunk data If name is empty all chunk data will processed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>- empty string for all chunk data or name from GetAvailableChunks for special chunk data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>requesting a specific chunk by name which is not available </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#a535fb59548f1b8613979a9d3cd261371" title="Query the list of the names of the existing chunk data To activate individual chunk data in a targete...">Cam.GetAvailableChunks()</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#aef9d59bf29336a3550604553665cd420">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="ad681192391a74de7e565c0d27eda715d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad681192391a74de7e565c0d27eda715d">&#9670;&nbsp;</a></span>DisableChunk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.DisableChunk </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">*&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disallow all or individual chunk data If name is empty all chunk data will processed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>- empty string for all chunk data or name from GetAvailableChunks for special chunk data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#a535fb59548f1b8613979a9d3cd261371" title="Query the list of the names of the existing chunk data To activate individual chunk data in a targete...">Cam.GetAvailableChunks()</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a650bf056805ae3c08dc53a48e1625fba">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a902197448111a59521537f067da10e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a902197448111a59521537f067da10e78">&#9670;&nbsp;</a></span>EnableEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.EnableEvent </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;str&quot;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
+          <td class="paramname"><em>max_queuesize</em> = <code>1000</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allow individual events. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>of event to enable </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_queuesize</td><td>max number of events in queue </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#a96e7621be71177bc2bd79bb266d03d3c" title="Get a list of event names supported by the camera A GenICam camera can support many events which aler...">Cam.GetAvailableEvents()</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a5e4bd8f41eb373eb8af1d4610fdd56e5">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a9751caf0f47a47e38ea91ef8599ec2ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9751caf0f47a47e38ea91ef8599ec2ad">&#9670;&nbsp;</a></span>DisableEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.DisableEvent </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;str&quot;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disallow individual events. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>of event to disable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#a96e7621be71177bc2bd79bb266d03d3c" title="Get a list of event names supported by the camera A GenICam camera can support many events which aler...">Cam.GetAvailableEvents()</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a8f6803711004617ffda5590e5e7f95b6">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="afa62e4ad2e20e3f8e77652168ada7ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa62e4ad2e20e3f8e77652168ada7ce1">&#9670;&nbsp;</a></span>ClearEvents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.ClearEvents </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">*&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delete the event queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of event to remove from queue, default is empty to drop all events </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>Cam.EventEnable() </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a9e1d7d205673d544624dffca42d14fca">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a9194d1a7f231b08aa3ae95e0e2956549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9194d1a7f231b08aa3ae95e0e2956549">&#9670;&nbsp;</a></span>EnableEventCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def neoapi.Cam.EnableEventCallback </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable event callback. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The EventCallback method of the given object will be called for every event data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of event to wait for, default is empty to wait for any event </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object Auto created callback class. Auto created callback methode. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a3b845c798b1c2c7da09234d8d2c42c0b">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="af6a0fc58c51bf7579fc086280df4a3ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6a0fc58c51bf7579fc086280df4a3ad">&#9670;&nbsp;</a></span>DisableEventCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.DisableEventCallback </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">*&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable event callback. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#adb6e79938a65f05b9605b675956005ac">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="ab07f5cc12958e241b180b20e3e00cc47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab07f5cc12958e241b180b20e3e00cc47">&#9670;&nbsp;</a></span>ClearPnPEvents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.ClearPnPEvents </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delete the event queue. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00859.html" title="Base camera class from which other camera classes inherit functionality This class provides all metho...">CamBase</a> object </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>CamBase.EventEnable() </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#abacf893cc84a9a97b55a6c0be753c10d">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a30e692aec2a89896d6aa229352e4532a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30e692aec2a89896d6aa229352e4532a">&#9670;&nbsp;</a></span>EnablePnPEventCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def neoapi.Cam.EnablePnPEventCallback </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable event callback. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The EventCallback method of the given object will be called for every event data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00859.html" title="Base camera class from which other camera classes inherit functionality This class provides all metho...">CamBase</a> object Auto created callback class. Auto created callback methode. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#a7973a93df5f8f705a5eca0d8289edef5">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a8021221f0a6e3068c316445e215fbbe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8021221f0a6e3068c316445e215fbbe3">&#9670;&nbsp;</a></span>DisablePnPEventCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Cam&quot; neoapi.Cam.DisablePnPEventCallback </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable event callback. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a00859.html#ada7b8d016968405a436c425caa46ce41">neoapi.CamBase</a>.</p>
+
+</div>
+</div>
+<a id="a177b60302bc6c88dfe82a8fc938f3885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a177b60302bc6c88dfe82a8fc938f3885">&#9670;&nbsp;</a></span>f()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;FeatureAccess&quot; neoapi.Cam.f </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provides access to the generated camera features A GenICam camera has hundreds of features which are used to configure the camera as required. </p>
+<p>The methode f encapsulates all those features </p><div class="fragment"><div class="line"><span class="keyword">import</span> neoapi</div><div class="line">cam = <a class="code" href="a00863.html">neoapi.Cam</a>()            <span class="comment"># create a camera object</span></div><div class="line">cam.Connect()                 <span class="comment"># connect to any camera</span></div><div class="line">cam.f.ExposureTime.value = 20000</div><div class="line">print(camera.f.Gain.value)</div><div class="line">camera.f.TriggerMode.value = TriggerMode_On;</div><div class="line">camera.f.TriggerSoftware.Execute();</div></div><!-- fragment --> <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00763.html" title="Class to controll GenICam features.">FeatureAccess</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>One or more features are not accessible </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aca5a01fb66bf17b8f9cbe250d3f3dc14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca5a01fb66bf17b8f9cbe250d3f3dc14">&#9670;&nbsp;</a></span>GetLibraryVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.CamBase.GetLibraryVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function returns the current library version. </p>
+<dl class="section return"><dt>Returns</dt><dd>The version number in the format "Mayor.Minor.Patch" </dd></dl>
+
+</div>
+</div>
+<a id="ad5d532323d90fcb245a0c2e9b4079d26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5d532323d90fcb245a0c2e9b4079d26">&#9670;&nbsp;</a></span>IsConnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.CamBase.IsConnected </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if a camera is connected Before using a camera it needs to be connected and initialized. </p>
+<p>Use the <code><a class="el" href="a00859.html#ad5d532323d90fcb245a0c2e9b4079d26" title="Checks if a camera is connected Before using a camera it needs to be connected and initialized.">IsConnected()</a></code> method to check if your <a class="el" href="a00863.html" title="Main camera class — connect, set features, retrieve images This class provides all methods to work wi...">Cam</a> object is connected with a camera and that this camera is ready to be configured and stream images. </p><dl class="section return"><dt>Returns</dt><dd>True if a camera is connected, otherwise false <div class="fragment"><div class="line"><span class="keyword">import</span> neoapi</div><div class="line">cam = <a class="code" href="a00863.html">neoapi.Cam</a>()        <span class="comment"># create a camera object</span></div><div class="line">cam.Connect()             <span class="comment"># connect to any camera</span></div><div class="line"><span class="keywordflow">if</span> (cam.IsConnected()):   <span class="comment"># check if the camera is connected</span></div><div class="line">    img = cam.GetImage()  <span class="comment"># retrieve an image from the camera</span></div></div><!-- fragment --> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#a723ec46c77f3b734328a9f40e7aa1c19" title="Connect a GenICam camera device to work with it The Connect method is called to establish a connectio...">CamBase.Connect()</a> </dd></dl>
+<dl class="section user"><dt>20190402 </dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a16d699f52cbdfa7b8f2ff2ed08149839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16d699f52cbdfa7b8f2ff2ed08149839">&#9670;&nbsp;</a></span>IsStreaming()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.CamBase.IsStreaming </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if a camera is streaming. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if a camera is streaming, otherwise False </dd></dl>
+
+</div>
+</div>
+<a id="a583f268ca217c5980a73142274850449"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a583f268ca217c5980a73142274850449">&#9670;&nbsp;</a></span>GetFeature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Feature&quot; neoapi.CamBase.GetFeature </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;str&quot;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> to access to it's properties, see <a class="el" href="a00863.html#a177b60302bc6c88dfe82a8fc938f3885" title="Provides access to the generated camera features A GenICam camera has hundreds of features which are ...">Cam.f</a> for a more convenient way to access features. </p>
+<p>You can use this method in case a camera feature is not accessable through <a class="el" href="a00863.html#a177b60302bc6c88dfe82a8fc938f3885" title="Provides access to the generated camera features A GenICam camera has hundreds of features which are ...">Cam.f</a>. </p><dl class="section note"><dt>Note</dt><dd>More information about the GenICam SFNC (Standard Feature Naming Convention) can be found in the GenICam SFNC Document on the <a href="https://www.emva.org/wp-content/uploads/GenICam_SFNC_v2_4.pdf">EMVA Website</a>. </dd>
+<dd>
+More information about the available features and vendor-specific features of your specific camera can be found in the documentation of your camera which is available at the member area of the <a href="https://vt.baumer.com">Baumer Website</a>. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the feature to retrieve (SFNC Name) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The feature is not accessible. <div class="fragment"><div class="line"><span class="keyword">import</span> neoapi</div><div class="line">cam = <a class="code" href="a00863.html">neoapi.Cam</a>()               <span class="comment"># create a camera object</span></div><div class="line">cam.Connect()                    <span class="comment"># connect to any camera</span></div><div class="line">feature = cam.f.Gain             <span class="comment"># get the &quot;Gain&quot; feature and its value from the camera</span></div><div class="line">print(feature.GetDisplayName())  <span class="comment"># print some feature data</span></div><div class="line">print(feature.value)</div></div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00863.html#a177b60302bc6c88dfe82a8fc938f3885" title="Provides access to the generated camera features A GenICam camera has hundreds of features which are ...">Cam.f</a> </dd>
+<dd>
+<a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> </dd></dl>
+<dl class="section user"><dt>20190402 </dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a374c5e3200cab8d7464bc907811ba035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a374c5e3200cab8d7464bc907811ba035">&#9670;&nbsp;</a></span>HasFeature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.CamBase.HasFeature </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;str&quot;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if a feature is supported by a camera, see <a class="el" href="a00863.html#a177b60302bc6c88dfe82a8fc938f3885" title="Provides access to the generated camera features A GenICam camera has hundreds of features which are ...">Cam.f</a> for a more convenient way to access features. </p>
+<p>You can use this method in case a camera feature is not accessable through <a class="el" href="a00863.html#a177b60302bc6c88dfe82a8fc938f3885" title="Provides access to the generated camera features A GenICam camera has hundreds of features which are ...">Cam.f</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the feature to read (SFNC Name) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the feature is supported by the camera otherwise False </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected <div class="fragment"><div class="line"><span class="keyword">import</span> neoapi</div><div class="line">cam = <a class="code" href="a00863.html">neoapi.Cam</a>()               <span class="comment"># create a camera object</span></div><div class="line">cam.Connect()                    <span class="comment"># connect to any camera</span></div><div class="line"><span class="keywordflow">if</span> (cam.HasFeature(<span class="stringliteral">&quot;Gain&quot;</span>)):     <span class="comment"># check if the feature is available</span></div><div class="line">  print(cam.GetFeature(<span class="stringliteral">&quot;Gain&quot;</span>))  <span class="comment"># print it&#39;s value</span></div></div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00863.html#a177b60302bc6c88dfe82a8fc938f3885" title="Provides access to the generated camera features A GenICam camera has hundreds of features which are ...">Cam.f</a> </dd>
+<dd>
+<a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> </dd></dl>
+<dl class="section user"><dt>20190402 </dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a7e02b28ffff318ae93a6c0a37b5de38a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e02b28ffff318ae93a6c0a37b5de38a">&#9670;&nbsp;</a></span>IsReadable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.CamBase.IsReadable </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;str&quot;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates that the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is readable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is readable, otherwise False </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The feature is not accessible </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afc86d804d99b2d9b11ce5c685548b24b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc86d804d99b2d9b11ce5c685548b24b">&#9670;&nbsp;</a></span>IsWritable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.CamBase.IsWritable </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;str&quot;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates that the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is writable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> object is readable, otherwise False </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00779.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The feature is not accessible </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae93ad58886f8665f885b777d27e9532f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93ad58886f8665f885b777d27e9532f">&#9670;&nbsp;</a></span>GetFeatureList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;FeatureList&quot; neoapi.CamBase.GetFeatureList </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a list of all available features of the camera. </p>
+<dl class="section return"><dt>Returns</dt><dd>A list of available Features </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00815.html" title="Provides list functionality for camera features.">FeatureList</a> </dd></dl>
+
+</div>
+</div>
+<a id="aa15c1f6e02b987b7a3fe7b1300f9e6f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa15c1f6e02b987b7a3fe7b1300f9e6f9">&#9670;&nbsp;</a></span>GetRuntimeInfoList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;FeatureList&quot; neoapi.CamBase.GetRuntimeInfoList </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a list of all available runtime infos. </p>
+<dl class="section return"><dt>Returns</dt><dd>A list of available runtime infos </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00815.html" title="Provides list functionality for camera features.">FeatureList</a> </dd></dl>
+
+</div>
+</div>
+<a id="a1dabab0b7beb6aff03dcdb8f13ef370d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dabab0b7beb6aff03dcdb8f13ef370d">&#9670;&nbsp;</a></span>GetImagesPerBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.CamBase.GetImagesPerBuffer </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>returns maximum transmitted image count per buffer </p>
+<dl class="section note"><dt>Note</dt><dd>the real image count may be different in every received buffer </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the maximum transmitted image count </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae92af3924d145c8a26c18558d279fa9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae92af3924d145c8a26c18558d279fa9b">&#9670;&nbsp;</a></span>GetImageInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;ImageInfo&quot; neoapi.CamBase.GetImageInfo </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>returns a <a class="el" href="a00803.html" title="Provides an object to get access to image properties even before streaming The ImageInfo object give ...">neoapi.ImageInfo</a> object that gives basic informations about the image and the related buffer segment </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>index of the image which information should obtained </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00803.html" title="Provides an object to get access to image properties even before streaming The ImageInfo object give ...">ImageInfo</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00791.html" title="Invalid Arguments Exception.">InvalidArgumentException</a></td><td>if index is out of bounds </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab03809a72ac8136b628597d502b4db51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03809a72ac8136b628597d502b4db51">&#9670;&nbsp;</a></span>GetImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;Image&quot; neoapi.CamBase.GetImage </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>400</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get an image from the camera The GetImage method is used to retrieve an image from the camera to work with it. </p>
+<p>All buffer-handling is done internally for you, so that no further setup is needed to acquire an image. In the default configuration, the method will always return the latest (newest) image transferred from the camera. please refer to the section <a class="el" href="a00923.html">Images and Buffers with neoAPI</a> to learn how to configure the buffer-handling to change that behavior. By default, each camera object creates and uses 10 Buffers to ensure reliable image delivery. You can change this default using the <a class="el" href="a00863.html#a2f19563bca5378be0b09e23dc1fd70d1" title="Set the number of internal used image buffers The number of internal image buffers is equal to the ma...">SetImageBufferCount()</a> method. The time until an image is available can be quite large. Depending on the current state and settings like ExposureTime. The time consists out of camera start up time, the exposure time, the readout time of the sensor and the time for transport into host memory. If no image is available at the time the method is called, it will wait for the timeout specified with the parameter timeout (in ms). The default Timeout is 400 ms. </p><dl class="section note"><dt>Note</dt><dd>If the camera is in trigger mode, you need to ensure you trigger the camera before an image can be retrieved. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The internal buffer, used to store images arriving from the camera, is given to you to avoid copying of the data. It can only be reused by neoAPI once you have returned it from your application by destroying your image object. If you do not return the buffers you will receive an <a class="el" href="a00783.html" title="Requesting an image while holding all available image resources.">NoImageBufferException</a>. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>Timeout in ms to wait for an image, default is 400 ms </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00855.html" title="Provides an object to get access to image data and its properties The Image object is used to retriev...">Image</a> object with all relevant data, could be empty </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00783.html" title="Requesting an image while holding all available image resources.">NoImageBufferException</a></td><td>No image buffer available to store data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#ad635657fae4824cbc8df3a1aee5ad7eb" title="Get the current number of internal or external image buffers Provides the current number of internal ...">CamBase.GetImageBufferCount()</a> </dd>
+<dd>
+<a class="el" href="a00855.html#a1b97c1b3863997a4f2274ace6f8d68fa" title="Check if the image is empty or filled with data.">Image.IsEmpty()</a> </dd></dl>
+<dl class="section user"><dt>20190402 </dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a53107564ffb57385f19127eea6435f64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53107564ffb57385f19127eea6435f64">&#9670;&nbsp;</a></span>GetImages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;list&quot; neoapi.CamBase.GetImages </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">'int'&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>400</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return all images from the current buffer. </p>
+<dl class="section note"><dt>Note</dt><dd>If GetImage called before and there are remaining images in the current buffer, only the remaing images will be returned.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>Timeout in ms to wait for a buffer, default is 400 ms </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A list containing all remaining <a class="el" href="a00855.html" title="Provides an object to get access to image data and its properties The Image object is used to retriev...">Image</a> objects from the current buffer </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#ab03809a72ac8136b628597d502b4db51" title="Get an image from the camera The GetImage method is used to retrieve an image from the camera to work...">CamBase.GetImage()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a8158f4ce4112a5c886b0258557e1bb79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8158f4ce4112a5c886b0258557e1bb79">&#9670;&nbsp;</a></span>GetUserBufferMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.CamBase.GetUserBufferMode </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>In user buffer mode the camera uses buffers provided by AddUserBuffer. </p>
+<p>In this mode memory blocks allocated by other frameworks like e.g. OpenCV are used as acquisition buffers for the camera. </p><dl class="section return"><dt>Returns</dt><dd>The state of user buffer mode </dd></dl>
+
+</div>
+</div>
+<a id="ad62bf7e7209b986b3f0140301273b202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad62bf7e7209b986b3f0140301273b202">&#9670;&nbsp;</a></span>AddUserBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;CamBase&quot; neoapi.CamBase.AddUserBuffer </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;BufferBase&quot;&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add a user allocated memory for use as buffer in UserBufferMode A buffer is only used if the buffer has enough memory to handle the incoming data. </p>
+<p>The required memory size may change when the incoming data size changes e.g. by modifying the image dimensions. </p><dl class="section note"><dt>Note</dt><dd>It is allowed to add buffers without/partially registered memory blocks. In this case the required memory blocks will be allocated by the NeoAPI internally. This allows the user to attach private data to a specific buffer. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>object derived from <a class="el" href="a00879.html" title="Base class to derive from for use as user buffer.">neoapi.BufferBase</a> that should used as buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00859.html" title="Base camera class from which other camera classes inherit functionality This class provides all metho...">CamBase</a> object </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00791.html" title="Invalid Arguments Exception.">InvalidArgumentException</a></td><td>buffer is not initialized correctly or when same memory is already used by another buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad635657fae4824cbc8df3a1aee5ad7eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad635657fae4824cbc8df3a1aee5ad7eb">&#9670;&nbsp;</a></span>GetImageBufferCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.CamBase.GetImageBufferCount </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the current number of internal or external image buffers Provides the current number of internal or externally provided image buffers used to store incoming images from the camera until they can be processed. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current image buffer count </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#ab03809a72ac8136b628597d502b4db51" title="Get an image from the camera The GetImage method is used to retrieve an image from the camera to work...">CamBase.GetImage()</a> </dd>
+<dd>
+<a class="el" href="a00859.html#ab5ad7ce815a8397b5073767ed344a896" title="Set the number of internal used image buffers The number of internal image buffers is equal to the ma...">CamBase.SetImageBufferCount()</a> </dd></dl>
+<dl class="section user"><dt>20190402 </dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a2692cee5025c780d021b782e125c9a35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2692cee5025c780d021b782e125c9a35">&#9670;&nbsp;</a></span>GetImageBufferCycleCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.CamBase.GetImageBufferCycleCount </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the number of internal image buffers to be cycled automatically. </p>
+<dl class="section return"><dt>Returns</dt><dd>the number of internal image buffers to be cycled automatically </dd></dl>
+
+</div>
+</div>
+<a id="a2f1286b198a986b461e3229c784b0981"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f1286b198a986b461e3229c784b0981">&#9670;&nbsp;</a></span>GetSynchronFeatureMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.CamBase.GetSynchronFeatureMode </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>In synchronous mode the acquisition will restart for every feature change, to ensure new values will be reflected in the next image When a feature is set to a new value, this change may take some time to take effect. </p>
+<p>In free running mode the camera may transfer one or more images based on the last value. To ensure new values will reflect in the next image the acquisition is stopped, the value of the feature is set and the acquisition will be restarted </p><dl class="section note"><dt>Note</dt><dd>The synchronous mode is active by default </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The state of synchronous mode </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#ab03809a72ac8136b628597d502b4db51" title="Get an image from the camera The GetImage method is used to retrieve an image from the camera to work...">CamBase.GetImage()</a> </dd></dl>
+
+</div>
+</div>
+<a id="acd1be2e807ab576178a378e04353a691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd1be2e807ab576178a378e04353a691">&#9670;&nbsp;</a></span>GetAdjustFeatureValueMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.CamBase.GetAdjustFeatureValueMode </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>With AdjustFeatureValueMode enabled feature values will be checked an adjusted where necessary. </p>
+<p>Some <a class="el" href="a00811.html" title="Provides access to camera features This class provides an easy way to work with camera features.">Feature</a> can only be changed with a fixed increment. If a feature is set to a value the device can not handle, the value will be adjusted to the next valid value </p><dl class="section note"><dt>Note</dt><dd>The AdjustFeatureValueMode is active by default </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The state of adjust value mode </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#ab03809a72ac8136b628597d502b4db51" title="Get an image from the camera The GetImage method is used to retrieve an image from the camera to work...">CamBase.GetImage()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a535fb59548f1b8613979a9d3cd261371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a535fb59548f1b8613979a9d3cd261371">&#9670;&nbsp;</a></span>GetAvailableChunks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;tuple&quot; neoapi.CamBase.GetAvailableChunks </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Query the list of the names of the existing chunk data To activate individual chunk data in a targeted manner, you need their names; the list of all names can be read here. </p>
+<dl class="section return"><dt>Returns</dt><dd>A list containing all possible chunks for this camera </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a96e7621be71177bc2bd79bb266d03d3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96e7621be71177bc2bd79bb266d03d3c">&#9670;&nbsp;</a></span>GetAvailableEvents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;tuple&quot; neoapi.CamBase.GetAvailableEvents </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a list of event names supported by the camera A GenICam camera can support many events which alert to changes of a data item in the camera. </p>
+<p>Typical sources of events are Acquisition, Timer, Counter and I/O lines. To enable individual events use the EventEnable() method. </p><dl class="section return"><dt>Returns</dt><dd>A list containing the names of possible events </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>CamBase.EventEnable() </dd></dl>
+
+</div>
+</div>
+<a id="a5b34c75756c475826f4eafa59de2b3e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b34c75756c475826f4eafa59de2b3e6">&#9670;&nbsp;</a></span>GetEnabledEvents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;tuple&quot; neoapi.CamBase.GetEnabledEvents </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a list of event names enabled in the camera A GenICam camera can support many events which alert to changes of a data item in the camera. </p>
+<p>Typical sources of events are Acquisition, Timer, Counter and I/O lines. To enable individual events use the EventEnable() method. </p><dl class="section return"><dt>Returns</dt><dd>A list containing the names of enabled events </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00775.html" title="Camera not accessible Exception.">NoAccessException</a></td><td>device is not connected anymore </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00771.html" title="No camera connected Exception.">NotConnectedException</a></td><td>No device connected </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>CamBase.EventEnable() </dd></dl>
+
+</div>
+</div>
+<a id="a457e6738d020688c89c4f76f6283b538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a457e6738d020688c89c4f76f6283b538">&#9670;&nbsp;</a></span>GetEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;NeoEvent&quot; neoapi.CamBase.GetEvent </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">*&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get an event from the camera The GetEvent method is used to retrieve an event from the camera to work with it. </p>
+<p>If an event is waiting to be retrieved, it will return immediately, if no event is available at the time the method is called, it will wait for the timeout specified with the parameter timeout (in ms). The default Timeout is 400 ms. </p><dl class="section note"><dt>Note</dt><dd>Please be aware, that the event you require needs to be enabled first by using the EventEnable() method. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of event to wait for, default is empty to wait for any event </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>Timeout in ms to wait for an event, default is 400 ms </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00807.html" title="Provides access to events This class provides an easy way to work with events.">NeoEvent</a> object with all relevant data, could be empty </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>CamBase.EventEnable() </dd>
+<dd>
+<a class="el" href="a00807.html#a319a9dbb64925123137c58a8466196b4" title="Check if the event is empty or filled with data.">NeoEvent.IsEmpty()</a> </dd></dl>
+
+</div>
+</div>
+<a id="aaaf166323ef78a64f75e02be7a32d8fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaf166323ef78a64f75e02be7a32d8fa">&#9670;&nbsp;</a></span>IsOnline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.CamBase.IsOnline </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if a camera is online A camera may be offline if a device reset was performed or as consequence of power issues or the removal of a cable. </p>
+<p>If the camera is offline no access to features is possible and the attemp to access any feature will lead to an exception. </p><dl class="section warning"><dt>Warning</dt><dd>If a camera has been offline all configurations not stored in a user set will be reset to the defaults. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the camera is online and ready to use, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="a4b3accbf3321c31a5fceb7fc0ab9de87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b3accbf3321c31a5fceb7fc0ab9de87">&#9670;&nbsp;</a></span>GetOfflineCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.CamBase.GetOfflineCount </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the number of times the camera was offline This counter will increase every time the camera goes offline and is intended to keep track of pnp events. </p>
+<p>If this number increases over time there is likely an issue with your system which should be fixed. </p><dl class="section return"><dt>Returns</dt><dd>The counter of offline events for this camera </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00859.html#aaaf166323ef78a64f75e02be7a32d8fa" title="Checks if a camera is online A camera may be offline if a device reset was performed or as consequenc...">CamBase.IsOnline()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a5533479e8e16bc1a5aea0a5c7a2dde5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5533479e8e16bc1a5aea0a5c7a2dde5c">&#9670;&nbsp;</a></span>GetPnPEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;NeoEvent&quot; neoapi.CamBase.GetPnPEvent </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>400</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a plug and play event from the camera The GetPnPEvent method is used to retrieve an plug and play event from the camera to work with it. </p>
+<p>If an event is waiting to be retrieved, it will return immediately, if no event is available at the time the method is called, it will wait for the timeout specified with the parameter timeout (in ms). The default Timeout is 400 ms. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>Timeout in ms to wait for an event, default is 400 ms </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00807.html" title="Provides access to events This class provides an easy way to work with events.">NeoEvent</a> object with all relevant data, could be empty </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="a00807.html#a319a9dbb64925123137c58a8466196b4" title="Check if the event is empty or filled with data.">NeoEvent.IsEmpty()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a6dc8972d4d0bdc70a9022b18f8cd1b00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dc8972d4d0bdc70a9022b18f8cd1b00">&#9670;&nbsp;</a></span>GetInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;CamInfo&quot; neoapi.CamBase.GetInfo </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get basic information about the camera. </p>
+<dl class="section return"><dt>Returns</dt><dd>The camera information </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="ae50022e50933bacdcc0438eb00ccedd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae50022e50933bacdcc0438eb00ccedd1">&#9670;&nbsp;</a></span>thisown</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">neoapi.Cam.thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc=&quot;The membership flag&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The membership flag. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>neoapi.py</li>
+</ul>
+</div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->
 </div>
@@ -76,7 +2617,7 @@ $(function() {
 </div>
 <hr class="footer" /><address class="footer">
     <small>
-        neoAPI Python Documentation ver. 1.4.1,
+        neoAPI Python Documentation ver. 1.5.0,
         generated by <a href="http://www.doxygen.org/index.html">
             Doxygen
         </a>

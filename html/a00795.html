@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
     <meta name="generator" content="Doxygen 1.8.15" />
     <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
-    <title>neoAPI Python Documentation: neoapi.StringFeature Class Reference</title>
+    <title>neoAPI Python Documentation: neoapi.ColorMatrix Class Reference</title>
     <link rel="shortcut icon" type="image/x-icon" media="all" href="favicon.ico" />
     <script type="text/javascript" src="dynsections.js"></script>
     <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -61,92 +61,90 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00091.html">neoapi</a></li><li class="navelem"><a class="el" href="a00795.html">StringFeature</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00091.html">neoapi</a></li><li class="navelem"><a class="el" href="a00795.html">ColorMatrix</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="a00792.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">neoapi.StringFeature Class Reference<div class="ingroups"><a class="el" href="a00090.html">All Cam Classes</a> &#124; <a class="el" href="a00087.html">GenICam Feature Interface</a></div></div>  </div>
+<div class="title">neoapi.ColorMatrix Class Reference<div class="ingroups"><a class="el" href="a00090.html">All Cam Classes</a> &#124; <a class="el" href="a00086.html">Cam Interface Classes</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Class providing the 'IString' interface.  
+<p>Class for the Color Transformation Matrix This class provides methods to configure the Color Matrix for color cameras.  
  <a href="a00795.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for neoapi.StringFeature:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for neoapi.ColorMatrix:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a00795.png" usemap="#neoapi.StringFeature_map" alt=""/>
-  <map id="neoapi.StringFeature_map" name="neoapi.StringFeature_map">
-<area href="a00783.html" title="Base Feature class providing the interface to be used independent of Feature data-type." alt="neoapi.BaseFeature" shape="rect" coords="0,56,131,80"/>
-  </map>
-</div></div>
+  <img src="a00795.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad3035706236c93a425aaddbe49aef73a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00795.html#ad3035706236c93a425aaddbe49aef73a">__init__</a> (self, *args)</td></tr>
-<tr class="memdesc:ad3035706236c93a425aaddbe49aef73a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ad3035706236c93a425aaddbe49aef73a">More...</a><br /></td></tr>
-<tr class="separator:ad3035706236c93a425aaddbe49aef73a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a916dccbc9b59e906cadbac7d0f69f373"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00795.html#a916dccbc9b59e906cadbac7d0f69f373">GetMaxStringLength</a> (self)</td></tr>
-<tr class="memdesc:a916dccbc9b59e906cadbac7d0f69f373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum allowed string-length of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#a916dccbc9b59e906cadbac7d0f69f373">More...</a><br /></td></tr>
-<tr class="separator:a916dccbc9b59e906cadbac7d0f69f373"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95b35d8b9ea8b3cbb284a7c05e91b2a2"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00795.html#a95b35d8b9ea8b3cbb284a7c05e91b2a2">GetString</a> (self)</td></tr>
-<tr class="memdesc:a95b35d8b9ea8b3cbb284a7c05e91b2a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> as a string.  <a href="#a95b35d8b9ea8b3cbb284a7c05e91b2a2">More...</a><br /></td></tr>
-<tr class="separator:a95b35d8b9ea8b3cbb284a7c05e91b2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97dbf74a34369bbd83eb82f7c97ef35e"><td class="memItemLeft" align="right" valign="top">&quot;StringFeature&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00795.html#a97dbf74a34369bbd83eb82f7c97ef35e">SetString</a> (self, 'str' <a class="el" href="a00795.html#a8195b7b7fe4c9184132cedc144896a5a">value</a>)</td></tr>
-<tr class="memdesc:a97dbf74a34369bbd83eb82f7c97ef35e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the value of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> as a string.  <a href="#a97dbf74a34369bbd83eb82f7c97ef35e">More...</a><br /></td></tr>
-<tr class="separator:a97dbf74a34369bbd83eb82f7c97ef35e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affff6bd927a38fc199f92c32fd031490"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#affff6bd927a38fc199f92c32fd031490">GetInterface</a> (self)</td></tr>
-<tr class="memdesc:affff6bd927a38fc199f92c32fd031490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the GenICam data type of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#affff6bd927a38fc199f92c32fd031490">More...</a><br /></td></tr>
-<tr class="separator:affff6bd927a38fc199f92c32fd031490"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1aa8c9d453a386b2f9f91cd3b3615c3"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#ad1aa8c9d453a386b2f9f91cd3b3615c3">GetToolTip</a> (self)</td></tr>
-<tr class="memdesc:ad1aa8c9d453a386b2f9f91cd3b3615c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a short description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#ad1aa8c9d453a386b2f9f91cd3b3615c3">More...</a><br /></td></tr>
-<tr class="separator:ad1aa8c9d453a386b2f9f91cd3b3615c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6830b31068e48ae5db294d32f2def11c"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#a6830b31068e48ae5db294d32f2def11c">GetDescription</a> (self)</td></tr>
-<tr class="memdesc:a6830b31068e48ae5db294d32f2def11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#a6830b31068e48ae5db294d32f2def11c">More...</a><br /></td></tr>
-<tr class="separator:a6830b31068e48ae5db294d32f2def11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae28b09dddd7447d487a04a8258590633"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#ae28b09dddd7447d487a04a8258590633">GetName</a> (self)</td></tr>
-<tr class="memdesc:ae28b09dddd7447d487a04a8258590633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#ae28b09dddd7447d487a04a8258590633">More...</a><br /></td></tr>
-<tr class="separator:ae28b09dddd7447d487a04a8258590633"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa79f26165f8083861522250888e0cee3"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#aa79f26165f8083861522250888e0cee3">GetDisplayName</a> (self)</td></tr>
-<tr class="memdesc:aa79f26165f8083861522250888e0cee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the display name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#aa79f26165f8083861522250888e0cee3">More...</a><br /></td></tr>
-<tr class="separator:aa79f26165f8083861522250888e0cee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bacabd7d5e68d9e54e88314660e2e9a"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#a4bacabd7d5e68d9e54e88314660e2e9a">GetVisibility</a> (self)</td></tr>
-<tr class="memdesc:a4bacabd7d5e68d9e54e88314660e2e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the recommended visibility (Beginner/Expert/Guru or Invisible) of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#a4bacabd7d5e68d9e54e88314660e2e9a">More...</a><br /></td></tr>
-<tr class="separator:a4bacabd7d5e68d9e54e88314660e2e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04f73633d9a8b93b7865bf91d2d36b67"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#a04f73633d9a8b93b7865bf91d2d36b67">IsReadable</a> (self)</td></tr>
-<tr class="memdesc:a04f73633d9a8b93b7865bf91d2d36b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is readable.  <a href="#a04f73633d9a8b93b7865bf91d2d36b67">More...</a><br /></td></tr>
-<tr class="separator:a04f73633d9a8b93b7865bf91d2d36b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac1faf49fc350a92ddf2ce11d35ba85c"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#aac1faf49fc350a92ddf2ce11d35ba85c">IsWritable</a> (self)</td></tr>
-<tr class="memdesc:aac1faf49fc350a92ddf2ce11d35ba85c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if a <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is writable.  <a href="#aac1faf49fc350a92ddf2ce11d35ba85c">More...</a><br /></td></tr>
-<tr class="separator:aac1faf49fc350a92ddf2ce11d35ba85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada3c4ad870b561c575714a16f70d19db"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#ada3c4ad870b561c575714a16f70d19db">IsAvailable</a> (self)</td></tr>
-<tr class="memdesc:ada3c4ad870b561c575714a16f70d19db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is available.  <a href="#ada3c4ad870b561c575714a16f70d19db">More...</a><br /></td></tr>
-<tr class="separator:ada3c4ad870b561c575714a16f70d19db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77457432abbcb3cd3fab77bffbb548c6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00795.html#a77457432abbcb3cd3fab77bffbb548c6">__init__</a> (self, *args)</td></tr>
+<tr class="separator:a77457432abbcb3cd3fab77bffbb548c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c91d569c5ad07fa4b48464d6d27b1b"><td class="memItemLeft" align="right" valign="top">&quot;float&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00795.html#ad2c91d569c5ad07fa4b48464d6d27b1b">GetValue</a> (self, &quot;int&quot; gain_selector)</td></tr>
+<tr class="memdesc:ad2c91d569c5ad07fa4b48464d6d27b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of a matrix element.  <a href="#ad2c91d569c5ad07fa4b48464d6d27b1b">More...</a><br /></td></tr>
+<tr class="separator:ad2c91d569c5ad07fa4b48464d6d27b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37db09b0787505c9db9d383279fb54e2"><td class="memItemLeft" align="right" valign="top">&quot;ColorMatrix&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00795.html#a37db09b0787505c9db9d383279fb54e2">SetValue</a> (self, &quot;int&quot; gain_selector, &quot;float&quot; value)</td></tr>
+<tr class="memdesc:a37db09b0787505c9db9d383279fb54e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of a matrix element.  <a href="#a37db09b0787505c9db9d383279fb54e2">More...</a><br /></td></tr>
+<tr class="separator:a37db09b0787505c9db9d383279fb54e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a4dc54f7673d75fb5d0560c7b93c910e0"><td class="memItemLeft" align="right" valign="top"><a id="a4dc54f7673d75fb5d0560c7b93c910e0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Gain_Gain00</b> = _neoapi.ColorMatrix_Gain_Gain00</td></tr>
+<tr class="separator:a4dc54f7673d75fb5d0560c7b93c910e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1b892990f72c8d33d0bc8da0fa16bd4"><td class="memItemLeft" align="right" valign="top"><a id="ab1b892990f72c8d33d0bc8da0fa16bd4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Gain_Gain01</b> = _neoapi.ColorMatrix_Gain_Gain01</td></tr>
+<tr class="separator:ab1b892990f72c8d33d0bc8da0fa16bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a3c971728a121a84496e51dfee1b584"><td class="memItemLeft" align="right" valign="top"><a id="a3a3c971728a121a84496e51dfee1b584"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Gain_Gain02</b> = _neoapi.ColorMatrix_Gain_Gain02</td></tr>
+<tr class="separator:a3a3c971728a121a84496e51dfee1b584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b66b01c76530933eccfedce25cbb0b"><td class="memItemLeft" align="right" valign="top"><a id="ac9b66b01c76530933eccfedce25cbb0b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Gain_Gain10</b> = _neoapi.ColorMatrix_Gain_Gain10</td></tr>
+<tr class="separator:ac9b66b01c76530933eccfedce25cbb0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a912001ae39ff89ee86bfde29556c985d"><td class="memItemLeft" align="right" valign="top"><a id="a912001ae39ff89ee86bfde29556c985d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Gain_Gain11</b> = _neoapi.ColorMatrix_Gain_Gain11</td></tr>
+<tr class="separator:a912001ae39ff89ee86bfde29556c985d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa83b9bd7794e7f52e8983a70e2df2fd8"><td class="memItemLeft" align="right" valign="top"><a id="aa83b9bd7794e7f52e8983a70e2df2fd8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Gain_Gain12</b> = _neoapi.ColorMatrix_Gain_Gain12</td></tr>
+<tr class="separator:aa83b9bd7794e7f52e8983a70e2df2fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c52daf7747be9b8eff08c085129fc85"><td class="memItemLeft" align="right" valign="top"><a id="a7c52daf7747be9b8eff08c085129fc85"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Gain_Gain20</b> = _neoapi.ColorMatrix_Gain_Gain20</td></tr>
+<tr class="separator:a7c52daf7747be9b8eff08c085129fc85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd5538d163f61ef64fb11256bbfe2c6"><td class="memItemLeft" align="right" valign="top"><a id="adcd5538d163f61ef64fb11256bbfe2c6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Gain_Gain21</b> = _neoapi.ColorMatrix_Gain_Gain21</td></tr>
+<tr class="separator:adcd5538d163f61ef64fb11256bbfe2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7deaf969b726a22d1534fc4feb2757fe"><td class="memItemLeft" align="right" valign="top"><a id="a7deaf969b726a22d1534fc4feb2757fe"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Gain_Gain22</b> = _neoapi.ColorMatrix_Gain_Gain22</td></tr>
+<tr class="separator:a7deaf969b726a22d1534fc4feb2757fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a8195b7b7fe4c9184132cedc144896a5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00795.html#a8195b7b7fe4c9184132cedc144896a5a">value</a> = property(<a class="el" href="a00795.html#a95b35d8b9ea8b3cbb284a7c05e91b2a2">GetString</a>, <a class="el" href="a00795.html#a97dbf74a34369bbd83eb82f7c97ef35e">SetString</a>)</td></tr>
-<tr class="memdesc:a8195b7b7fe4c9184132cedc144896a5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the feature value as a property.  <a href="#a8195b7b7fe4c9184132cedc144896a5a">More...</a><br /></td></tr>
-<tr class="separator:a8195b7b7fe4c9184132cedc144896a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5adc25ece28bd03a426c7cbe6afdc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00795.html#aec5adc25ece28bd03a426c7cbe6afdc3">thisown</a> = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc=&quot;The membership flag&quot;)</td></tr>
+<tr class="memdesc:aec5adc25ece28bd03a426c7cbe6afdc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The membership flag.  <a href="#aec5adc25ece28bd03a426c7cbe6afdc3">More...</a><br /></td></tr>
+<tr class="separator:aec5adc25ece28bd03a426c7cbe6afdc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class providing the 'IString' interface. </p>
+<div class="textblock"><p>Class for the Color Transformation Matrix This class provides methods to configure the Color Matrix for color cameras. </p>
+<p>The Color Matrix can be used to achieve ideal color representation of an image during de-bayering. After setting suitable values for the color matrix elements, you can pass the instance to a <a class="el" href="a00799.html" title="Image post processing settings This class provides methods to configure image conversions.">neoapi.ConverterSettings</a> instance which can than be used with the <a class="el" href="a00855.html#af9fd5b5a5d619eb69e2c6c49e51c5e70">neoapi.Image.Convert</a> method to apply the settings to an image. </p><dl class="section note"><dt>Note</dt><dd>The elements are named according to the SFNC USAGE: <div class="fragment"><div class="line">matrix = <a class="code" href="a00795.html">neoapi.ColorMatrix</a>()                          <span class="comment"># Create a ColorMatrix object</span></div><div class="line">settings = <a class="code" href="a00799.html">neoapi.ConverterSettings</a>()                  <span class="comment"># Create a ConverterSettings object</span></div><div class="line">matrix.SetValue(neoapi.ColorMatrix.Gain_Gain00, -0.3)  <span class="comment"># Set a single value</span></div><div class="line">settings.SetColorTransformationMatrix(matrix)          <span class="comment"># Set the ColorMatrix to ConverterSettings</span></div></div><!-- fragment --> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad3035706236c93a425aaddbe49aef73a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3035706236c93a425aaddbe49aef73a">&#9670;&nbsp;</a></span>__init__()</h2>
+<a id="a77457432abbcb3cd3fab77bffbb548c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77457432abbcb3cd3fab77bffbb548c6">&#9670;&nbsp;</a></span>__init__()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def neoapi.StringFeature.__init__ </td>
+          <td class="memname">def neoapi.ColorMatrix.__init__ </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -164,83 +162,26 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<pre class="fragment">   \brief     Constructor
+</pre> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">*args</td><td>Arguments:<br />
- <b>object</b> (optional) An <a class="el" href="a00795.html" title="Class providing the &#39;IString&#39; interface.">StringFeature</a> object </td></tr>
+ <b>object</b> (optional) A <a class="el" href="a00795.html" title="Class for the Color Transformation Matrix This class provides methods to configure the Color Matrix f...">ColorMatrix</a> object </td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Reimplemented from <a class="el" href="a00783.html#ad57036684dcf73a4522484aafbb2b1ca">neoapi.BaseFeature</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a916dccbc9b59e906cadbac7d0f69f373"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a916dccbc9b59e906cadbac7d0f69f373">&#9670;&nbsp;</a></span>GetMaxStringLength()</h2>
+<a id="ad2c91d569c5ad07fa4b48464d6d27b1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2c91d569c5ad07fa4b48464d6d27b1b">&#9670;&nbsp;</a></span>GetValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;int&quot; neoapi.StringFeature.GetMaxStringLength </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the maximum allowed string-length of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The maximum length of the string </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a95b35d8b9ea8b3cbb284a7c05e91b2a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95b35d8b9ea8b3cbb284a7c05e91b2a2">&#9670;&nbsp;</a></span>GetString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;str&quot; neoapi.StringFeature.GetString </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the value of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> as a string. </p>
-<dl class="section return"><dt>Returns</dt><dd>The value of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a97dbf74a34369bbd83eb82f7c97ef35e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97dbf74a34369bbd83eb82f7c97ef35e">&#9670;&nbsp;</a></span>SetString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;StringFeature&quot; neoapi.StringFeature.SetString </td>
+          <td class="memname"> &quot;float&quot; neoapi.ColorMatrix.GetValue </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -248,7 +189,50 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">'str'&#160;</td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
+          <td class="paramname"><em>gain_selector</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the value of a matrix element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">gain_selector</td><td>Selects a component. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the selected component </dd></dl>
+
+</div>
+</div>
+<a id="a37db09b0787505c9db9d383279fb54e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37db09b0787505c9db9d383279fb54e2">&#9670;&nbsp;</a></span>SetValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;ColorMatrix&quot; neoapi.ColorMatrix.SetValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;int&quot;&#160;</td>
+          <td class="paramname"><em>gain_selector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;float&quot;&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -259,343 +243,21 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Write the value of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> as a string. </p>
+<p>Set the value of a matrix element. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>A value to be written to the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gain_selector</td><td>Selects a component. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The new value for this component. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00795.html" title="Class providing the &#39;IString&#39; interface.">StringFeature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="affff6bd927a38fc199f92c32fd031490"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affff6bd927a38fc199f92c32fd031490">&#9670;&nbsp;</a></span>GetInterface()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetInterface </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the GenICam data type of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<p>GenICam features can have different interface (data) types. Depending on the interface type, different feature access methods are provided.</p>
-<div class="fragment"><div class="line">IInteger     - data type integer</div><div class="line">IFloat       - data type float</div><div class="line">IBool        - data type boolean</div><div class="line">IString      - data type string</div><div class="line">IEnumeration - data type enumeration, can be a selector or an enumeration</div><div class="line">ICommand     - command features are executable features</div><div class="line">ICategory    - used to group features which belong together</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>The interface type of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ad1aa8c9d453a386b2f9f91cd3b3615c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1aa8c9d453a386b2f9f91cd3b3615c3">&#9670;&nbsp;</a></span>GetToolTip()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetToolTip </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get a short description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The short description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a6830b31068e48ae5db294d32f2def11c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6830b31068e48ae5db294d32f2def11c">&#9670;&nbsp;</a></span>GetDescription()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetDescription </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The description text of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ae28b09dddd7447d487a04a8258590633"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae28b09dddd7447d487a04a8258590633">&#9670;&nbsp;</a></span>GetName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetName </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa79f26165f8083861522250888e0cee3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa79f26165f8083861522250888e0cee3">&#9670;&nbsp;</a></span>GetDisplayName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetDisplayName </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the display name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The display name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a4bacabd7d5e68d9e54e88314660e2e9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bacabd7d5e68d9e54e88314660e2e9a">&#9670;&nbsp;</a></span>GetVisibility()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetVisibility </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the recommended visibility (Beginner/Expert/Guru or Invisible) of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The string representing the visibility of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a04f73633d9a8b93b7865bf91d2d36b67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04f73633d9a8b93b7865bf91d2d36b67">&#9670;&nbsp;</a></span>IsReadable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;bool&quot; neoapi.BaseFeature.IsReadable </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Indicates that the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is readable. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is readable, otherwise False </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aac1faf49fc350a92ddf2ce11d35ba85c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac1faf49fc350a92ddf2ce11d35ba85c">&#9670;&nbsp;</a></span>IsWritable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;bool&quot; neoapi.BaseFeature.IsWritable </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Indicates if a <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is writable. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is writable, otherwise False </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ada3c4ad870b561c575714a16f70d19db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada3c4ad870b561c575714a16f70d19db">&#9670;&nbsp;</a></span>IsAvailable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"> &quot;bool&quot; neoapi.BaseFeature.IsAvailable </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Indicates whether the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is available. </p>
-<pre class="fragment"> "Not available" or False is equivalent to the access mode 'NA'.
-</pre><dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is available to work with it, otherwise False </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00799.html" title="Image post processing settings This class provides methods to configure image conversions.">ConverterSettings</a> object </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a id="a8195b7b7fe4c9184132cedc144896a5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8195b7b7fe4c9184132cedc144896a5a">&#9670;&nbsp;</a></span>value</h2>
+<a id="aec5adc25ece28bd03a426c7cbe6afdc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec5adc25ece28bd03a426c7cbe6afdc3">&#9670;&nbsp;</a></span>thisown</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -604,7 +266,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">neoapi.StringFeature.value = property(<a class="el" href="a00795.html#a95b35d8b9ea8b3cbb284a7c05e91b2a2">GetString</a>, <a class="el" href="a00795.html#a97dbf74a34369bbd83eb82f7c97ef35e">SetString</a>)</td>
+          <td class="memname">neoapi.ColorMatrix.thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc=&quot;The membership flag&quot;)</td>
         </tr>
       </table>
   </td>
@@ -614,7 +276,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Provides access to the feature value as a property. </p>
+<p>The membership flag. </p>
 
 </div>
 </div>
@@ -631,7 +293,7 @@ Properties</h2></td></tr>
 </div>
 <hr class="footer" /><address class="footer">
     <small>
-        neoAPI Python Documentation ver. 1.4.1,
+        neoAPI Python Documentation ver. 1.5.0,
         generated by <a href="http://www.doxygen.org/index.html">
             Doxygen
         </a>

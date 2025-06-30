@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
     <meta name="generator" content="Doxygen 1.8.15" />
     <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
-    <title>neoAPI Python Documentation: Trace Programming Concepts of the neoAPI</title>
+    <title>neoAPI Python Documentation: neoapi.CamInfo Class Reference</title>
     <link rel="shortcut icon" type="image/x-icon" media="all" href="favicon.ico" />
     <script type="text/javascript" src="dynsections.js"></script>
     <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -59,37 +59,405 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="a00091.html">neoapi</a></li><li class="navelem"><a class="el" href="a00883.html">CamInfo</a></li>  </ul>
+</div>
 </div><!-- top -->
-<div class="PageDoc"><div class="header">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a> &#124;
+<a href="a00880.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Trace Programming Concepts of the neoAPI </div>  </div>
+<div class="title">neoapi.CamInfo Class Reference<div class="ingroups"><a class="el" href="a00090.html">All Cam Classes</a> &#124; <a class="el" href="a00086.html">Cam Interface Classes</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md98">Trace</a><ul><li class="level2"><a href="#autotoc_md99">Trace to Callback</a></li>
-</ul>
-</li>
-</ul>
+
+<p>Camera info container class which offers basic information about an available camera If <a class="el" href="a00891.html" title="Provides a list of physically connected cameras available to be used/connected with neoAPI You can us...">neoapi.CamInfoList</a> is called it will return a list of cameras, you can use the <a class="el" href="a00883.html" title="Camera info container class which offers basic information about an available camera If neoapi....">neoapi.CamInfo()</a> class to get information about a camera in this list.  
+ <a href="a00883.html#details">More...</a></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for neoapi.CamInfo:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
-<div class="textblock"><p>This document describes the concepts around Trace and how they can be used in the neoAPI.</p>
-<h1><a class="anchor" id="autotoc_md98"></a>
-Trace</h1>
-<p>The neoAPI trace logs internal operations, data and events. It can help you to understand how the API and the camera is working and helps uncover common errors. The shared library <code>tracelogger.dll/.so</code> provides the <code>NeoAPI::NeoTrace</code> class which is used for tracing.</p>
-<p>The user application can also use the tracelogger this will ensure that all messages are compiled in one file and helps to follow the flow of events.</p>
-<p>The trace can be enabled in different ways:</p>
-<ul>
-<li>By creating an (empty) file named 'tracelogger.ini' in <code>%LOCALAPPDATA%\Baumer</code> (Windows) or <code>$home/.local/share/Baumer</code> (Linux). The trace file(s) will be generated in the same folder. This is especially useful to debug applications in production where you might not be able to change the existing application code.</li>
-<li>By a call to 'EnableLogfile' for file logging. Every subsequent call 'EnableLogCallback' or 'EnableLogfile' will replace the old trace target with a new one.</li>
-<li>By a call to 'EnableLogCallback' where all trace messages are received by a callback method.</li>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a00883.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a1444e63e26d810f16085eee8e5c1e4dc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#a1444e63e26d810f16085eee8e5c1e4dc">__init__</a> (self, *args)</td></tr>
+<tr class="separator:a1444e63e26d810f16085eee8e5c1e4dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b280fc28767fa40b626fa7d55e05e22"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#a3b280fc28767fa40b626fa7d55e05e22">GetId</a> (self)</td></tr>
+<tr class="memdesc:a3b280fc28767fa40b626fa7d55e05e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ID of the camera, this is unique to each camera in combination with a Baumer producer.  <a href="#a3b280fc28767fa40b626fa7d55e05e22">More...</a><br /></td></tr>
+<tr class="separator:a3b280fc28767fa40b626fa7d55e05e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b279a8ae9ce9fe893d619a8cd94d40"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#ad5b279a8ae9ce9fe893d619a8cd94d40">GetModelName</a> (self)</td></tr>
+<tr class="memdesc:ad5b279a8ae9ce9fe893d619a8cd94d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the camera model name.  <a href="#ad5b279a8ae9ce9fe893d619a8cd94d40">More...</a><br /></td></tr>
+<tr class="separator:ad5b279a8ae9ce9fe893d619a8cd94d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7e2ddc7afebf27dfaf9f39142ae004"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#a9a7e2ddc7afebf27dfaf9f39142ae004">GetSerialNumber</a> (self)</td></tr>
+<tr class="memdesc:a9a7e2ddc7afebf27dfaf9f39142ae004"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the camera serial number.  <a href="#a9a7e2ddc7afebf27dfaf9f39142ae004">More...</a><br /></td></tr>
+<tr class="separator:a9a7e2ddc7afebf27dfaf9f39142ae004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37322389fc2a46340e7b5a2127b8d5fd"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#a37322389fc2a46340e7b5a2127b8d5fd">GetTLType</a> (self)</td></tr>
+<tr class="memdesc:a37322389fc2a46340e7b5a2127b8d5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the transport layer type.  <a href="#a37322389fc2a46340e7b5a2127b8d5fd">More...</a><br /></td></tr>
+<tr class="separator:a37322389fc2a46340e7b5a2127b8d5fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab32d45aaec3dd88fd8710536cd3992e9"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#ab32d45aaec3dd88fd8710536cd3992e9">GetVendorName</a> (self)</td></tr>
+<tr class="memdesc:ab32d45aaec3dd88fd8710536cd3992e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the camera vendor name.  <a href="#ab32d45aaec3dd88fd8710536cd3992e9">More...</a><br /></td></tr>
+<tr class="separator:ab32d45aaec3dd88fd8710536cd3992e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22ac983ae10d350dc8ddfc267550e81c"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#a22ac983ae10d350dc8ddfc267550e81c">GetUSB3VisionGUID</a> (self)</td></tr>
+<tr class="memdesc:a22ac983ae10d350dc8ddfc267550e81c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the USB3 vision GUID.  <a href="#a22ac983ae10d350dc8ddfc267550e81c">More...</a><br /></td></tr>
+<tr class="separator:a22ac983ae10d350dc8ddfc267550e81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5de8d52a362cb493cd9e59ac694c835c"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#a5de8d52a362cb493cd9e59ac694c835c">GetUSBPortID</a> (self)</td></tr>
+<tr class="memdesc:a5de8d52a362cb493cd9e59ac694c835c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the USB port ID.  <a href="#a5de8d52a362cb493cd9e59ac694c835c">More...</a><br /></td></tr>
+<tr class="separator:a5de8d52a362cb493cd9e59ac694c835c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a175411ea401a6181a618fc17d2e5679c"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#a175411ea401a6181a618fc17d2e5679c">GetGevIpAddress</a> (self)</td></tr>
+<tr class="memdesc:a175411ea401a6181a618fc17d2e5679c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the cameras ethernet IP address.  <a href="#a175411ea401a6181a618fc17d2e5679c">More...</a><br /></td></tr>
+<tr class="separator:a175411ea401a6181a618fc17d2e5679c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d8c1ef2009f95f8c0f1151d3aa6e81b"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#a4d8c1ef2009f95f8c0f1151d3aa6e81b">GetGevSubnetMask</a> (self)</td></tr>
+<tr class="memdesc:a4d8c1ef2009f95f8c0f1151d3aa6e81b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the cameras ethernet subnet mask.  <a href="#a4d8c1ef2009f95f8c0f1151d3aa6e81b">More...</a><br /></td></tr>
+<tr class="separator:a4d8c1ef2009f95f8c0f1151d3aa6e81b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0352d41af150acea7033ec7cffe4cf"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#a6a0352d41af150acea7033ec7cffe4cf">GetGevGateway</a> (self)</td></tr>
+<tr class="memdesc:a6a0352d41af150acea7033ec7cffe4cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the cameras ethernet gateway IP.  <a href="#a6a0352d41af150acea7033ec7cffe4cf">More...</a><br /></td></tr>
+<tr class="separator:a6a0352d41af150acea7033ec7cffe4cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab16917727ebcd2c47cd17bae14f8ee90"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#ab16917727ebcd2c47cd17bae14f8ee90">GetGevMACAddress</a> (self)</td></tr>
+<tr class="memdesc:ab16917727ebcd2c47cd17bae14f8ee90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the cameras ethernet MAC address.  <a href="#ab16917727ebcd2c47cd17bae14f8ee90">More...</a><br /></td></tr>
+<tr class="separator:ab16917727ebcd2c47cd17bae14f8ee90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27191e69df494ad411b19603074cece0"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#a27191e69df494ad411b19603074cece0">IsConnectable</a> (self)</td></tr>
+<tr class="memdesc:a27191e69df494ad411b19603074cece0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this camera is available for connection.  <a href="#a27191e69df494ad411b19603074cece0">More...</a><br /></td></tr>
+<tr class="separator:a27191e69df494ad411b19603074cece0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a58c833eb8d0490277872e0ed78e29534"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00883.html#a58c833eb8d0490277872e0ed78e29534">thisown</a> = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc=&quot;The membership flag&quot;)</td></tr>
+<tr class="memdesc:a58c833eb8d0490277872e0ed78e29534"><td class="mdescLeft">&#160;</td><td class="mdescRight">The membership flag.  <a href="#a58c833eb8d0490277872e0ed78e29534">More...</a><br /></td></tr>
+<tr class="separator:a58c833eb8d0490277872e0ed78e29534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Camera info container class which offers basic information about an available camera If <a class="el" href="a00891.html" title="Provides a list of physically connected cameras available to be used/connected with neoAPI You can us...">neoapi.CamInfoList</a> is called it will return a list of cameras, you can use the <a class="el" href="a00883.html" title="Camera info container class which offers basic information about an available camera If neoapi....">neoapi.CamInfo()</a> class to get information about a camera in this list. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1444e63e26d810f16085eee8e5c1e4dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1444e63e26d810f16085eee8e5c1e4dc">&#9670;&nbsp;</a></span>__init__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def neoapi.CamInfo.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">*&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">   \brief      Constructor
+</pre> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*args</td><td>Arguments:<br />
+ <b>object</b> (optional) A <a class="el" href="a00883.html" title="Camera info container class which offers basic information about an available camera If neoapi....">CamInfo</a> object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3b280fc28767fa40b626fa7d55e05e22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b280fc28767fa40b626fa7d55e05e22">&#9670;&nbsp;</a></span>GetId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.CamInfo.GetId </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the ID of the camera, this is unique to each camera in combination with a Baumer producer. </p>
+<dl class="section return"><dt>Returns</dt><dd>The ID </dd></dl>
+
+</div>
+</div>
+<a id="ad5b279a8ae9ce9fe893d619a8cd94d40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b279a8ae9ce9fe893d619a8cd94d40">&#9670;&nbsp;</a></span>GetModelName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.CamInfo.GetModelName </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the camera model name. </p>
+<dl class="section return"><dt>Returns</dt><dd>The model name </dd></dl>
+
+</div>
+</div>
+<a id="a9a7e2ddc7afebf27dfaf9f39142ae004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7e2ddc7afebf27dfaf9f39142ae004">&#9670;&nbsp;</a></span>GetSerialNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.CamInfo.GetSerialNumber </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the camera serial number. </p>
+<dl class="section return"><dt>Returns</dt><dd>The serial number </dd></dl>
+
+</div>
+</div>
+<a id="a37322389fc2a46340e7b5a2127b8d5fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37322389fc2a46340e7b5a2127b8d5fd">&#9670;&nbsp;</a></span>GetTLType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.CamInfo.GetTLType </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the transport layer type. </p>
+<dl class="section return"><dt>Returns</dt><dd>The transport layer type </dd></dl>
+
+</div>
+</div>
+<a id="ab32d45aaec3dd88fd8710536cd3992e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab32d45aaec3dd88fd8710536cd3992e9">&#9670;&nbsp;</a></span>GetVendorName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.CamInfo.GetVendorName </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the camera vendor name. </p>
+<dl class="section return"><dt>Returns</dt><dd>The vendor name </dd></dl>
+
+</div>
+</div>
+<a id="a22ac983ae10d350dc8ddfc267550e81c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ac983ae10d350dc8ddfc267550e81c">&#9670;&nbsp;</a></span>GetUSB3VisionGUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.CamInfo.GetUSB3VisionGUID </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the USB3 vision GUID. </p>
+<dl class="section note"><dt>Note</dt><dd>Only valid for USB3 Vision cameras </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The USB3 Vision GUID </dd></dl>
+
+</div>
+</div>
+<a id="a5de8d52a362cb493cd9e59ac694c835c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5de8d52a362cb493cd9e59ac694c835c">&#9670;&nbsp;</a></span>GetUSBPortID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.CamInfo.GetUSBPortID </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the USB port ID. </p>
+<dl class="section note"><dt>Note</dt><dd>Only valid for USB3 Vision cameras </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The port ID </dd></dl>
+
+</div>
+</div>
+<a id="a175411ea401a6181a618fc17d2e5679c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a175411ea401a6181a618fc17d2e5679c">&#9670;&nbsp;</a></span>GetGevIpAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.CamInfo.GetGevIpAddress </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the cameras ethernet IP address. </p>
+<dl class="section note"><dt>Note</dt><dd>Only valid for GigE Vision cameras </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The IP address </dd></dl>
+
+</div>
+</div>
+<a id="a4d8c1ef2009f95f8c0f1151d3aa6e81b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d8c1ef2009f95f8c0f1151d3aa6e81b">&#9670;&nbsp;</a></span>GetGevSubnetMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.CamInfo.GetGevSubnetMask </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the cameras ethernet subnet mask. </p>
+<dl class="section note"><dt>Note</dt><dd>Only valid for GigE Vision cameras </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The subnet mask </dd></dl>
+
+</div>
+</div>
+<a id="a6a0352d41af150acea7033ec7cffe4cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a0352d41af150acea7033ec7cffe4cf">&#9670;&nbsp;</a></span>GetGevGateway()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.CamInfo.GetGevGateway </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the cameras ethernet gateway IP. </p>
+<dl class="section note"><dt>Note</dt><dd>Only valid for GigE Vision cameras </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The gateway </dd></dl>
+
+</div>
+</div>
+<a id="ab16917727ebcd2c47cd17bae14f8ee90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab16917727ebcd2c47cd17bae14f8ee90">&#9670;&nbsp;</a></span>GetGevMACAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;str&quot; neoapi.CamInfo.GetGevMACAddress </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the cameras ethernet MAC address. </p>
+<dl class="section note"><dt>Note</dt><dd>Only valid for GigE Vision cameras </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The MAC address </dd></dl>
+
+</div>
+</div>
+<a id="a27191e69df494ad411b19603074cece0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27191e69df494ad411b19603074cece0">&#9670;&nbsp;</a></span>IsConnectable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.CamInfo.IsConnectable </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if this camera is available for connection. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if this camera can be connected, false otherwise </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a58c833eb8d0490277872e0ed78e29534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58c833eb8d0490277872e0ed78e29534">&#9670;&nbsp;</a></span>thisown</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">neoapi.CamInfo.thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc=&quot;The membership flag&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The membership flag. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>neoapi.py</li>
 </ul>
-<blockquote class="doxtable">
-<p>Note:</p>
-<p>Trace to callback and file can be used in parallel. </p>
-</blockquote>
-<p>## Trace to Trace-File </p><div class="fragment"><div class="line"><span class="keyword">import</span> neoapi</div><div class="line"></div><div class="line">camera = <a class="code" href="a00831.html">neoapi.Cam</a>()</div><div class="line">camera.Connect()</div><div class="line"></div><div class="line">logfile = <span class="stringliteral">&quot;test.log&quot;</span></div><div class="line">trace = <a class="code" href="a00859.html">neoapi.NeoTrace</a>()</div><div class="line">trace.SetSeverity(neoapi.NeoTraceSeverity_All)          <span class="comment"># set the severity</span></div><div class="line">trace.EnableLogfile(logfile)                            <span class="comment"># enable trace to logfile</span></div><div class="line"></div><div class="line">trace.Info(<span class="stringliteral">&quot;The Info&quot;</span>, <span class="stringliteral">&quot;Module Name&quot;</span>, <span class="stringliteral">&quot;Function name&quot;</span>, trace)  <span class="comment"># trace something</span></div><div class="line">trace.Warning(<span class="stringliteral">&quot;The Warning&quot;</span>, <span class="stringliteral">&quot;Module Name&quot;</span>, <span class="stringliteral">&quot;Function name&quot;</span>, camera)</div><div class="line">trace.Error(<span class="stringliteral">&quot;The Error&quot;</span>)</div><div class="line"></div><div class="line"><span class="comment"># calling this (and other) methods will produce a trace message from the API</span></div><div class="line">print(<span class="stringliteral">&quot;prog: &quot;</span>, neoapi.Cam.GetLibraryVersion())</div><div class="line">trace.DisableLogfile()</div></div><!-- fragment --><h2><a class="anchor" id="autotoc_md99"></a>
-Trace to Callback</h2>
-<p>Alternatively you can trace to a callback. This gives you the option to trace neoAPI messages to your own system.</p>
-<div class="fragment"><div class="line"><span class="keyword">import</span> neoapi</div><div class="line"></div><div class="line"><span class="comment"># write the callback to handle the trace</span></div><div class="line"><span class="keyword">class </span>TestTraceCallback():</div><div class="line">    <span class="keyword">def </span>tracecallback(self, msg):</div><div class="line">        print(<span class="stringliteral">&quot;trace: &quot;</span>, str(msg))</div><div class="line"></div><div class="line">camera = <a class="code" href="a00831.html">neoapi.Cam</a>()</div><div class="line">camera.Connect()</div><div class="line"></div><div class="line">trace = <a class="code" href="a00859.html">neoapi.NeoTrace</a>()</div><div class="line">callback = TestTraceCallback()</div><div class="line">trace.EnableLogCallback(callback.tracecallback)         <span class="comment"># register the callback</span></div><div class="line">trace.SetSeverity(neoapi.NeoTraceSeverity_All)          <span class="comment"># set the severity</span></div><div class="line"></div><div class="line">trace.Info(<span class="stringliteral">&quot;The Info&quot;</span>, <span class="stringliteral">&quot;my app&quot;</span>, <span class="stringliteral">&quot;main&quot;</span>, camera)        <span class="comment"># trace something</span></div><div class="line">trace.Warning(<span class="stringliteral">&quot;The Warning&quot;</span>)</div><div class="line">trace.Error(<span class="stringliteral">&quot;The Error&quot;</span>)</div><div class="line"></div><div class="line"><span class="comment"># calling this (and other) methods will produce a trace message from the API</span></div><div class="line">print(<span class="stringliteral">&quot;prog: &quot;</span>, neoapi.Cam.GetLibraryVersion())</div><div class="line">trace.DisableLogCallback()</div></div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->
@@ -100,7 +468,7 @@ Trace to Callback</h2>
 </div>
 <hr class="footer" /><address class="footer">
     <small>
-        neoAPI Python Documentation ver. 1.4.1,
+        neoAPI Python Documentation ver. 1.5.0,
         generated by <a href="http://www.doxygen.org/index.html">
             Doxygen
         </a>

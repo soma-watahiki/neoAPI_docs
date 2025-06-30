@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
     <meta name="generator" content="Doxygen 1.8.15" />
     <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
-    <title>neoAPI Python Documentation: neoapi.CommandFeature Class Reference</title>
+    <title>neoAPI Python Documentation: neoapi.ImageInfo Class Reference</title>
     <link rel="shortcut icon" type="image/x-icon" media="all" href="favicon.ico" />
     <script type="text/javascript" src="dynsections.js"></script>
     <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -61,85 +61,105 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00091.html">neoapi</a></li><li class="navelem"><a class="el" href="a00803.html">CommandFeature</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00091.html">neoapi</a></li><li class="navelem"><a class="el" href="a00803.html">ImageInfo</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="a00800.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">neoapi.CommandFeature Class Reference<div class="ingroups"><a class="el" href="a00090.html">All Cam Classes</a> &#124; <a class="el" href="a00087.html">GenICam Feature Interface</a></div></div>  </div>
+<div class="title">neoapi.ImageInfo Class Reference<div class="ingroups"><a class="el" href="a00090.html">All Cam Classes</a> &#124; <a class="el" href="a00086.html">Cam Interface Classes</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Class providing the 'ICommand' interface.  
+<p>Provides an object to get access to image properties even before streaming The <a class="el" href="a00803.html" title="Provides an object to get access to image properties even before streaming The ImageInfo object give ...">ImageInfo</a> object give access to basic image information like width and height.  
  <a href="a00803.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for neoapi.CommandFeature:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for neoapi.ImageInfo:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a00803.png" usemap="#neoapi.CommandFeature_map" alt=""/>
-  <map id="neoapi.CommandFeature_map" name="neoapi.CommandFeature_map">
-<area href="a00783.html" title="Base Feature class providing the interface to be used independent of Feature data-type." alt="neoapi.BaseFeature" shape="rect" coords="0,56,153,80"/>
+  <img src="a00803.png" usemap="#neoapi.ImageInfo_map" alt=""/>
+  <map id="neoapi.ImageInfo_map" name="neoapi.ImageInfo_map">
+<area href="a00855.html" title="Provides an object to get access to image data and its properties The Image object is used to retriev..." alt="neoapi.Image" shape="rect" coords="0,112,108,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0d5bdf3cf98e3fd8b08165634d68d0ea"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a0d5bdf3cf98e3fd8b08165634d68d0ea">__init__</a> (self, *args)</td></tr>
-<tr class="memdesc:a0d5bdf3cf98e3fd8b08165634d68d0ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a0d5bdf3cf98e3fd8b08165634d68d0ea">More...</a><br /></td></tr>
-<tr class="separator:a0d5bdf3cf98e3fd8b08165634d68d0ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af55472020332ce0ac4eb28f4d5db26bd"><td class="memItemLeft" align="right" valign="top">&quot;CommandFeature&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#af55472020332ce0ac4eb28f4d5db26bd">Execute</a> (self)</td></tr>
-<tr class="memdesc:af55472020332ce0ac4eb28f4d5db26bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the command of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#af55472020332ce0ac4eb28f4d5db26bd">More...</a><br /></td></tr>
-<tr class="separator:af55472020332ce0ac4eb28f4d5db26bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae956efb17be5de0ea7e50ef52e8b7bc7"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#ae956efb17be5de0ea7e50ef52e8b7bc7">IsDone</a> (self)</td></tr>
-<tr class="memdesc:ae956efb17be5de0ea7e50ef52e8b7bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the command of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is still executing.  <a href="#ae956efb17be5de0ea7e50ef52e8b7bc7">More...</a><br /></td></tr>
-<tr class="separator:ae956efb17be5de0ea7e50ef52e8b7bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d36113f3c6757d191b623890f2d47f6"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a4d36113f3c6757d191b623890f2d47f6">GetString</a> (self)</td></tr>
-<tr class="memdesc:a4d36113f3c6757d191b623890f2d47f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> as a string.  <a href="#a4d36113f3c6757d191b623890f2d47f6">More...</a><br /></td></tr>
-<tr class="separator:a4d36113f3c6757d191b623890f2d47f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affff6bd927a38fc199f92c32fd031490"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#affff6bd927a38fc199f92c32fd031490">GetInterface</a> (self)</td></tr>
-<tr class="memdesc:affff6bd927a38fc199f92c32fd031490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the GenICam data type of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#affff6bd927a38fc199f92c32fd031490">More...</a><br /></td></tr>
-<tr class="separator:affff6bd927a38fc199f92c32fd031490"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1aa8c9d453a386b2f9f91cd3b3615c3"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#ad1aa8c9d453a386b2f9f91cd3b3615c3">GetToolTip</a> (self)</td></tr>
-<tr class="memdesc:ad1aa8c9d453a386b2f9f91cd3b3615c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a short description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#ad1aa8c9d453a386b2f9f91cd3b3615c3">More...</a><br /></td></tr>
-<tr class="separator:ad1aa8c9d453a386b2f9f91cd3b3615c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6830b31068e48ae5db294d32f2def11c"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#a6830b31068e48ae5db294d32f2def11c">GetDescription</a> (self)</td></tr>
-<tr class="memdesc:a6830b31068e48ae5db294d32f2def11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#a6830b31068e48ae5db294d32f2def11c">More...</a><br /></td></tr>
-<tr class="separator:a6830b31068e48ae5db294d32f2def11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae28b09dddd7447d487a04a8258590633"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#ae28b09dddd7447d487a04a8258590633">GetName</a> (self)</td></tr>
-<tr class="memdesc:ae28b09dddd7447d487a04a8258590633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#ae28b09dddd7447d487a04a8258590633">More...</a><br /></td></tr>
-<tr class="separator:ae28b09dddd7447d487a04a8258590633"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa79f26165f8083861522250888e0cee3"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#aa79f26165f8083861522250888e0cee3">GetDisplayName</a> (self)</td></tr>
-<tr class="memdesc:aa79f26165f8083861522250888e0cee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the display name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#aa79f26165f8083861522250888e0cee3">More...</a><br /></td></tr>
-<tr class="separator:aa79f26165f8083861522250888e0cee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bacabd7d5e68d9e54e88314660e2e9a"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#a4bacabd7d5e68d9e54e88314660e2e9a">GetVisibility</a> (self)</td></tr>
-<tr class="memdesc:a4bacabd7d5e68d9e54e88314660e2e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the recommended visibility (Beginner/Expert/Guru or Invisible) of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object.  <a href="#a4bacabd7d5e68d9e54e88314660e2e9a">More...</a><br /></td></tr>
-<tr class="separator:a4bacabd7d5e68d9e54e88314660e2e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04f73633d9a8b93b7865bf91d2d36b67"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#a04f73633d9a8b93b7865bf91d2d36b67">IsReadable</a> (self)</td></tr>
-<tr class="memdesc:a04f73633d9a8b93b7865bf91d2d36b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates that the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is readable.  <a href="#a04f73633d9a8b93b7865bf91d2d36b67">More...</a><br /></td></tr>
-<tr class="separator:a04f73633d9a8b93b7865bf91d2d36b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac1faf49fc350a92ddf2ce11d35ba85c"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#aac1faf49fc350a92ddf2ce11d35ba85c">IsWritable</a> (self)</td></tr>
-<tr class="memdesc:aac1faf49fc350a92ddf2ce11d35ba85c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if a <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is writable.  <a href="#aac1faf49fc350a92ddf2ce11d35ba85c">More...</a><br /></td></tr>
-<tr class="separator:aac1faf49fc350a92ddf2ce11d35ba85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada3c4ad870b561c575714a16f70d19db"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00783.html#ada3c4ad870b561c575714a16f70d19db">IsAvailable</a> (self)</td></tr>
-<tr class="memdesc:ada3c4ad870b561c575714a16f70d19db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is available.  <a href="#ada3c4ad870b561c575714a16f70d19db">More...</a><br /></td></tr>
-<tr class="separator:ada3c4ad870b561c575714a16f70d19db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b9c3ab561324333874160df5007205f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a8b9c3ab561324333874160df5007205f">__init__</a> (self, *args)</td></tr>
+<tr class="memdesc:a8b9c3ab561324333874160df5007205f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a8b9c3ab561324333874160df5007205f">More...</a><br /></td></tr>
+<tr class="separator:a8b9c3ab561324333874160df5007205f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d5b973f50c053e96ecc7edfe9da635"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#ae2d5b973f50c053e96ecc7edfe9da635">GetHeight</a> (self)</td></tr>
+<tr class="memdesc:ae2d5b973f50c053e96ecc7edfe9da635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the height of the image in pixel, returns zero as long the image is not filled with data.  <a href="#ae2d5b973f50c053e96ecc7edfe9da635">More...</a><br /></td></tr>
+<tr class="separator:ae2d5b973f50c053e96ecc7edfe9da635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74ea98a5251ad92bcfc39dffb7e46ced"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a74ea98a5251ad92bcfc39dffb7e46ced">GetYOffset</a> (self)</td></tr>
+<tr class="memdesc:a74ea98a5251ad92bcfc39dffb7e46ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the y offset in pixel.  <a href="#a74ea98a5251ad92bcfc39dffb7e46ced">More...</a><br /></td></tr>
+<tr class="separator:a74ea98a5251ad92bcfc39dffb7e46ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa68a32ae42c15e79caace60e346a4ed6"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#aa68a32ae42c15e79caace60e346a4ed6">GetYPadding</a> (self)</td></tr>
+<tr class="memdesc:aa68a32ae42c15e79caace60e346a4ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of extra bytes transmitted at the end of the image.  <a href="#aa68a32ae42c15e79caace60e346a4ed6">More...</a><br /></td></tr>
+<tr class="separator:aa68a32ae42c15e79caace60e346a4ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae70432b723d9c832f6abb5cae6030bd5"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#ae70432b723d9c832f6abb5cae6030bd5">GetWidth</a> (self)</td></tr>
+<tr class="memdesc:ae70432b723d9c832f6abb5cae6030bd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the width of the image in pixel, returns zero as long the image is not filled with data.  <a href="#ae70432b723d9c832f6abb5cae6030bd5">More...</a><br /></td></tr>
+<tr class="separator:ae70432b723d9c832f6abb5cae6030bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27e12c31a0a6257a2f34c5549412341a"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a27e12c31a0a6257a2f34c5549412341a">GetXOffset</a> (self)</td></tr>
+<tr class="memdesc:a27e12c31a0a6257a2f34c5549412341a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the x offset in pixel.  <a href="#a27e12c31a0a6257a2f34c5549412341a">More...</a><br /></td></tr>
+<tr class="separator:a27e12c31a0a6257a2f34c5549412341a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae264d4741c2e3768699e8305f4502bbe"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#ae264d4741c2e3768699e8305f4502bbe">GetXPadding</a> (self)</td></tr>
+<tr class="memdesc:ae264d4741c2e3768699e8305f4502bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the the number of extra bytes transmitted at the end of each line.  <a href="#ae264d4741c2e3768699e8305f4502bbe">More...</a><br /></td></tr>
+<tr class="separator:ae264d4741c2e3768699e8305f4502bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e5a1a4759118139478186645dcde8e"><td class="memItemLeft" align="right" valign="top">&quot;str&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a66e5a1a4759118139478186645dcde8e">GetPixelFormat</a> (self)</td></tr>
+<tr class="memdesc:a66e5a1a4759118139478186645dcde8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the pixelformat of the image, returns an empty string as long the image is not filled with data The GenICam SFNC defines many different PixelFormats which are used to transfer image data from a camera such as RGB, YUV and BayerRG.  <a href="#a66e5a1a4759118139478186645dcde8e">More...</a><br /></td></tr>
+<tr class="separator:a66e5a1a4759118139478186645dcde8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a4b22523f4c2591f18a92aa6672cb3b"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a2a4b22523f4c2591f18a92aa6672cb3b">GetSize</a> (self)</td></tr>
+<tr class="memdesc:a2a4b22523f4c2591f18a92aa6672cb3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the whole size of the image in bytes.  <a href="#a2a4b22523f4c2591f18a92aa6672cb3b">More...</a><br /></td></tr>
+<tr class="separator:a2a4b22523f4c2591f18a92aa6672cb3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d5595e748e4efee67fb72bca5d12d51"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a4d5595e748e4efee67fb72bca5d12d51">GetGroupID</a> (self)</td></tr>
+<tr class="memdesc:a4d5595e748e4efee67fb72bca5d12d51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the group id of the image.  <a href="#a4d5595e748e4efee67fb72bca5d12d51">More...</a><br /></td></tr>
+<tr class="separator:a4d5595e748e4efee67fb72bca5d12d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c62cef40e061aa4b5648e15f6d45739"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a4c62cef40e061aa4b5648e15f6d45739">GetSourceID</a> (self)</td></tr>
+<tr class="memdesc:a4c62cef40e061aa4b5648e15f6d45739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the source id of the image.  <a href="#a4c62cef40e061aa4b5648e15f6d45739">More...</a><br /></td></tr>
+<tr class="separator:a4c62cef40e061aa4b5648e15f6d45739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd62ce238c06939313a60842098db1b"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a1dd62ce238c06939313a60842098db1b">GetRegionID</a> (self)</td></tr>
+<tr class="memdesc:a1dd62ce238c06939313a60842098db1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the region id of the image.  <a href="#a1dd62ce238c06939313a60842098db1b">More...</a><br /></td></tr>
+<tr class="separator:a1dd62ce238c06939313a60842098db1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a501b21913ccb8e7ad6836707f96511e9"><td class="memItemLeft" align="right" valign="top">&quot;NeoImageCompression&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a501b21913ccb8e7ad6836707f96511e9">GetCompression</a> (self)</td></tr>
+<tr class="memdesc:a501b21913ccb8e7ad6836707f96511e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get compression method of the image.  <a href="#a501b21913ccb8e7ad6836707f96511e9">More...</a><br /></td></tr>
+<tr class="separator:a501b21913ccb8e7ad6836707f96511e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f6176d9aba067023fc07d32cd374d7"><td class="memItemLeft" align="right" valign="top">&quot;bool&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#ab0f6176d9aba067023fc07d32cd374d7">IsSegmentShared</a> (self)</td></tr>
+<tr class="memdesc:ab0f6176d9aba067023fc07d32cd374d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give information if the memory segment in a buffer is shared with other components.  <a href="#ab0f6176d9aba067023fc07d32cd374d7">More...</a><br /></td></tr>
+<tr class="separator:ab0f6176d9aba067023fc07d32cd374d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0026a34eafc3b9412a7bc3cb58c4db6d"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a0026a34eafc3b9412a7bc3cb58c4db6d">GetSegmentOffset</a> (self)</td></tr>
+<tr class="memdesc:a0026a34eafc3b9412a7bc3cb58c4db6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the image data offset related to the begin of the memory segment in the buffer.  <a href="#a0026a34eafc3b9412a7bc3cb58c4db6d">More...</a><br /></td></tr>
+<tr class="separator:a0026a34eafc3b9412a7bc3cb58c4db6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00db0b522111679788d2624d5c4e32bb"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a00db0b522111679788d2624d5c4e32bb">GetSegmentSize</a> (self)</td></tr>
+<tr class="memdesc:a00db0b522111679788d2624d5c4e32bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the whole size of the memory segment in the buffer.  <a href="#a00db0b522111679788d2624d5c4e32bb">More...</a><br /></td></tr>
+<tr class="separator:a00db0b522111679788d2624d5c4e32bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab40fa50855bca84a534c90af65c32230"><td class="memItemLeft" align="right" valign="top">&quot;int&quot;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#ab40fa50855bca84a534c90af65c32230">GetSegmentIndex</a> (self)</td></tr>
+<tr class="memdesc:ab40fa50855bca84a534c90af65c32230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of the memory segment in the buffer.  <a href="#ab40fa50855bca84a534c90af65c32230">More...</a><br /></td></tr>
+<tr class="separator:ab40fa50855bca84a534c90af65c32230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a27ecc4d388b740e2749c167c4565dd79"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a27ecc4d388b740e2749c167c4565dd79">thisown</a> = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc=&quot;The membership flag&quot;)</td></tr>
+<tr class="memdesc:a27ecc4d388b740e2749c167c4565dd79"><td class="mdescLeft">&#160;</td><td class="mdescRight">The membership flag.  <a href="#a27ecc4d388b740e2749c167c4565dd79">More...</a><br /></td></tr>
+<tr class="separator:a27ecc4d388b740e2749c167c4565dd79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class providing the 'ICommand' interface. </p>
+<div class="textblock"><p>Provides an object to get access to image properties even before streaming The <a class="el" href="a00803.html" title="Provides an object to get access to image properties even before streaming The ImageInfo object give ...">ImageInfo</a> object give access to basic image information like width and height. </p>
+<p>These informations can be obtained by the camera even before the streaming starts. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0d5bdf3cf98e3fd8b08165634d68d0ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d5bdf3cf98e3fd8b08165634d68d0ea">&#9670;&nbsp;</a></span>__init__()</h2>
+<a id="a8b9c3ab561324333874160df5007205f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b9c3ab561324333874160df5007205f">&#9670;&nbsp;</a></span>__init__()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def neoapi.CommandFeature.__init__ </td>
+          <td class="memname">def neoapi.ImageInfo.__init__ </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -159,27 +179,20 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*args</td><td>Arguments:<br />
- <b>object</b> (optional) An <a class="el" href="a00803.html" title="Class providing the &#39;ICommand&#39; interface.">CommandFeature</a> object </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p>Reimplemented from <a class="el" href="a00783.html#ad57036684dcf73a4522484aafbb2b1ca">neoapi.BaseFeature</a>.</p>
+<p>Reimplemented in <a class="el" href="a00855.html#a9c163a4c5d6c5372acfb297c2c62ff08">neoapi.Image</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af55472020332ce0ac4eb28f4d5db26bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af55472020332ce0ac4eb28f4d5db26bd">&#9670;&nbsp;</a></span>Execute()</h2>
+<a id="ae2d5b973f50c053e96ecc7edfe9da635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2d5b973f50c053e96ecc7edfe9da635">&#9670;&nbsp;</a></span>GetHeight()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;CommandFeature&quot; neoapi.CommandFeature.Execute </td>
+          <td class="memname"> &quot;int&quot; neoapi.ImageInfo.GetHeight </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
@@ -188,25 +201,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Executes the command of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="a00803.html" title="Class providing the &#39;ICommand&#39; interface.">CommandFeature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Get the height of the image in pixel, returns zero as long the image is not filled with data. </p>
+<dl class="section return"><dt>Returns</dt><dd>The height of the image in pixel. // TODO: kepp after convert </dd></dl>
 
 </div>
 </div>
-<a id="ae956efb17be5de0ea7e50ef52e8b7bc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae956efb17be5de0ea7e50ef52e8b7bc7">&#9670;&nbsp;</a></span>IsDone()</h2>
+<a id="a74ea98a5251ad92bcfc39dffb7e46ced"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74ea98a5251ad92bcfc39dffb7e46ced">&#9670;&nbsp;</a></span>GetYOffset()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;bool&quot; neoapi.CommandFeature.IsDone </td>
+          <td class="memname"> &quot;int&quot; neoapi.ImageInfo.GetYOffset </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
@@ -215,25 +222,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Indicates whether the command of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is still executing. </p>
-<dl class="section return"><dt>Returns</dt><dd>False if the command of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is still been executed, True if it finished executing </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Return the y offset in pixel. </p>
+<dl class="section return"><dt>Returns</dt><dd>The y offset in pixel // TODO: keep after convert </dd></dl>
 
 </div>
 </div>
-<a id="a4d36113f3c6757d191b623890f2d47f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d36113f3c6757d191b623890f2d47f6">&#9670;&nbsp;</a></span>GetString()</h2>
+<a id="aa68a32ae42c15e79caace60e346a4ed6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa68a32ae42c15e79caace60e346a4ed6">&#9670;&nbsp;</a></span>GetYPadding()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;str&quot; neoapi.CommandFeature.GetString </td>
+          <td class="memname"> &quot;int&quot; neoapi.ImageInfo.GetYPadding </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
@@ -242,300 +243,292 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the value of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> as a string. </p>
-<dl class="section return"><dt>Returns</dt><dd>The value of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Return the number of extra bytes transmitted at the end of the image. </p>
+<dl class="section return"><dt>Returns</dt><dd>The y padding of the image in byte. // TODO: 0 after convert </dd></dl>
 
 </div>
 </div>
-<a id="affff6bd927a38fc199f92c32fd031490"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affff6bd927a38fc199f92c32fd031490">&#9670;&nbsp;</a></span>GetInterface()</h2>
+<a id="ae70432b723d9c832f6abb5cae6030bd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae70432b723d9c832f6abb5cae6030bd5">&#9670;&nbsp;</a></span>GetWidth()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetInterface </td>
+          <td class="memname"> &quot;int&quot; neoapi.ImageInfo.GetWidth </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Get the GenICam data type of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<p>GenICam features can have different interface (data) types. Depending on the interface type, different feature access methods are provided.</p>
-<div class="fragment"><div class="line">IInteger     - data type integer</div><div class="line">IFloat       - data type float</div><div class="line">IBool        - data type boolean</div><div class="line">IString      - data type string</div><div class="line">IEnumeration - data type enumeration, can be a selector or an enumeration</div><div class="line">ICommand     - command features are executable features</div><div class="line">ICategory    - used to group features which belong together</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>The interface type of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Get the width of the image in pixel, returns zero as long the image is not filled with data. </p>
+<dl class="section return"><dt>Returns</dt><dd>The width of the image in pixel. // TODO: keep after convert </dd></dl>
 
 </div>
 </div>
-<a id="ad1aa8c9d453a386b2f9f91cd3b3615c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1aa8c9d453a386b2f9f91cd3b3615c3">&#9670;&nbsp;</a></span>GetToolTip()</h2>
+<a id="a27e12c31a0a6257a2f34c5549412341a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27e12c31a0a6257a2f34c5549412341a">&#9670;&nbsp;</a></span>GetXOffset()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetToolTip </td>
+          <td class="memname"> &quot;int&quot; neoapi.ImageInfo.GetXOffset </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Get a short description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The short description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Return the x offset in pixel. </p>
+<dl class="section return"><dt>Returns</dt><dd>The x offset in pixel // TODO: keep after convert </dd></dl>
 
 </div>
 </div>
-<a id="a6830b31068e48ae5db294d32f2def11c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6830b31068e48ae5db294d32f2def11c">&#9670;&nbsp;</a></span>GetDescription()</h2>
+<a id="ae264d4741c2e3768699e8305f4502bbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae264d4741c2e3768699e8305f4502bbe">&#9670;&nbsp;</a></span>GetXPadding()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetDescription </td>
+          <td class="memname"> &quot;int&quot; neoapi.ImageInfo.GetXPadding </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Get the description of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The description text of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Return the the number of extra bytes transmitted at the end of each line. </p>
+<dl class="section return"><dt>Returns</dt><dd>The x padding of the image in byte // TODO: 0 after convert </dd></dl>
 
 </div>
 </div>
-<a id="ae28b09dddd7447d487a04a8258590633"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae28b09dddd7447d487a04a8258590633">&#9670;&nbsp;</a></span>GetName()</h2>
+<a id="a66e5a1a4759118139478186645dcde8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66e5a1a4759118139478186645dcde8e">&#9670;&nbsp;</a></span>GetPixelFormat()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetName </td>
+          <td class="memname"> &quot;str&quot; neoapi.ImageInfo.GetPixelFormat </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Get the name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Get the pixelformat of the image, returns an empty string as long the image is not filled with data The GenICam SFNC defines many different PixelFormats which are used to transfer image data from a camera such as RGB, YUV and BayerRG. </p>
+<p>Knowledge about it is essential so the image can be converted to a format needed to process it </p><dl class="section note"><dt>Note</dt><dd>More information about the GenICam SFNC (Standard Feature Naming Convention) can be found in the GenICam SFNC Document on the <a href="https://www.emva.org/wp-content/uploads/GenICam_SFNC_v2_4.pdf">EMVA Website</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The PixelFormat of the <a class="el" href="a00855.html" title="Provides an object to get access to image data and its properties The Image object is used to retriev...">Image</a> // TODO: ask image after convert </dd></dl>
 
 </div>
 </div>
-<a id="aa79f26165f8083861522250888e0cee3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa79f26165f8083861522250888e0cee3">&#9670;&nbsp;</a></span>GetDisplayName()</h2>
+<a id="a2a4b22523f4c2591f18a92aa6672cb3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a4b22523f4c2591f18a92aa6672cb3b">&#9670;&nbsp;</a></span>GetSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetDisplayName </td>
+          <td class="memname"> &quot;int&quot; neoapi.ImageInfo.GetSize </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Get the display name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The display name of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Get the whole size of the image in bytes. </p>
+<dl class="section return"><dt>Returns</dt><dd>the image size in bytes // TODO: ask image after convert </dd></dl>
 
 </div>
 </div>
-<a id="a4bacabd7d5e68d9e54e88314660e2e9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bacabd7d5e68d9e54e88314660e2e9a">&#9670;&nbsp;</a></span>GetVisibility()</h2>
+<a id="a4d5595e748e4efee67fb72bca5d12d51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d5595e748e4efee67fb72bca5d12d51">&#9670;&nbsp;</a></span>GetGroupID()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;str&quot; neoapi.BaseFeature.GetVisibility </td>
+          <td class="memname"> &quot;int&quot; neoapi.ImageInfo.GetGroupID </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Get the recommended visibility (Beginner/Expert/Guru or Invisible) of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>The string representing the visibility of the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Return the group id of the image. </p>
+<dl class="section note"><dt>Note</dt><dd>in case of a non GenDC buffer this returns always 0 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the group id // TODO: keep after convert </dd></dl>
 
 </div>
 </div>
-<a id="a04f73633d9a8b93b7865bf91d2d36b67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04f73633d9a8b93b7865bf91d2d36b67">&#9670;&nbsp;</a></span>IsReadable()</h2>
+<a id="a4c62cef40e061aa4b5648e15f6d45739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c62cef40e061aa4b5648e15f6d45739">&#9670;&nbsp;</a></span>GetSourceID()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;bool&quot; neoapi.BaseFeature.IsReadable </td>
+          <td class="memname"> &quot;int&quot; neoapi.ImageInfo.GetSourceID </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Indicates that the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is readable. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is readable, otherwise False </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Return the source id of the image. </p>
+<dl class="section note"><dt>Note</dt><dd>in case of a non GenDC buffer this returns always 0 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the source id // TODO: kepp after convert </dd></dl>
 
 </div>
 </div>
-<a id="aac1faf49fc350a92ddf2ce11d35ba85c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac1faf49fc350a92ddf2ce11d35ba85c">&#9670;&nbsp;</a></span>IsWritable()</h2>
+<a id="a1dd62ce238c06939313a60842098db1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dd62ce238c06939313a60842098db1b">&#9670;&nbsp;</a></span>GetRegionID()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;bool&quot; neoapi.BaseFeature.IsWritable </td>
+          <td class="memname"> &quot;int&quot; neoapi.ImageInfo.GetRegionID </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Indicates if a <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is writable. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is writable, otherwise False </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Return the region id of the image. </p>
+<dl class="section note"><dt>Note</dt><dd>in case of a non GenDC buffer this returns always 0 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the region id // TODO: keep after convert </dd></dl>
 
 </div>
 </div>
-<a id="ada3c4ad870b561c575714a16f70d19db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada3c4ad870b561c575714a16f70d19db">&#9670;&nbsp;</a></span>IsAvailable()</h2>
+<a id="a501b21913ccb8e7ad6836707f96511e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a501b21913ccb8e7ad6836707f96511e9">&#9670;&nbsp;</a></span>GetCompression()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;NeoImageCompression&quot; neoapi.ImageInfo.GetCompression </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get compression method of the image. </p>
+<dl class="section return"><dt>Returns</dt><dd>The compression method // TODO: RAW after convert </dd></dl>
+
+</div>
+</div>
+<a id="ab0f6176d9aba067023fc07d32cd374d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f6176d9aba067023fc07d32cd374d7">&#9670;&nbsp;</a></span>IsSegmentShared()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;bool&quot; neoapi.ImageInfo.IsSegmentShared </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Give information if the memory segment in a buffer is shared with other components. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if segment is shared with other components, otherwise false // TODO: refresh value after convert </dd></dl>
+
+</div>
+</div>
+<a id="a0026a34eafc3b9412a7bc3cb58c4db6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0026a34eafc3b9412a7bc3cb58c4db6d">&#9670;&nbsp;</a></span>GetSegmentOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.ImageInfo.GetSegmentOffset </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the image data offset related to the begin of the memory segment in the buffer. </p>
+<dl class="section return"><dt>Returns</dt><dd>the offset of the image data // TODO: refresh value after convert </dd></dl>
+
+</div>
+</div>
+<a id="a00db0b522111679788d2624d5c4e32bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00db0b522111679788d2624d5c4e32bb">&#9670;&nbsp;</a></span>GetSegmentSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.ImageInfo.GetSegmentSize </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the whole size of the memory segment in the buffer. </p>
+<dl class="section note"><dt>Note</dt><dd>when the segment only contains this image the result is identical to <a class="el" href="a00803.html#a2a4b22523f4c2591f18a92aa6672cb3b" title="Get the whole size of the image in bytes.">GetSize()</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the memory size in bytes // TODO: refresh value after convert </dd></dl>
+
+</div>
+</div>
+<a id="ab40fa50855bca84a534c90af65c32230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab40fa50855bca84a534c90af65c32230">&#9670;&nbsp;</a></span>GetSegmentIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> &quot;int&quot; neoapi.ImageInfo.GetSegmentIndex </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the index of the memory segment in the buffer. </p>
+<dl class="section return"><dt>Returns</dt><dd>the segment index // TODO: 0 after convert </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a27ecc4d388b740e2749c167c4565dd79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27ecc4d388b740e2749c167c4565dd79">&#9670;&nbsp;</a></span>thisown</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -544,29 +537,17 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"> &quot;bool&quot; neoapi.BaseFeature.IsAvailable </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
+          <td class="memname">neoapi.ImageInfo.thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc=&quot;The membership flag&quot;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Indicates whether the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is available. </p>
-<pre class="fragment"> "Not available" or False is equivalent to the access mode 'NA'.
-</pre><dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="a00771.html" title="Provides access to camera features.">Feature</a> object is available to work with it, otherwise False </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00743.html" title="Feature not accessible Exception.">FeatureAccessException</a></td><td>The calling object is not valid </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>The membership flag. </p>
 
 </div>
 </div>
@@ -583,7 +564,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <hr class="footer" /><address class="footer">
     <small>
-        neoAPI Python Documentation ver. 1.4.1,
+        neoAPI Python Documentation ver. 1.5.0,
         generated by <a href="http://www.doxygen.org/index.html">
             Doxygen
         </a>
